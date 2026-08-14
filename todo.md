@@ -66,3 +66,9 @@
 - [x] Capture and document separate dark-mode and light-mode screenshots for both the homepage and a guide route after the final widget/sidebar changes.
 - [x] Verify the new floating Ask widget, sound toggle, close button, composer, and desktop sidebar collapse control with keyboard-only navigation and focus-visible states.
 - [x] Capture fresh dark-mode and light-mode screenshots for homepage and guide routes after the new widget/sidebar changes.
+
+## Laptop & Smaller Viewport Layout Fixes
+
+- [x] Tune CSS grid templates so 1024px to 1366px viewports fit sidebar, article, and TOC without horizontal overflow or cramped text.
+- [x] Ensure sidebar collapses gracefully or uses responsive grid columns on medium screens.
+- [x] Verify 1024px, 1280px, and mobile viewports with screenshots and build checks, including a fresh 390px narrow-mobile pass after the laptop fix.

@@ -1149,3 +1149,60 @@ html[data-theme="dark"] .kb-aurora__orb { mix-blend-mode: normal; opacity: .055;
 @media (prefers-reduced-motion: reduce) {
   .kb-assistant-fab:hover { transform: none; }
 }
+
+
+/* Laptop-first layout guard: preserve the three-column reading rhythm without requiring a maximized window. */
+@media (min-width: 901px) and (max-width: 1240px) {
+  .kb-topbar__inner { padding-left: 20px; padding-right: 20px; gap: 14px; }
+  .kb-topbar-context { font-size: 11px; }
+  .kb-layout { max-width: none; width: 100%; }
+  .kb-layout--home { grid-template-columns: 220px minmax(0, 1fr); }
+  .kb-layout--guide { grid-template-columns: 220px minmax(0, 1fr) 194px; gap: 0 24px; }
+  .kb-sidebar { padding-left: 18px; padding-right: 14px; }
+  .kb-main--home { padding: 34px 32px 76px 34px; }
+  .kb-main--article { padding-top: 32px; }
+  .kb-hero { gap: 30px; padding-top: 50px; }
+  .kb-hero__art { min-height: 328px; }
+  .kb-hero__art-caption { font-size: 21px; }
+  .kb-article h1 { font-size: clamp(38px, 4.3vw, 54px); }
+  .kb-article-section__body p,
+  .kb-article-section__body ul,
+  .kb-article-section__body ol { max-width: 650px; }
+  .kb-toc { margin-top: 6px; }
+  .kb-toc__card { padding: 18px 16px; }
+}
+
+@media (min-width: 901px) and (max-width: 1040px) {
+  .kb-layout--home { grid-template-columns: 204px minmax(0, 1fr); }
+  .kb-layout--guide { grid-template-columns: 204px minmax(0, 1fr) 176px; gap: 0 18px; }
+  .kb-sidebar { padding-left: 14px; padding-right: 10px; }
+  .kb-nav-link { padding-left: 8px; padding-right: 6px; font-size: 11px; }
+  .kb-main--home { padding-left: 26px; padding-right: 24px; }
+  .kb-hero { grid-template-columns: minmax(0, 1fr) 270px; gap: 24px; }
+  .kb-hero h1 { font-size: clamp(40px, 5.2vw, 58px); }
+  .kb-hero__copy > p { font-size: 15px; }
+  .kb-hero__art { min-height: 300px; }
+  .kb-toc__card { padding: 16px 13px; }
+  .kb-toc__card h2 { font-size: 17px; }
+  .kb-toc nav a { font-size: 10px; }
+}
+
+@media (min-width: 901px) and (max-width: 960px) {
+  .kb-layout--guide { grid-template-columns: 194px minmax(0, 1fr) 166px; gap: 0 14px; }
+  .kb-topbar__inner { padding-left: 14px; padding-right: 14px; }
+  .kb-topbar-context { display: none; }
+  .kb-main--article { padding-left: 0; padding-right: 0; }
+  .kb-article__intro { font-size: 16px; }
+}
+
+@media (min-width: 901px) and (max-width: 920px) {
+  .kb-search-trigger span { display: none; }
+  .kb-search-trigger kbd { margin-left: 0; }
+}
+
+
+/* Keep the guide map available on laptops; it only collapses with the mobile navigation layout. */
+@media (min-width: 901px) and (max-width: 1240px) {
+  .kb-toc { display: block; min-width: 0; }
+  .kb-toc__card { width: 100%; }
+}
