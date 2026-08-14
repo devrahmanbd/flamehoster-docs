@@ -85,9 +85,22 @@
 - [x] Analyze theolympus.org interaction style: subtle glowing grid lines, luminous mouse-proximity highlights, floating tech cards, and smooth layered depth.
 - [x] Upgrade `DocsMotionLayer` and `index.css` with an interactive CSS/JS grid tracking layer and luminous highlight effects without harming document contrast.
 - [x] Add cinematic hover/focus physics to homepage feature cards and guide action items.
-- [ ] Run build, tests, responsive checks, and save checkpoint.
+- [x] Run build, tests, responsive checks, and save checkpoint.
+- [x] Verify responsive behavior across desktop and narrow viewports with screenshots.
+- [x] Verify dark-mode and light-mode readability with the new grid and cursor spotlight layer.
 
 ### Olympus Reference Analysis & Transferable Patterns
 - **Subtle Framer Grid**: Fine geometric grid overlay that provides spatial grounding without overwhelming document typography.
 - **Luminous Mouse Proximity**: Soft radial teal/cyan cursor spotlight that tracks pointer movement and gives dark obsidian surfaces depth and responsiveness.
 - **Layered Cinematic Cards**: Multi-stop dark gradient cards with glowing border gradients on hover, establishing clear hierarchical elevation.
+
+## Visibly Framer-Inspired Motion & Interactive Grid
+
+- [x] Implement animated, drifting Framer grid canvas in `DocsMotionLayer.tsx` with smooth requestAnimationFrame loops.
+- [x] Add route-aware page transition animation with smooth fade and upward slide on guide and home changes.
+- [x] Extend cinematic hover/focus physics and glowing border gradients to sidebar navigation links and the Ask chat widget.
+- [x] Build a restrained cursor trail/particle emission effect attached to the cursor spotlight.
+- [x] Run build, tests, responsive checks, and save checkpoint.
+
+- [x] Re-run post-fix motion-layer verification at 1024px and 390px for homepage and guide routes; no responsive regression observed.
+- [x] Save a new checkpoint after the visible Framer-grid and motion corrections.
