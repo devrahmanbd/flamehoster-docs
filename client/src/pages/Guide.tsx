@@ -1,41 +1,44 @@
-/* Brick Docs design reminder: readable article center, persistent left taxonomy, right-side page map, version-aware routes, and explicit operator affordances. */
-import { ArrowLeft, CheckCircle2, ChevronRight, Copy, Search, Terminal, Wrench } from "lucide-react";
-import { useMemo, useState } from "react";
+/* Brick Docs design reminder: the article is the product—keep the center measure calm, make navigation obvious, and never imply public terminal access. */
+import { ArrowLeft, ArrowRight, CheckCircle2, Clipboard, Copy, FileText, Link2, Terminal, Wrench } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useLocation, useRoute } from "wouter";
-import { allGuides } from "../data/guides";
-
-const versionOptions = [
-  { value: "v0.9", label: "v0.9 stable" },
-  { value: "v1.0-beta", label: "v1.0 beta" }
-] as const;
-
-const navigationGroups = [
-  { label: "Getting Started", categories: ["Start Here", "Applications"] },
-  { label: "Storage & Databases", categories: ["Data & Storage"] },
-  { label: "Security & Network", categories: ["Security & Network"] },
-  { label: "Operations & Recovery", categories: ["Operations"] }
-];
+import DocsAssistantDrawer from "../components/DocsAssistantDrawer";
+import DocsHeader from "../components/DocsHeader";
+import DocsSearchDialog from "../components/DocsSearchDialog";
+import DocsSidebar from "../components/DocsSidebar";
+import SeoMeta from "../components/SeoMeta";
+import { getGuideHref, getNextGuide, getPreviousGuide, findGuide, type DocsVersion } from "../lib/docs";
 
 export default function Guide() {
   const [, versionParams] = useRoute("/docs/:version/:slug");
   const [, shortParams] = useRoute("/docs/:slug");
   const [, navigate] = useLocation();
   const slug = versionParams?.slug ?? shortParams?.slug ?? "getting-started";
-  const versionValue = versionParams?.version === "v1.0-beta" ? "v1.0-beta" : "v0.9";
-  const guide = useMemo(() => allGuides.find((item) => item.slug === slug) ?? allGuides[0], [slug]);
+  const version: DocsVersion = versionParams?.version === "v1.0-beta" ? "v1.0-beta" : "v0.9";
+  const guide = useMemo(() => findGuide(slug), [slug]);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [assistantOpen, setAssistantOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+  const [pageCopied, setPageCopied] = useState(false);
+  const nextGuide = getNextGuide(guide.slug);
+  const previousGuide = getPreviousGuide(guide.slug);
 
-  const filteredGuides = useMemo(() => {
-    const normalized = searchQuery.trim().toLowerCase();
-    if (!normalized) return allGuides;
-    return allGuides.filter((item) => `${item.title} ${item.category} ${item.intro}`.toLowerCase().includes(normalized));
-  }, [searchQuery]);
-
-  const switchVersion = (nextVersion: string) => {
-    navigate(`/docs/${nextVersion}/${guide.slug}`);
-  };
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        setSearchOpen(true);
+      }
+      if (event.key === "Escape") {
+        setSearchOpen(false);
+        setAssistantOpen(false);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
 
   const copyCode = async (code: string, index: number) => {
     await navigator.clipboard?.writeText(code);
@@ -43,57 +46,41 @@ export default function Guide() {
     window.setTimeout(() => setCopiedIndex(null), 1500);
   };
 
+  const copyPageLink = async () => {
+    await navigator.clipboard?.writeText(window.location.href);
+    setPageCopied(true);
+    window.setTimeout(() => setPageCopied(false), 1500);
+  };
+
+  const changeVersion = (nextVersion: DocsVersion) => navigate(getGuideHref(guide.slug, nextVersion));
+
   return (
-    <div className="docs-shell">
-      <header className="docs-topbar">
-        <div className="docs-topbar__left">
-          <Link href="/docs" className="docs-back-btn" title="Return to documentation home"><ArrowLeft size={16} /></Link>
-          <Link href="/" className="docs-logo" aria-label="Brick Docs home">
-            <div className="docs-logo__mark">B</div><span className="docs-logo__text">Brick</span><span className="docs-logo__badge">Docs</span>
-          </Link>
-          <span className="topbar-divider" />
-          <span className="topbar-context">User documentation</span>
-          <div className="version-selector">
-            <select value={versionValue} onChange={(event) => switchVersion(event.target.value)} aria-label="Documentation version">
-              {versionOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
-            </select>
-          </div>
-        </div>
-        <div className="docs-topbar__right">
-          <button className="search-trigger-pill" onClick={() => setSearchOpen(true)} aria-label="Search guides"><Search size={14} /><span>Search guides...</span><kbd>⌘K</kbd></button>
-          <a href="https://github.com/devrahmanbd/flamehoster" target="_blank" rel="noreferrer" className="docs-github-link">GitHub</a>
-        </div>
-      </header>
-
-      <div className="docs-container docs-container--guide">
-        <aside className="docs-sidebar">
-          <div className="sidebar-intro-line"><span className="status-dot" /> {versionValue === "v0.9" ? "Stable" : "Beta"} user docs</div>
-          {navigationGroups.map((group) => {
-            const items = allGuides.filter((item) => group.categories.includes(item.category));
-            return <div className="sidebar-group" key={group.label}><div className="sidebar-group__title">{group.label}</div>{items.map((item) => <Link key={item.slug} href={`/docs/${versionValue}/${item.slug}`} className={item.slug === guide.slug ? "sidebar-link sidebar-link--active" : "sidebar-link"}><span>{item.title}</span><ChevronRight size={13} /></Link>)}</div>;
-          })}
-        </aside>
-
-        <main className="docs-main docs-main--guide">
-          <article className="guide-content-box">
-            <div className="guide-meta-header"><span className="guide-category-tag">{guide.eyebrow}</span><span className="guide-read-time">{guide.read} read • {versionValue === "v0.9" ? "v0.9 stable" : "v1.0 beta"}</span></div>
-            <h1 className="guide-title">{guide.title}</h1>
-            <p className="guide-intro">{guide.intro}</p>
-            <div className="guide-divider" />
-            {guide.sections.map((section, idx) => <section key={section.title} id={`section-${idx + 1}`} className="guide-section-block"><div className="section-number">0{idx + 1}</div><div className="section-body"><h2>{section.title}</h2><p>{section.body}</p>{section.bullets && <ul className="guide-bullets">{section.bullets.map((bullet) => <li key={bullet}><CheckCircle2 size={15} className="bullet-icon" /><span>{bullet}</span></li>)}</ul>}{section.code && <div className="guide-terminal"><div className="terminal-header"><span><Terminal size={13} /> terminal shell</span><button onClick={() => copyCode(section.code!, idx)}><Copy size={13} />{copiedIndex === idx ? "Copied" : "Copy"}</button></div><pre><code>{section.code}</code></pre></div>}</div></section>)}
-            <div className="guide-footer-callout"><Wrench size={18} /><div><strong>Need deeper verification?</strong><span>Run `brick-sentinel -cmd check` before applying production changes to record system state.</span></div></div>
+    <div className="kb-shell">
+      <SeoMeta title={guide.title} description={guide.intro} path={`/docs/${version}/${guide.slug}`} />
+      <DocsHeader version={version} isGuide mobileOpen={mobileOpen} onToggleMobile={() => setMobileOpen((open) => !open)} onOpenSearch={() => setSearchOpen(true)} onOpenAssistant={() => setAssistantOpen(true)} onVersionChange={changeVersion} />
+      <div className="kb-layout kb-layout--guide">
+        <DocsSidebar version={version} activeSlug={guide.slug} open={mobileOpen} onNavigate={() => setMobileOpen(false)} />
+        <main className="kb-main kb-main--article">
+          <div className="kb-breadcrumbs"><Link href="/docs">Brick Docs</Link><ChevronSlash /><Link href={`/docs/${version}/${guide.slug}`}>{version === "v0.9" ? "Stable" : "Beta"}</Link><ChevronSlash /><span>{guide.title}</span></div>
+          <article className="kb-article">
+            <div className="kb-article__meta"><span className="kb-article-tag">{guide.eyebrow}</span><span>{guide.read} read</span><span className="kb-article-status"><i /> {version === "v0.9" ? "Stable operator guide" : "Beta preview"}</span></div>
+            <h1>{guide.title}</h1>
+            <p className="kb-article__intro">{guide.intro}</p>
+            <div className="kb-article__tools"><button className="kb-article-tool" onClick={copyPageLink}>{pageCopied ? <Clipboard size={15} /> : <Link2 size={15} />} {pageCopied ? "Link copied" : "Copy link"}</button><button className="kb-article-tool" onClick={() => setAssistantOpen(true)}><FileText size={15} /> Ask about this guide</button></div>
+            <div className="kb-article__rule" />
+            {guide.sections.map((section, index) => <section className="kb-article-section" id={`section-${index + 1}`} key={section.title}><div className="kb-article-section__number">{String(index + 1).padStart(2, "0")}</div><div className="kb-article-section__body"><h2>{section.title}</h2><p>{section.body}</p>{section.bullets && <ul className="kb-check-list">{section.bullets.map((bullet) => <li key={bullet}><CheckCircle2 size={16} /><span>{bullet}</span></li>)}</ul>}{section.code && <div className="kb-reference-block"><div className="kb-reference-block__header"><span><Terminal size={14} /> Reference snippet</span><button onClick={() => copyCode(section.code!, index)}>{copiedIndex === index ? <Clipboard size={14} /> : <Copy size={14} />}{copiedIndex === index ? "Copied" : "Copy"}</button></div><pre><code>{section.code}</code></pre><small>Examples are documentation references only. This site does not provide terminal access.</small></div>}</div></section>)}
+            <div className="kb-article-callout"><Wrench size={18} /><div><strong>Operate from the Brick panel</strong><span>Use the corresponding panel screen and its visible status indicators to confirm changes. Keep recovery checkpoints and operator notes with every production change.</span></div></div>
+            <footer className="kb-article-footer"><div className="kb-article-footer__nav">{previousGuide ? <Link href={getGuideHref(previousGuide.slug, version)} className="kb-next-link kb-next-link--previous"><span><ArrowLeft size={15} /> Previous</span><strong>{previousGuide.title}</strong></Link> : <span />}{nextGuide ? <Link href={getGuideHref(nextGuide.slug, version)} className="kb-next-link"><span>Next guide <ArrowRight size={15} /></span><strong>{nextGuide.title}</strong></Link> : <span />}</div><p><button className="kb-text-button" onClick={copyPageLink}>{pageCopied ? "Link copied" : "Copy this page"}</button> · <a href="https://github.com/devrahmanbd/flamehoster" target="_blank" rel="noreferrer">View source</a></p></footer>
           </article>
         </main>
-
-        <aside className="guide-toc">
-          <div className="guide-toc__title">ON THIS PAGE</div>
-          <nav>{guide.sections.map((section, idx) => <a key={section.title} href={`#section-${idx + 1}`}><span>0{idx + 1}</span>{section.title}</a>)}</nav>
-          <div className="guide-toc__rule" />
-          <div className="guide-toc__meta"><span>DOCUMENT STATUS</span><strong>{versionValue === "v0.9" ? "Stable operator guide" : "Beta preview"}</strong><p>Procedures are written for administrators with host access.</p></div>
-        </aside>
+        <aside className="kb-toc" aria-label="On this page"><div className="kb-toc__label">ON THIS PAGE</div><nav>{guide.sections.map((section, index) => <a href={`#section-${index + 1}`} key={section.title}><span>{String(index + 1).padStart(2, "0")}</span>{section.title}</a>)}</nav><div className="kb-toc__divider" /><div className="kb-toc__status"><span>DOCUMENT STATUS</span><strong>{version === "v0.9" ? "Stable operator guide" : "Beta preview"}</strong><p>Written for administrators operating Brick through the panel.</p></div></aside>
       </div>
-
-      {searchOpen && <div className="search-modal-backdrop" onClick={() => setSearchOpen(false)}><div className="search-modal-card" onClick={(event) => event.stopPropagation()}><div className="search-modal-input-wrap"><Search size={18} /><input autoFocus value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder="Search databases, SSL, PHP, WordPress..." /><button onClick={() => setSearchOpen(false)}>ESC</button></div><div className="search-results-list">{filteredGuides.map((item) => <Link key={item.slug} href={`/docs/${versionValue}/${item.slug}`} className="search-result-item" onClick={() => setSearchOpen(false)}><div><span className="search-item-cat">{item.category}</span><h4>{item.title}</h4><p>{item.intro}</p></div><ChevronRight size={15} /></Link>)}</div></div></div>}
+      <DocsSearchDialog open={searchOpen} query={searchQuery} version={version} onQueryChange={setSearchQuery} onClose={() => setSearchOpen(false)} />
+      <DocsAssistantDrawer open={assistantOpen} version={version} onClose={() => setAssistantOpen(false)} />
     </div>
   );
+}
+
+function ChevronSlash() {
+  return <span className="kb-breadcrumb-separator">/</span>;
 }

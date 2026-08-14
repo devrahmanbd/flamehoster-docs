@@ -1,4 +1,4 @@
-/* Brick Docs design reminder: docs-first routing with stable short URLs plus explicit versioned aliases for releases. */
+/* Brick Docs design reminder: every public URL must resolve to a real knowledge-base page with a clear escape route. */
 import { Route, Switch } from "wouter";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -12,6 +12,7 @@ function Router() {
       <Route path="/docs" component={Home} />
       <Route path="/docs/:version/:slug" component={Guide} />
       <Route path="/docs/:slug" component={Guide} />
+      <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -19,7 +20,7 @@ function Router() {
 
 export default function App() {
   return (
-    <ThemeProvider defaultTheme="light">
+    <ThemeProvider defaultTheme="dark">
       <Router />
     </ThemeProvider>
   );
