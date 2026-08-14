@@ -55,3 +55,14 @@
 - [x] Soften harsh neon colors into a professional, restrained enterprise palette with refined contrast.
 - [x] Fix sidebar click responsiveness, link states, and typography hierarchy.
 - [x] Verify fixed UX across homepage and guide routes with screenshots and build checks.
+
+## Chat Widget, Sidebar Collapse & Typography Polish
+
+- [x] Refine article line spacing, typography rhythm, and paragraph measure for the enterprise reading canvas.
+- [x] Convert the top header Ask menu into a bottom-right floating chat widget with welcome message, animated typing indicator, and optional synthesized notification sound.
+- [x] Add a desktop sidebar collapse/expand toggle button while preserving mobile drawer functionality.
+- [x] Run `pnpm run build` and `pnpm test` after the chat widget/sidebar collapse changes and fix any regressions.
+- [x] Verify the floating Ask widget, sound toggle, close button, composer, and desktop sidebar collapse control with keyboard-only navigation and confirm visible focus states in code and screenshots.
+- [x] Capture and document separate dark-mode and light-mode screenshots for both the homepage and a guide route after the final widget/sidebar changes.
+- [x] Verify the new floating Ask widget, sound toggle, close button, composer, and desktop sidebar collapse control with keyboard-only navigation and focus-visible states.
+- [x] Capture fresh dark-mode and light-mode screenshots for homepage and guide routes after the new widget/sidebar changes.

@@ -18,6 +18,7 @@ export default function Guide() {
   const version: DocsVersion = versionParams?.version === "v1.0-beta" ? "v1.0-beta" : "v0.9";
   const guide = useMemo(() => findGuide(slug), [slug]);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [assistantOpen, setAssistantOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -71,9 +72,9 @@ export default function Guide() {
   return (
     <div className="kb-shell">
       <SeoMeta title={guide.title} description={guide.intro} path={`/docs/${version}/${guide.slug}`} type="article" section={guide.category} keywords={[guide.title, guide.category, "Brick Web UI", "hosting panel", "operator guide"]} />
-      <DocsHeader isGuide mobileOpen={mobileOpen} onToggleMobile={() => setMobileOpen((open) => !open)} onOpenSearch={() => setSearchOpen(true)} onOpenAssistant={() => setAssistantOpen(true)} />
-      <div className="kb-layout kb-layout--guide">
-        <DocsSidebar version={version} activeSlug={guide.slug} open={mobileOpen} onNavigate={() => setMobileOpen(false)} onVersionChange={changeVersion} />
+      <DocsHeader isGuide mobileOpen={mobileOpen} onToggleMobile={() => setMobileOpen((open) => !open)} onOpenSearch={() => setSearchOpen(true)} />
+      <div className={`kb-layout kb-layout--guide ${sidebarCollapsed ? "kb-layout--sidebar-collapsed" : ""}`}>
+        <DocsSidebar version={version} activeSlug={guide.slug} open={mobileOpen} collapsed={sidebarCollapsed} onToggleCollapse={() => setSidebarCollapsed((collapsed) => !collapsed)} onNavigate={() => setMobileOpen(false)} onVersionChange={changeVersion} />
         {mobileOpen && <button className="kb-sidebar-scrim" aria-label="Close navigation" onClick={() => setMobileOpen(false)} />}
         <main className="kb-main kb-main--article">
           <div className="kb-breadcrumbs"><Link href="/docs">Brick Docs</Link><ChevronSlash /><Link href={`/docs/${version}/${guide.slug}`}>{version === "v0.9" ? "Stable" : "Beta"}</Link><ChevronSlash /><span>{guide.title}</span></div>
@@ -91,7 +92,7 @@ export default function Guide() {
         <aside className="kb-toc" aria-label="On this page"><div className="kb-toc__head"><div><div className="kb-toc__label">GUIDE MAP</div><strong>On this page</strong></div><span className="kb-toc__count">{String(guide.sections.length).padStart(2, "0")} SECTIONS</span></div><p className="kb-toc__intro">Follow the operator checkpoints in sequence, then confirm the visible panel state.</p><div className="kb-toc__progress" aria-hidden="true"><span style={{ width: `${Math.min(100, Math.max(24, guide.sections.length * 18))}%` }} /></div><nav>{guide.sections.map((section, index) => <a href={`#section-${index + 1}`} key={section.title}><span>{String(index + 1).padStart(2, "0")}</span><b>{section.title}</b><i>↗</i></a>)}</nav><div className="kb-toc__divider" /><div className="kb-toc__status"><span>DOCUMENT STATUS</span><strong>{version === "v0.9" ? "Stable operator guide" : "Beta preview"}</strong><p>Written for administrators operating Brick through the panel.</p></div></aside>
       </div>
       <DocsSearchDialog open={searchOpen} query={searchQuery} version={version} onQueryChange={setSearchQuery} onClose={() => setSearchOpen(false)} />
-      <DocsAssistantDrawer open={assistantOpen} version={version} onClose={() => setAssistantOpen(false)} />
+      <DocsAssistantDrawer open={assistantOpen} version={version} onOpen={() => setAssistantOpen(true)} onClose={() => setAssistantOpen(false)} />
     </div>
   );
 }

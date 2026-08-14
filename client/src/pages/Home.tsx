@@ -16,6 +16,7 @@ const heroImage = "/manus-storage/brick-docs-hero_c9ca5dec.jpg";
 export default function Home() {
   const [version, setVersion] = useState<DocsVersion>("v0.9");
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [assistantOpen, setAssistantOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -56,9 +57,9 @@ export default function Home() {
   return (
     <div className="kb-shell">
       <SeoMeta title="Knowledge base for operators" description="Task-focused Brick Web UI documentation for shared hosting, dedicated hosting, application deployment, databases, SSL/TLS, backups, and security." path="/docs" type="website" section="Brick Web UI" keywords={["Brick hosting panel", "shared hosting", "dedicated hosting", "web UI documentation", "application deployment", "SSL", "databases", "backups"]} />
-      <DocsHeader mobileOpen={mobileOpen} onToggleMobile={() => setMobileOpen((open) => !open)} onOpenSearch={() => setSearchOpen(true)} onOpenAssistant={() => setAssistantOpen(true)} />
-      <div className="kb-layout kb-layout--home">
-        <DocsSidebar version={version} open={mobileOpen} onNavigate={() => setMobileOpen(false)} onVersionChange={setVersion} />
+      <DocsHeader mobileOpen={mobileOpen} onToggleMobile={() => setMobileOpen((open) => !open)} onOpenSearch={() => setSearchOpen(true)} />
+      <div className={`kb-layout kb-layout--home ${sidebarCollapsed ? "kb-layout--sidebar-collapsed" : ""}`}>
+        <DocsSidebar version={version} open={mobileOpen} collapsed={sidebarCollapsed} onToggleCollapse={() => setSidebarCollapsed((collapsed) => !collapsed)} onNavigate={() => setMobileOpen(false)} onVersionChange={setVersion} />
         {mobileOpen && <button className="kb-sidebar-scrim" aria-label="Close navigation" onClick={() => setMobileOpen(false)} />}
           <main className="kb-main kb-main--home">
           <div className="kb-breadcrumbs"><Link href="/">Brick Docs</Link><ChevronRight size={14} /><span>Public user documentation</span></div>
@@ -106,7 +107,7 @@ export default function Home() {
         </main>
       </div>
       <DocsSearchDialog open={searchOpen} query={query} version={version} onQueryChange={setQuery} onClose={() => setSearchOpen(false)} />
-      <DocsAssistantDrawer open={assistantOpen} version={version} onClose={() => setAssistantOpen(false)} />
+      <DocsAssistantDrawer open={assistantOpen} version={version} onOpen={() => setAssistantOpen(true)} onClose={() => setAssistantOpen(false)} />
     </div>
   );
 }
