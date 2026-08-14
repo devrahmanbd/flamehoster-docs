@@ -14,6 +14,8 @@ const STORAGE_KEY = "brick-docs-theme-v2";
 
 function getInitialTheme(defaultTheme: Theme): Theme {
   if (typeof window === "undefined") return defaultTheme;
+  const requested = new URLSearchParams(window.location.search).get("theme");
+  if (requested === "light" || requested === "dark") return requested;
   const stored = window.localStorage.getItem(STORAGE_KEY);
   if (stored === "light" || stored === "dark") return stored;
   return window.matchMedia?.("(prefers-color-scheme: dark)").matches ? "dark" : defaultTheme;
@@ -26,7 +28,7 @@ export function ThemeProvider({ children, defaultTheme = "light" }: { children: 
     const root = document.documentElement;
     root.classList.toggle("dark", theme === "dark");
     root.dataset.theme = theme;
-    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme === "dark" ? "#10151d" : "#f7f8fa");
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme === "dark" ? "#070b0e" : "#f4f8fa");
     window.localStorage.setItem(STORAGE_KEY, theme);
   }, [theme]);
 

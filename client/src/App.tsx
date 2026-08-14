@@ -1,5 +1,6 @@
 /* Brick Docs design reminder: every public URL must resolve to a real knowledge-base page with a clear escape route. */
 import { Route, Switch } from "wouter";
+import DocsMotionLayer from "./components/DocsMotionLayer";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
@@ -20,8 +21,11 @@ function Router() {
 
 export default function App() {
   return (
-    <ThemeProvider defaultTheme="dark">
-      <Router />
-    </ThemeProvider>
+    <>
+      <DocsMotionLayer />
+      <ThemeProvider defaultTheme="dark">
+        <Router />
+      </ThemeProvider>
+    </>
   );
 }

@@ -1,5 +1,6 @@
 /* Brick Docs design reminder: the article is the product—keep the center measure calm, make navigation obvious, and never imply public terminal access. */
 import { ArrowLeft, ArrowRight, CheckCircle2, Clipboard, Copy, FileText, Link2, Terminal, Wrench } from "lucide-react";
+import gsap from "gsap";
 import { useEffect, useMemo, useState } from "react";
 import { Link, useLocation, useRoute } from "wouter";
 import DocsAssistantDrawer from "../components/DocsAssistantDrawer";
@@ -24,6 +25,19 @@ export default function Guide() {
   const [pageCopied, setPageCopied] = useState(false);
   const nextGuide = getNextGuide(guide.slug);
   const previousGuide = getPreviousGuide(guide.slug);
+
+  useEffect(() => {
+    const root = document.querySelector<HTMLElement>(".kb-main--article");
+    if (!root || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const context = gsap.context(() => {
+      gsap.fromTo(
+        [".kb-article__meta", ".kb-article h1", ".kb-article__intro", ".kb-article__tools", ".kb-article-section", ".kb-article-callout", ".kb-article-footer"],
+        { y: 12 },
+        { y: 0, duration: 0.56, stagger: 0.045, ease: "power3.out", clearProps: "transform" },
+      );
+    }, root);
+    return () => context.revert();
+  }, [guide.slug]);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -73,7 +87,7 @@ export default function Guide() {
             <footer className="kb-article-footer"><div className="kb-article-footer__nav">{previousGuide ? <Link href={getGuideHref(previousGuide.slug, version)} className="kb-next-link kb-next-link--previous"><span><ArrowLeft size={15} /> Previous</span><strong>{previousGuide.title}</strong></Link> : <span />}{nextGuide ? <Link href={getGuideHref(nextGuide.slug, version)} className="kb-next-link"><span>Next guide <ArrowRight size={15} /></span><strong>{nextGuide.title}</strong></Link> : <span />}</div><p><button className="kb-text-button" onClick={copyPageLink}>{pageCopied ? "Link copied" : "Copy this page"}</button> · <a href="https://github.com/devrahmanbd/flamehoster" target="_blank" rel="noreferrer">View source</a></p></footer>
           </article>
         </main>
-        <aside className="kb-toc" aria-label="On this page"><div className="kb-toc__label">ON THIS PAGE</div><nav>{guide.sections.map((section, index) => <a href={`#section-${index + 1}`} key={section.title}><span>{String(index + 1).padStart(2, "0")}</span>{section.title}</a>)}</nav><div className="kb-toc__divider" /><div className="kb-toc__status"><span>DOCUMENT STATUS</span><strong>{version === "v0.9" ? "Stable operator guide" : "Beta preview"}</strong><p>Written for administrators operating Brick through the panel.</p></div></aside>
+        <aside className="kb-toc" aria-label="On this page"><div className="kb-toc__head"><div><div className="kb-toc__label">GUIDE MAP</div><strong>On this page</strong></div><span className="kb-toc__count">{String(guide.sections.length).padStart(2, "0")} SECTIONS</span></div><p className="kb-toc__intro">Follow the operator checkpoints in sequence, then confirm the visible panel state.</p><div className="kb-toc__progress" aria-hidden="true"><span style={{ width: `${Math.min(100, Math.max(24, guide.sections.length * 18))}%` }} /></div><nav>{guide.sections.map((section, index) => <a href={`#section-${index + 1}`} key={section.title}><span>{String(index + 1).padStart(2, "0")}</span><b>{section.title}</b><i>↗</i></a>)}</nav><div className="kb-toc__divider" /><div className="kb-toc__status"><span>DOCUMENT STATUS</span><strong>{version === "v0.9" ? "Stable operator guide" : "Beta preview"}</strong><p>Written for administrators operating Brick through the panel.</p></div></aside>
       </div>
       <DocsSearchDialog open={searchOpen} query={searchQuery} version={version} onQueryChange={setSearchQuery} onClose={() => setSearchOpen(false)} />
       <DocsAssistantDrawer open={assistantOpen} version={version} onClose={() => setAssistantOpen(false)} />
