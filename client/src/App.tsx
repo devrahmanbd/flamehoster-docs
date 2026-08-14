@@ -1,4 +1,4 @@
-/* Brick Docs design reminder: enterprise developer documentation with an obsidian canvas, electric-cyan signal color, asymmetric three-column reading layout, and restrained motion. */
+/* Brick Docs design reminder: docs-first routing with stable short URLs plus explicit versioned aliases for releases. */
 import { Route, Switch } from "wouter";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -10,6 +10,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/docs" component={Home} />
+      <Route path="/docs/:version/:slug" component={Guide} />
       <Route path="/docs/:slug" component={Guide} />
       <Route component={NotFound} />
     </Switch>

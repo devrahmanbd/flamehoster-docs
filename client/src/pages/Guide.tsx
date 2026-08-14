@@ -1,115 +1,99 @@
-/* Brick Docs design reminder: the guide reader stays obsidian, readable, task-first, and evidence-led, with cyan navigation signals and high-contrast content blocks. */
-import { ArrowLeft, CheckCircle2, ChevronRight, Copy, ShieldCheck, Terminal, Wrench } from "lucide-react";
+/* Brick Docs design reminder: readable article center, persistent left taxonomy, right-side page map, version-aware routes, and explicit operator affordances. */
+import { ArrowLeft, CheckCircle2, ChevronRight, Copy, Search, Terminal, Wrench } from "lucide-react";
 import { useMemo, useState } from "react";
-import { Link, useRoute } from "wouter";
+import { Link, useLocation, useRoute } from "wouter";
+import { allGuides } from "../data/guides";
 
-type GuideContent = {
-  slug: string;
-  eyebrow: string;
-  title: string;
-  intro: string;
-  read: string;
-  sections: Array<{ title: string; body: string; bullets?: string[]; code?: string }>;
-};
+const versionOptions = [
+  { value: "v0.9", label: "v0.9 stable" },
+  { value: "v1.0-beta", label: "v1.0 beta" }
+] as const;
 
-const guides: GuideContent[] = [
-  {
-    slug: "getting-started",
-    eyebrow: "USER GUIDE / START HERE",
-    title: "Install Brick and sign in safely.",
-    intro: "A first boot is complete when the host is prepared, the operator boundary is protected, and a state record exists for future changes.",
-    read: "5 min",
-    sections: [
-      { title: "Prepare the host", body: "Use a clean Debian or RHEL-family host with systemd, a working package manager, a supported container runtime, stable DNS when an FQDN is required, and enough storage for images, logs, backups, and recovery artifacts.", bullets: ["Confirm root or sudo access.", "Check package manager and systemd health.", "Review existing listeners, firewall policy, and unmanaged workloads.", "Confirm the hostname and timezone before certificates or scheduled jobs."] },
-      { title: "Verify the first boot", body: "After installation, confirm that the panel service and independent recovery tooling are present. Inspect the installer before execution and prefer a versioned release artifact over an unpinned development build.", code: "sudo brickctl status\nsudo systemctl status brick --no-pager\nsudo brick-sentinel -cmd check\nsudo brick-sentinel -cmd blueprint" },
-      { title: "Lock down the operator boundary", body: "Create a unique operator password, change any default entrance, create a break-glass account, and enroll passkey or TOTP MFA before exposing the panel publicly. Keep the recovery material offline and test the recovery path in a maintenance window." },
-    ],
-  },
-  {
-    slug: "deploying-apps",
-    eyebrow: "USER GUIDE / APPLICATIONS",
-    title: "Deploy an application without guessing.",
-    intro: "Brick turns an app template into a deployment contract: image, ports, persistence, environment, health, dependencies, and FQDN routing.",
-    read: "8 min",
-    sections: [
-      { title: "Review the template", body: "Before launch, review the image source and version, exposed ports, volume mounts, required variables, secrets references, database or cache dependencies, health check, reverse-proxy metadata, and update path." },
-      { title: "Let the backend resolve ports", body: "Never choose a port by trial and error. Brick must compare the requested ports against the panel, system listeners, existing deployments, reserved policy, and concurrent allocations. A conflict is a backend validation failure, not a frontend choice." },
-      { title: "Verify the external path", body: "After deployment, check the service state, health signal, logs, storage mounts, FQDN, and TLS path. A local container response is not enough: test the application through the hostname that users will reach.", bullets: ["Plan generated and conflict-free.", "Resources created with the expected volumes.", "Health check passing after the startup grace period.", "Reverse proxy and TLS route return the expected application."] },
-    ],
-  },
-  {
-    slug: "security",
-    eyebrow: "USER GUIDE / SECURITY",
-    title: "Make the panel harder to misuse.",
-    intro: "Security is a layered operating practice: identity, network policy, scanning, evidence, and monitoring reinforce one another.",
-    read: "7 min",
-    sections: [
-      { title: "Protect identity", body: "Enable MFA for every operator, keep a separate break-glass identity, scope API tokens, and review failed-login and session events. Do not share operator accounts because audit attribution matters during an incident." },
-      { title: "Reduce network exposure", body: "Use NFTables as the authoritative firewall backend. Start with deny-by-default inbound policy, restrict SSH sources, and allow application ports only when an active deployment record explains them. Record why every privileged rule exists." },
-      { title: "Treat detections as evidence", body: "A suspicious file or outbound connection should open an investigation. Preserve path, hash, owner, permissions, process ancestry, deployment identity, and logs before quarantine. A heuristic finding is not proof of compromise by itself." },
-    ],
-  },
-  {
-    slug: "operations",
-    eyebrow: "USER GUIDE / OPERATIONS",
-    title: "Update with a way back.",
-    intro: "Before a risky change, capture the state, protect customer data, validate the recovery handle, and keep the health contract visible until the observation window passes.",
-    read: "9 min",
-    sections: [
-      { title: "Capture before change", body: "Run the Sentinel check and blueprint, store the manifest with the change record, verify snapshot support, and confirm a tested data backup. A manifest is state evidence; it is not a complete customer-data backup on a non-snapshot filesystem.", code: "sudo brick-sentinel -cmd check\nsudo brick-sentinel -cmd blueprint" },
-      { title: "Understand SATURE", body: "The transaction should resolve dependencies, capture state, create a native snapshot where supported, stage changes, apply them, verify the control plane, agent, network, data, and boot path, and commit only after the health contract passes." },
-      { title: "Handle failure", body: "If the health contract fails, preserve transaction logs, package output, boot evidence, and the pre-change manifest. Use the configured rollback or known-good boot path rather than rerunning the update blindly. Keep the failed change open until recovery is verified." },
-    ],
-  },
-  {
-    slug: "troubleshooting",
-    eyebrow: "USER GUIDE / RECOVERY",
-    title: "Diagnose without destroying evidence.",
-    intro: "Observe first, change one variable at a time, and preserve the timestamped evidence that explains the failure.",
-    read: "6 min",
-    sections: [
-      { title: "Panel is unreachable", body: "Compare local and external connectivity, confirm the listener and firewall state, inspect the reverse-proxy target, and verify that a restart did not change the configured binding. Do not open a random second port before identifying the owner of the original one." },
-      { title: "Login or MFA fails", body: "Compare the browser time with host logs, preserve the failed event, and use the documented break-glass flow if rate limiting is active. After recovery, rotate the affected credential and review recent sessions." },
-      { title: "An update failed", body: "Do not immediately retry. Preserve the transaction ID, health results, service logs, package output, and manifest. Determine whether the control plane, agent, customer data mounts, kernel, and boot entry remain healthy before selecting rollback or manual recovery." },
-    ],
-  },
+const navigationGroups = [
+  { label: "Getting Started", categories: ["Start Here", "Applications"] },
+  { label: "Storage & Databases", categories: ["Data & Storage"] },
+  { label: "Security & Network", categories: ["Security & Network"] },
+  { label: "Operations & Recovery", categories: ["Operations"] }
 ];
 
 export default function Guide() {
-  const [, params] = useRoute("/docs/:slug");
-  const guide = useMemo(() => guides.find((item) => item.slug === params?.slug) ?? guides[0], [params?.slug]);
-  const [copied, setCopied] = useState(false);
+  const [, versionParams] = useRoute("/docs/:version/:slug");
+  const [, shortParams] = useRoute("/docs/:slug");
+  const [, navigate] = useLocation();
+  const slug = versionParams?.slug ?? shortParams?.slug ?? "getting-started";
+  const versionValue = versionParams?.version === "v1.0-beta" ? "v1.0-beta" : "v0.9";
+  const guide = useMemo(() => allGuides.find((item) => item.slug === slug) ?? allGuides[0], [slug]);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
 
-  const copyCode = async (code: string) => {
+  const filteredGuides = useMemo(() => {
+    const normalized = searchQuery.trim().toLowerCase();
+    if (!normalized) return allGuides;
+    return allGuides.filter((item) => `${item.title} ${item.category} ${item.intro}`.toLowerCase().includes(normalized));
+  }, [searchQuery]);
+
+  const switchVersion = (nextVersion: string) => {
+    navigate(`/docs/${nextVersion}/${guide.slug}`);
+  };
+
+  const copyCode = async (code: string, index: number) => {
     await navigator.clipboard?.writeText(code);
-    setCopied(true);
-    window.setTimeout(() => setCopied(false), 1400);
+    setCopiedIndex(index);
+    window.setTimeout(() => setCopiedIndex(null), 1500);
   };
 
   return (
-    <div className="docs-app guide-app">
-      <header className="topbar">
-        <div className="topbar__brand"><Link href="/" className="guide-back"><ArrowLeft size={15} /></Link><div className="brand-mark brand-mark--fallback">B</div><span className="brand-name">Brick<span>Docs</span></span><span className="brand-version">USER GUIDE</span></div>
-        <div className="topbar__actions"><Link href="/" className="topbar-link">Back to docs <ChevronRight size={14} /></Link></div>
+    <div className="docs-shell">
+      <header className="docs-topbar">
+        <div className="docs-topbar__left">
+          <Link href="/docs" className="docs-back-btn" title="Return to documentation home"><ArrowLeft size={16} /></Link>
+          <Link href="/" className="docs-logo" aria-label="Brick Docs home">
+            <div className="docs-logo__mark">B</div><span className="docs-logo__text">Brick</span><span className="docs-logo__badge">Docs</span>
+          </Link>
+          <span className="topbar-divider" />
+          <span className="topbar-context">User documentation</span>
+          <div className="version-selector">
+            <select value={versionValue} onChange={(event) => switchVersion(event.target.value)} aria-label="Documentation version">
+              {versionOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
+            </select>
+          </div>
+        </div>
+        <div className="docs-topbar__right">
+          <button className="search-trigger-pill" onClick={() => setSearchOpen(true)} aria-label="Search guides"><Search size={14} /><span>Search guides...</span><kbd>⌘K</kbd></button>
+          <a href="https://github.com/devrahmanbd/flamehoster" target="_blank" rel="noreferrer" className="docs-github-link">GitHub</a>
+        </div>
       </header>
-      <main className="guide-layout">
-        <aside className="guide-index">
-          <span className="eyebrow-dot" /> <span>Public documentation</span>
-          <h2>Operator guides</h2>
-          <nav aria-label="User guides">
-            {guides.map((item) => <Link key={item.slug} href={`/docs/${item.slug}`} className={item.slug === guide.slug ? "guide-index__link guide-index__link--active" : "guide-index__link"}>{item.title.replace(/[.!?].*$/, "")} <ChevronRight size={13} /></Link>)}
-          </nav>
-          <div className="guide-index__note"><ShieldCheck size={16} /><span>Public docs contain safe operator workflows. Internal design notes stay outside this repository.</span></div>
+
+      <div className="docs-container docs-container--guide">
+        <aside className="docs-sidebar">
+          <div className="sidebar-intro-line"><span className="status-dot" /> {versionValue === "v0.9" ? "Stable" : "Beta"} user docs</div>
+          {navigationGroups.map((group) => {
+            const items = allGuides.filter((item) => group.categories.includes(item.category));
+            return <div className="sidebar-group" key={group.label}><div className="sidebar-group__title">{group.label}</div>{items.map((item) => <Link key={item.slug} href={`/docs/${versionValue}/${item.slug}`} className={item.slug === guide.slug ? "sidebar-link sidebar-link--active" : "sidebar-link"}><span>{item.title}</span><ChevronRight size={13} /></Link>)}</div>;
+          })}
         </aside>
-        <article className="guide-article">
-          <div className="guide-article__meta"><span>{guide.eyebrow}</span><span>{guide.read} read</span></div>
-          <h1>{guide.title}</h1>
-          <p className="guide-article__intro">{guide.intro}</p>
-          <div className="guide-rule" />
-          {guide.sections.map((section, index) => <section className="guide-section" key={section.title}><div className="guide-section__index">0{index + 1}</div><div><h2>{section.title}</h2><p>{section.body}</p>{section.bullets && <ul>{section.bullets.map((bullet) => <li key={bullet}><CheckCircle2 size={14} />{bullet}</li>)}</ul>}{section.code && <div className="guide-code"><div className="guide-code__toolbar"><span><Terminal size={13} /> brick shell</span><button onClick={() => copyCode(section.code!)}><Copy size={13} />{copied ? "Copied" : "Copy"}</button></div><pre><code>{section.code}</code></pre></div>}</div></section>)}
-          <div className="guide-next"><Wrench size={16} /><div><strong>Keep the change record open</strong><span>Attach the verification evidence before you close the task.</span></div></div>
-        </article>
-      </main>
+
+        <main className="docs-main docs-main--guide">
+          <article className="guide-content-box">
+            <div className="guide-meta-header"><span className="guide-category-tag">{guide.eyebrow}</span><span className="guide-read-time">{guide.read} read • {versionValue === "v0.9" ? "v0.9 stable" : "v1.0 beta"}</span></div>
+            <h1 className="guide-title">{guide.title}</h1>
+            <p className="guide-intro">{guide.intro}</p>
+            <div className="guide-divider" />
+            {guide.sections.map((section, idx) => <section key={section.title} id={`section-${idx + 1}`} className="guide-section-block"><div className="section-number">0{idx + 1}</div><div className="section-body"><h2>{section.title}</h2><p>{section.body}</p>{section.bullets && <ul className="guide-bullets">{section.bullets.map((bullet) => <li key={bullet}><CheckCircle2 size={15} className="bullet-icon" /><span>{bullet}</span></li>)}</ul>}{section.code && <div className="guide-terminal"><div className="terminal-header"><span><Terminal size={13} /> terminal shell</span><button onClick={() => copyCode(section.code!, idx)}><Copy size={13} />{copiedIndex === idx ? "Copied" : "Copy"}</button></div><pre><code>{section.code}</code></pre></div>}</div></section>)}
+            <div className="guide-footer-callout"><Wrench size={18} /><div><strong>Need deeper verification?</strong><span>Run `brick-sentinel -cmd check` before applying production changes to record system state.</span></div></div>
+          </article>
+        </main>
+
+        <aside className="guide-toc">
+          <div className="guide-toc__title">ON THIS PAGE</div>
+          <nav>{guide.sections.map((section, idx) => <a key={section.title} href={`#section-${idx + 1}`}><span>0{idx + 1}</span>{section.title}</a>)}</nav>
+          <div className="guide-toc__rule" />
+          <div className="guide-toc__meta"><span>DOCUMENT STATUS</span><strong>{versionValue === "v0.9" ? "Stable operator guide" : "Beta preview"}</strong><p>Procedures are written for administrators with host access.</p></div>
+        </aside>
+      </div>
+
+      {searchOpen && <div className="search-modal-backdrop" onClick={() => setSearchOpen(false)}><div className="search-modal-card" onClick={(event) => event.stopPropagation()}><div className="search-modal-input-wrap"><Search size={18} /><input autoFocus value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder="Search databases, SSL, PHP, WordPress..." /><button onClick={() => setSearchOpen(false)}>ESC</button></div><div className="search-results-list">{filteredGuides.map((item) => <Link key={item.slug} href={`/docs/${versionValue}/${item.slug}`} className="search-result-item" onClick={() => setSearchOpen(false)}><div><span className="search-item-cat">{item.category}</span><h4>{item.title}</h4><p>{item.intro}</p></div><ChevronRight size={15} /></Link>)}</div></div></div>}
     </div>
   );
 }
