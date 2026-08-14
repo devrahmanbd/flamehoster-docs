@@ -52,3 +52,27 @@ Brick is structured as an enterprise-grade control panel built as an evolutionar
 [2] Brick Core Go Dependencies and Module Audit. `/home/ubuntu/brick/core/go.mod`, `/home/ubuntu/brick/core/go.sum`.  
 [3] SATURE Transactional Update Engine Specification. `/home/ubuntu/brick/sentinel/pkg/sature/transaction.go`.  
 [4] Brick Interactive Installer and Regression Harness. `/home/ubuntu/brick/scripts/brick-interactive-install.sh`, `/home/ubuntu/brick/scripts/test-brick-interactive-install.sh`.
+
+
+## 6. Remediation Applied in This Change
+
+The confirmed `base64Captcha` namespace dependency was removed from executable Brick code. `core/utils/captcha/captcha.go` now imports `github.com/mojocn/base64Captcha`; `core/go.mod` and `core/go.sum` contain only the neutral module and its verified checksums. Stale `1panel-dev` and `brick-dev` captcha checksum entries were removed. The root `package.json` no longer contains an embedded GitHub credential; its repository URL is now unauthenticated.
+
+SATURE now performs a fail-closed signature-verification preflight before package upgrades. APT verification rejects insecure repositories and unauthenticated packages and requires update metadata to complete without errors. DNF/YUM verification requires package, repository-metadata, and local-package GPG checks. The upgrade command repeats the signature-enforcement options. Unit tests cover APT, DNF, YUM, unsupported package managers, and propagated verification failures.
+
+The installer now has a CI-backed container harness at `scripts/test-installer-containers.sh` and `.github/workflows/installer-containers.yml`. The harness exercises dry-run validation, an isolated real installation, file permissions, idempotent password preservation, and symlink-target rejection on Debian Bookworm, Ubuntu 24.04, and Rocky Linux 9. The local sandbox used for this change does not provide Docker or Podman, so the container matrix was syntax-checked and added for execution on a container-capable CI runner; it was not falsely reported as locally executed.
+
+The CI rebrand check no longer excludes `1Panel-dev` from its legacy-reference scan. Historical references remain in planning/audit documents and in generated vendored frontend bundles; those are not executable upstream dependencies and should be handled in a separate asset regeneration task rather than by blind string replacement.
+
+## 7. Verification Record
+
+| Verification | Result |
+| :--- | :--- |
+| `go test ./...` in `core` | Passed |
+| `go mod verify` in `core` | Passed |
+| `go test ./...` and `go vet ./...` in `sentinel` | Passed |
+| Shell syntax checks for installer scripts | Passed |
+| Git diff whitespace check | Passed |
+| Credential-pattern scan | Passed; no GitHub token-like credential remains |
+| Debian/Ubuntu/Rocky container execution | Not run locally; Docker/Podman unavailable; CI workflow added |
+| ShellCheck | Not run; binary unavailable in the sandbox |
