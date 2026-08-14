@@ -31,7 +31,7 @@
 - [x] Add enterprise infrastructure artifacts to the public homepage: status badges, architecture/state panel, and operator-grade copy.
 - [x] Refine the article right rail so the Table of Contents is prominent, readable, and visually distinct in the three-column layout.
 - [x] Verify dark/light theme defaults and keyboard-visible contrast with fresh screenshots and build checks.
-- [ ] Push the completed Brick Docs visual overhaul to the flamehoster-docs GitHub repository (blocked until GitHub connector approval).
+- [x] Push the completed Brick Docs visual overhaul to the flamehoster-docs GitHub repository using the user-provided PAT.
 
 ## Runtime follow-up history
 
