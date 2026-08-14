@@ -1,5 +1,4 @@
-/* Brick Docs design reminder: knowledge-base first, calm reading canvas, clear task taxonomy, no terminal access, and a restrained reference-inspired landing page. */
-import { Activity, ArrowRight, BadgeCheck, BookOpen, ChevronRight, Database, Gauge, Layers3, LockKeyhole, RefreshCw, Search, Server, ShieldCheck, Sparkles, Workflow } from "lucide-react";
+import { Activity, ArrowRight, BadgeCheck, BookOpen, ChevronRight, Database, ExternalLink, FileText, Gauge, Layers3, LockKeyhole, RefreshCw, Search, Server, ShieldCheck, Sparkles, Workflow } from "lucide-react";
 import gsap from "gsap";
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "wouter";
@@ -11,8 +10,6 @@ import SeoMeta from "../components/SeoMeta";
 import { allGuides } from "../data/guides";
 import { getGuideHref, type DocsVersion } from "../lib/docs";
 
-const heroImage = "/manus-storage/brick-docs-hero_c9ca5dec.jpg";
-
 export default function Home() {
   const [version, setVersion] = useState<DocsVersion>("v0.9");
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -20,24 +17,33 @@ export default function Home() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [assistantOpen, setAssistantOpen] = useState(false);
   const [query, setQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+
+  const categories = useMemo(() => {
+    const set = new Set(allGuides.map((g) => g.category));
+    return ["All", ...Array.from(set)];
+  }, []);
+
   const filteredGuides = useMemo(() => {
-    const value = query.trim().toLowerCase();
-    if (!value) return allGuides.slice(0, 6);
-    return allGuides.filter((guide) => `${guide.title} ${guide.category} ${guide.intro}`.toLowerCase().includes(value));
-  }, [query]);
+    return allGuides.filter((guide) => {
+      const matchesQuery = !query.trim() || `${guide.title} ${guide.category} ${guide.intro}`.toLowerCase().includes(query.trim().toLowerCase());
+      const matchesCategory = selectedCategory === "All" || guide.category === selectedCategory;
+      return matchesQuery && matchesCategory;
+    });
+  }, [query, selectedCategory]);
 
   useEffect(() => {
     const root = document.querySelector<HTMLElement>(".kb-main--home");
     if (!root || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const context = gsap.context(() => {
       gsap.fromTo(
-        [".kb-hero__copy", ".kb-hero__art", ".kb-guide-card", ".kb-helper-band", ".kb-home-search-preview"],
-        { y: 14 },
-        { y: 0, duration: 0.62, stagger: 0.055, ease: "power3.out", clearProps: "transform" },
+        [".kb-kb-header", ".kb-category-tabs", ".kb-guide-list-item", ".kb-kb-sidebar-panel"],
+        { y: 10 },
+        { y: 0, duration: 0.45, stagger: 0.03, ease: "power3.out", clearProps: "transform" },
       );
     }, root);
     return () => context.revert();
-  }, []);
+  }, [selectedCategory, query]);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -56,54 +62,159 @@ export default function Home() {
 
   return (
     <div className="kb-shell">
-      <SeoMeta title="Knowledge base for operators" description="Task-focused Brick Web UI documentation for shared hosting, dedicated hosting, application deployment, databases, SSL/TLS, backups, and security." path="/docs" type="website" section="Brick Web UI" keywords={["Brick hosting panel", "shared hosting", "dedicated hosting", "web UI documentation", "application deployment", "SSL", "databases", "backups"]} />
+      <SeoMeta title="Brick Docs — Knowledge Base & Operator Manual" description="Official knowledge base and web UI guides for Brick hosting panel. Task-focused documentation for shared hosting, databases, SSL/TLS, file management, and system maintenance." path="/docs" type="website" section="Brick Knowledge Base" keywords={["Brick documentation", "hosting panel", "shared hosting", "database guides", "SSL configuration", "backups"]} />
       <DocsHeader mobileOpen={mobileOpen} onToggleMobile={() => setMobileOpen((open) => !open)} onOpenSearch={() => setSearchOpen(true)} />
       <div className={`kb-layout kb-layout--home ${sidebarCollapsed ? "kb-layout--sidebar-collapsed" : ""}`}>
         <DocsSidebar version={version} open={mobileOpen} collapsed={sidebarCollapsed} onToggleCollapse={() => setSidebarCollapsed((collapsed) => !collapsed)} onNavigate={() => setMobileOpen(false)} onVersionChange={setVersion} />
         <button className="kb-sidebar-scrim" aria-label="Close navigation" aria-hidden={!mobileOpen} tabIndex={mobileOpen ? 0 : -1} onClick={() => setMobileOpen(false)} />
-          <main className="kb-main kb-main--home">
-          <div className="kb-breadcrumbs"><Link href="/">Brick Docs</Link><ChevronRight size={14} /><span>Public user documentation</span></div>
-          <section className="kb-hero">
-            <div className="kb-hero__copy">
-              <div className="kb-eyebrow"><span className="kb-status-dot" /> Brick user documentation</div>
-              <h1>Run the panel.<br /><em>Know the state.</em></h1>
-              <p>Task-focused guidance for preparing hosts, deploying applications, protecting tenants, and recovering production state through the Brick Web UI.</p>
-              <div className="kb-hero__actions"><Link href={getGuideHref("getting-started", version)} className="kb-button kb-button--primary">Start with installation <ArrowRight size={16} /></Link><button className="kb-button kb-button--quiet" onClick={() => setSearchOpen(true)}><Search size={16} /> Search the guides</button></div>
-              <div className="kb-hero__proof"><span><ShieldCheck size={15} /> Operator-first</span><span><Layers3 size={15} /> {allGuides.length} public guides</span><span><BookOpen size={15} /> {version === "v0.9" ? "Stable channel" : "Beta channel"}</span></div>
-            </div>
-            <div className="kb-hero__art" style={{ backgroundImage: `linear-gradient(180deg, rgba(20,31,44,.08), rgba(20,31,44,.75)), url(${heroImage})` }} aria-label="Abstract Brick infrastructure illustration"><div className="kb-hero__art-label">STATE-AWARE CONTROL PLANE</div><div className="kb-hero__art-caption">A governed route from first boot to recoverable operations.</div></div>
-          </section>
+        <main className="kb-main kb-main--home" style={{ padding: "36px 48px 64px", maxWidth: "1280px" }}>
+          <div className="kb-breadcrumbs" style={{ marginBottom: "20px" }}>
+            <Link href="/">Brick Knowledge Base</Link>
+            <ChevronRight size={14} />
+            <span>Documentation Index</span>
+          </div>
 
-          <section className="kb-infrastructure" aria-labelledby="infrastructure-heading">
-            <div className="kb-section-heading"><div><span className="kb-section-kicker">CONTROL PLANE SIGNALS</span><h2 id="infrastructure-heading">Operate from known state.</h2><p>Brick keeps the Web UI close to the system signals that matter: identity, deployment health, storage, and recoverability.</p></div><span className="kb-section-count">LIVE MODEL</span></div>
-            <div className="kb-infrastructure__grid">
-              <div className="kb-infrastructure__diagram kb-card-cinematic" aria-label="Brick control plane architecture overview">
-                <div className="kb-infrastructure__diagram-head"><span><Workflow size={15} /> CONTROL PLANE ROUTE</span><span className="kb-state-badge"><i /> NOMINAL</span></div>
-                <div className="kb-infrastructure__flow">
-                  <div className="kb-infrastructure__node kb-infrastructure__node--primary"><Server size={18} /><span>Brick Web UI</span><small>Operator boundary</small></div>
-                  <div className="kb-infrastructure__connector"><span /><span /><span /></div>
-                  <div className="kb-infrastructure__node"><Database size={18} /><span>Service state</span><small>Apps · data · storage</small></div>
-                  <div className="kb-infrastructure__connector"><span /><span /><span /></div>
-                  <div className="kb-infrastructure__node"><RefreshCw size={18} /><span>Recovery path</span><small>Snapshots · rollback</small></div>
+          <div className="kb-kb-header" style={{ marginBottom: "32px", display: "grid", gap: "12px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <span className="kb-status-dot" />
+              <span className="kb-sidebar__topline" style={{ margin: 0 }}>Brick Knowledge Base · {version === "v0.9" ? "Stable v0.9" : "Beta v1.0"}</span>
+            </div>
+            <h1 style={{ fontSize: "36px", fontWeight: "700", fontFamily: "var(--kb-font-display)", letterSpacing: "-.04em", color: "var(--kb-ink-strong)", margin: 0 }}>
+              Documentation Index & Operator Guides
+            </h1>
+            <p style={{ color: "var(--kb-muted)", fontSize: "16px", lineHeight: "1.6", maxWidth: "780px", margin: 0 }}>
+              Comprehensive, task-oriented reference manuals for managing shared hosting tenants, configuring databases, securing domains with SSL/TLS, and executing point-in-time recovery entirely through the Brick Web UI.
+            </p>
+          </div>
+
+          <div className="kb-kb-toolbar" style={{ display: "flex", flexWrap: "wrap", gap: "16px", alignItems: "center", justifyContent: "space-between", marginBottom: "28px", paddingBottom: "20px", borderBottom: "1px solid var(--kb-line)" }}>
+            <div className="kb-category-tabs" style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  style={{
+                    padding: "7px 14px",
+                    borderRadius: "8px",
+                    fontSize: "12px",
+                    fontWeight: "600",
+                    fontFamily: "var(--kb-font-mono)",
+                    cursor: "pointer",
+                    border: "1px solid",
+                    borderColor: selectedCategory === cat ? "var(--kb-accent)" : "var(--kb-line)",
+                    background: selectedCategory === cat ? "var(--kb-accent-wash)" : "var(--kb-surface)",
+                    color: selectedCategory === cat ? "var(--kb-accent-strong)" : "var(--kb-muted)",
+                    transition: "all 150ms ease",
+                  }}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+
+            <div style={{ display: "flex", alignItems: "center", gap: "12px", width: "min(320px, 100%)" }}>
+              <div className="kb-inline-search" style={{ width: "100%", padding: "6px 12px", border: "1px solid var(--kb-line)", borderRadius: "9px", background: "var(--kb-surface)", display: "flex", alignItems: "center", gap: "8px" }}>
+                <Search size={15} style={{ color: "var(--kb-muted)" }} />
+                <input
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
+                  placeholder="Filter guides by keyword..."
+                  style={{ background: "transparent", border: 0, outline: 0, color: "var(--kb-ink)", fontSize: "13px", width: "100%" }}
+                />
+                <kbd style={{ fontSize: "10px", padding: "2px 5px", background: "var(--kb-surface-soft)", borderRadius: "4px", color: "var(--kb-faint)", border: "1px solid var(--kb-line)" }}>⌘K</kbd>
+              </div>
+            </div>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 300px", gap: "36px", alignItems: "start" }}>
+            <div className="kb-guide-list" style={{ display: "grid", gap: "12px" }}>
+              {filteredGuides.length === 0 ? (
+                <div style={{ padding: "48px", textAlign: "center", border: "1px solid var(--kb-line)", borderRadius: "12px", background: "var(--kb-surface)" }}>
+                  <p style={{ color: "var(--kb-muted)", fontSize: "14px", margin: "0 0 12px" }}>No guides match your filter criteria.</p>
+                  <button onClick={() => { setQuery(""); setSelectedCategory("All"); }} className="kb-button kb-button--quiet">Reset filters</button>
                 </div>
-                <div className="kb-infrastructure__diagram-foot"><span><LockKeyhole size={14} /> Session controls enforced</span><span><BadgeCheck size={14} /> Changes remain auditable</span></div>
-              </div>
-              <div className="kb-infrastructure__signals">
-                <div className="kb-signal-card kb-card-cinematic"><span className="kb-signal-card__icon"><Activity size={16} /></span><span><strong>Network posture</strong><small>Traffic and service health visible in context</small></span><b>READY</b></div>
-                <div className="kb-signal-card kb-card-cinematic"><span className="kb-signal-card__icon"><Gauge size={16} /></span><span><strong>Resource guardrails</strong><small>Quotas and usage states before deployment</small></span><b>READY</b></div>
-                <div className="kb-signal-card kb-card-cinematic"><span className="kb-signal-card__icon"><ShieldCheck size={16} /></span><span><strong>Security controls</strong><small>MFA, certificates, scanning, and policy</small></span><b>READY</b></div>
-              </div>
+              ) : (
+                filteredGuides.map((guide, index) => (
+                  <Link
+                    key={guide.slug}
+                    href={getGuideHref(guide.slug, version)}
+                    className="kb-guide-list-item kb-card-cinematic"
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "40px 1fr auto",
+                      gap: "16px",
+                      alignItems: "center",
+                      padding: "18px 20px",
+                      borderRadius: "12px",
+                      border: "1px solid var(--kb-line)",
+                      background: "var(--kb-surface)",
+                      textDecoration: "none",
+                      transition: "all 160ms ease",
+                    }}
+                  >
+                    <span style={{ fontFamily: "var(--kb-font-mono)", fontSize: "11px", color: "var(--kb-accent-strong)", fontWeight: "700" }}>
+                      0{index + 1}
+                    </span>
+                    <div style={{ display: "grid", gap: "4px", minWidth: 0 }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                        <span style={{ fontSize: "10px", fontFamily: "var(--kb-font-mono)", padding: "2px 6px", borderRadius: "4px", background: "var(--kb-accent-wash)", color: "var(--kb-accent-strong)", textTransform: "uppercase" }}>
+                          {guide.category}
+                        </span>
+                        <span style={{ fontSize: "11px", color: "var(--kb-faint)" }}>{guide.read}</span>
+                      </div>
+                      <h2 style={{ fontSize: "16px", fontWeight: "600", fontFamily: "var(--kb-font-display)", color: "var(--kb-ink-strong)", margin: 0 }}>
+                        {guide.title}
+                      </h2>
+                      <p style={{ fontSize: "13px", color: "var(--kb-muted)", margin: 0, overflow: "hidden", textOverflow: "ellipsis", display: "-webkit-box", WebkitLineClamp: 1, WebkitBoxOrient: "vertical" }}>
+                        {guide.intro}
+                      </p>
+                    </div>
+                    <ArrowRight size={16} style={{ color: "var(--kb-faint)" }} />
+                  </Link>
+                ))
+              )}
             </div>
-          </section>
 
-          <section className="kb-home-section">
-            <div className="kb-section-heading"><div><span className="kb-section-kicker">PUBLIC GUIDE INDEX</span><h2>Find the exact task.</h2><p>Browse by the kind of change you need to make, not by internal system names.</p></div><span className="kb-section-count">{allGuides.length} guides</span></div>
-            <div className="kb-guide-grid">{allGuides.map((guide, index) => <Link key={guide.slug} href={getGuideHref(guide.slug, version)} className="kb-guide-card kb-card-cinematic"><div className="kb-guide-card__top"><span>0{index + 1}</span><span>{guide.read}</span></div><h3>{guide.title}</h3><p>{guide.intro}</p><div className="kb-guide-card__footer"><span>{guide.category}</span><ArrowRight size={15} /></div></Link>)}</div>
-          </section>
+            <aside className="kb-kb-sidebar-panel" style={{ display: "grid", gap: "20px", position: "sticky", top: "90px" }}>
+              <div style={{ padding: "20px", border: "1px solid var(--kb-line)", borderRadius: "12px", background: "var(--kb-surface)", display: "grid", gap: "12px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "var(--kb-ink-strong)", fontWeight: "600", fontSize: "13px" }}>
+                  <FileText size={16} style={{ color: "var(--kb-accent-strong)" }} />
+                  <span>Knowledge Base Quick Stats</span>
+                </div>
+                <div style={{ display: "grid", gap: "8px", fontSize: "12px", color: "var(--kb-muted)" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <span>Total Published Guides:</span>
+                    <strong style={{ color: "var(--kb-ink-strong)", fontFamily: "var(--kb-font-mono)" }}>{allGuides.length}</strong>
+                  </div>
+                  <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <span>Active Version:</span>
+                    <strong style={{ color: "var(--kb-accent-strong)", fontFamily: "var(--kb-font-mono)" }}>{version}</strong>
+                  </div>
+                  <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <span>Interface Standard:</span>
+                    <strong style={{ color: "var(--kb-ink-strong)", fontFamily: "var(--kb-font-mono)" }}>Web UI Only</strong>
+                  </div>
+                </div>
+              </div>
 
-          <section className="kb-helper-band"><div className="kb-helper-band__icon"><Sparkles size={18} /></div><div><span className="kb-section-kicker">GUIDE-GROUNDED ASSISTANCE</span><h2>Resolve the next operator action.</h2><p>Ask about a published Web UI workflow and get routed to the relevant guide. The helper never runs commands or touches your host.</p></div><button className="kb-button kb-button--quiet" onClick={() => setAssistantOpen(true)}>Ask docs <ArrowRight size={16} /></button></section>
-
-          <section className="kb-home-search-preview"><div className="kb-section-heading"><div><span className="kb-section-kicker">START WITH A QUERY</span><h2>Search the knowledge base.</h2></div><button className="kb-text-button" onClick={() => setSearchOpen(true)}>Open full search <ArrowRight size={15} /></button></div><div className="kb-inline-search"><Search size={17} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Try databases, SSL, backups, PHP, or WordPress" /><kbd>⌘ K</kbd></div><div className="kb-search-preview-list">{filteredGuides.slice(0, 4).map((guide) => <Link key={guide.slug} href={getGuideHref(guide.slug, version)} className="kb-search-preview-item"><span><strong>{guide.title}</strong><small>{guide.category} · {guide.read}</small></span><ArrowRight size={15} /></Link>)}</div></section>
+              <div style={{ padding: "20px", border: "1px solid var(--kb-line)", borderRadius: "12px", background: "var(--kb-surface)", display: "grid", gap: "12px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "var(--kb-ink-strong)", fontWeight: "600", fontSize: "13px" }}>
+                  <Sparkles size={16} style={{ color: "var(--kb-accent-strong)" }} />
+                  <span>Embedded Assistant</span>
+                </div>
+                <p style={{ fontSize: "12px", color: "var(--kb-muted)", margin: 0, lineHeight: "1.5" }}>
+                  Need quick guidance on panel settings or backup schedules? Use the assistant widget at bottom-right for instant, guide-grounded answers.
+                </p>
+                <button
+                  onClick={() => setAssistantOpen(true)}
+                  className="kb-button kb-button--primary"
+                  style={{ width: "100%", justifyContent: "center", marginTop: "4px" }}
+                >
+                  Open Ask Assistant <ArrowRight size={14} />
+                </button>
+              </div>
+            </aside>
+          </div>
         </main>
       </div>
       <DocsSearchDialog open={searchOpen} query={query} version={version} onQueryChange={setQuery} onClose={() => setSearchOpen(false)} />
