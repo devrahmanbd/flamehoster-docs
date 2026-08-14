@@ -75,10 +75,10 @@
 
 ## Tablet Drawer Transition Animation (768px)
 
-- [ ] Audit existing drawer and scrim transition properties for 768px and smaller viewports.
-- [ ] Implement spring-like cubic-bezier timing (`cubic-bezier(0.16, 1, 0.3, 1)`), hardware-accelerated transforms, and reduced-motion fallbacks for the tablet drawer.
-- [ ] Verify 768px viewport drawer toggle with a dedicated screenshot.
-- [ ] Run production build and test suite, then save the refined checkpoint.
+- [x] Audit existing drawer and scrim transition properties for 768px and smaller viewports.
+- [x] Implement spring-like cubic-bezier timing (`cubic-bezier(0.16, 1, 0.3, 1)`), hardware-accelerated transforms, and reduced-motion fallbacks for the tablet drawer.
+- [x] Verify 768px viewport drawer toggle with a dedicated screenshot and a real Playwright open/close interaction assertion on `/` and `/docs/getting-started`.
+- [x] Run production build and test suite, then save the refined checkpoint after the interaction assertion passes.
 
 ## Olympus-Inspired Cinematic Motion & Framer Grid UI
 
@@ -104,3 +104,8 @@
 
 - [x] Re-run post-fix motion-layer verification at 1024px and 390px for homepage and guide routes; no responsive regression observed.
 - [x] Save a new checkpoint after the visible Framer-grid and motion corrections.
+
+### 768px audit findings
+
+- [x] The sidebar remains a fixed drawer below 900px, but its existing 220ms transform and display-based scrim rule caused abrupt tablet open/close behavior.
+- [x] The tablet correction keeps the scrim mounted, uses `translate3d` plus `will-change`, applies `cubic-bezier(0.16, 1, 0.3, 1)`, and disables non-essential motion under `prefers-reduced-motion`.

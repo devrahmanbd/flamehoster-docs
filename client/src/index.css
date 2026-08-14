@@ -1489,3 +1489,41 @@ html[data-theme="dark"] .kb-framer-grid {
 @media (prefers-reduced-motion: reduce) {
   .kb-framer-grid::after { animation: none; opacity: 0; }
 }
+
+/* Tablet drawer polish: preserve the mounted scrim so open/close can ease instead of snapping. */
+@media (min-width: 641px) and (max-width: 768px) {
+  .kb-sidebar {
+    width: min(328px, 82vw);
+    transform: translate3d(-104%, 0, 0);
+    will-change: transform;
+    transition: transform 460ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .kb-sidebar--open {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .kb-sidebar-scrim,
+  .kb-sidebar:not(.kb-sidebar--open) + .kb-sidebar-scrim {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 320ms cubic-bezier(0.16, 1, 0.3, 1), visibility 0s linear 320ms;
+  }
+
+  .kb-sidebar--open + .kb-sidebar-scrim {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kb-sidebar,
+  .kb-sidebar-scrim,
+  .kb-sidebar--open + .kb-sidebar-scrim {
+    transition: none !important;
+  }
+}
