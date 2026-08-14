@@ -9,7 +9,7 @@
 - [x] Add opt-in Umami-compatible analytics bootstrap and SPA route pageview tracking; remain inactive when variables are absent.
 - [x] Harden structured assistant parsing for text-part responses and validate citations against matched guide sections.
 - [x] Run assistant safety tests, full typecheck, production build, and desktop route screenshots.
-- [ ] Add a real hosted AI answer provider configuration and production smoke test after the deployment owner supplies the final model/analytics policy.
+- [x] Use the platform-injected hosted LLM provider and complete a real local production-route smoke test with a safe Web UI question; no additional browser secret is required.
 
 ## Public safety contract
 
