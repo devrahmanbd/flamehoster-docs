@@ -109,3 +109,17 @@
 
 - [x] The sidebar remains a fixed drawer below 900px, but its existing 220ms transform and display-based scrim rule caused abrupt tablet open/close behavior.
 - [x] The tablet correction keeps the scrim mounted, uses `translate3d` plus `will-change`, applies `cubic-bezier(0.16, 1, 0.3, 1)`, and disables non-essential motion under `prefers-reduced-motion`.
+
+## User-Requested Motion Polish (Sidebar Glow, Spotlight Trail, Route Transitions, Cinematic Elevation)
+
+- [x] Audit sidebar navigation items, Ask chat widget, cursor spotlight, route transitions, and documentation cards for visible motion.
+- [x] Implement glowing border physics for sidebar navigation links and the Ask chat widget.
+- [x] Implement an interactive cursor spotlight with a visible trailing particle/glow effect across the grid.
+- [x] Implement Framer-style grid page transitions between documentation sections.
+- [x] Apply cinematic card elevation to documentation sections.
+- [x] Run build, tests, responsive checks, and save checkpoint.
+
+- [x] Final motion-polish production build completed successfully with `pnpm run build`.
+- [x] Final motion-polish unit suite completed successfully with 4 tests passing across 2 test files.
+- [x] Final motion-polish screenshots verified at desktop and narrow mobile widths.
+- [x] Save the updated motion-polish checkpoint.

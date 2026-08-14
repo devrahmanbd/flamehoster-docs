@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const PARTICLE_COUNT = 12;
+const PARTICLE_COUNT = 18;
 
 /**
  * Ambient motion layer for Brick Docs.
@@ -37,7 +37,9 @@ export default function DocsMotionLayer() {
       if (!particle) return;
       particle.style.setProperty("--trail-x", `${x}px`);
       particle.style.setProperty("--trail-y", `${y}px`);
-      particle.style.setProperty("--trail-size", `${2.5 + ((particleIndexRef.current % 3) * 1.25)}px`);
+      particle.style.setProperty("--trail-size", `${3 + ((particleIndexRef.current % 4) * 1.35)}px`);
+      particle.style.setProperty("--trail-drift-x", `${((particleIndexRef.current % 5) - 2) * 7}px`);
+      particle.style.setProperty("--trail-drift-y", `${-12 - ((particleIndexRef.current % 4) * 5)}px`);
       particle.classList.remove("is-emitting");
       void particle.offsetWidth;
       particle.classList.add("is-emitting");
@@ -54,7 +56,7 @@ export default function DocsMotionLayer() {
         if (glowRef.current) {
           glowRef.current.style.transform = `translate3d(${current.x}px, ${current.y}px, 0) translate(-50%, -50%)`;
         }
-        if (time - lastParticleAtRef.current > 38) {
+        if (time - lastParticleAtRef.current > 28) {
           emitParticle(current.x, current.y);
           lastParticleAtRef.current = time;
         }
