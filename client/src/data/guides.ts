@@ -3,6 +3,7 @@ export interface GuideSection {
   body: string;
   bullets?: string[];
   code?: string;
+  note?: string;
 }
 
 export interface GuideArticle {
@@ -21,34 +22,34 @@ export const allGuides: GuideArticle[] = [
     slug: "getting-started",
     category: "Start Here",
     eyebrow: "GETTING STARTED",
-    title: "Install Brick and sign in safely",
+    title: "Navigating the Brick Web Panel",
     intro: "A first boot is complete when the host is prepared, the operator boundary is protected, and a durable state record exists for future updates.",
     read: "5 min",
     version: "v0.9 stable",
     sections: [
       {
-        title: "Prepare the host environment",
-        body: "Brick is engineered for dedicated or virtual Linux hosts running Debian or RHEL-family distributions. Before executing the installation script, confirm that systemd is active, a supported package manager is available, and storage headroom is sufficient for application containers and logs.",
+        title: "Accessing Your Dashboard Securely",
+        body: "Brick provides a clean, web-based management interface for both shared hosting accounts and dedicated instances. Navigate to your designated panel URL in any modern browser. Enter your operator credentials issued by your hosting provider. On your first login, the panel prompts you to establish a secure password and enroll in multi-factor authentication.",
         bullets: [
-          "Confirm root or sudo privileges on the target host.",
-          "Verify systemd service supervision is running without degradation.",
-          "Ensure Docker and Compose runtimes are installed or ready for automated deployment."
+          "Confirm your assigned panel URL and secure credentials.",
+          "Verify multi-factor authentication setup during initial login.",
+          "Check your account dashboard to confirm your hosting service tier (shared or dedicated)."
         ],
-        code: "sudo -v\nsystemctl is-system-running\ndocker version"
+        code: "Browser -> https://your-panel-domain.tld -> Enter Credentials -> Complete MFA"
       },
       {
-        title: "Run the installation and verify",
-        body: "Execute the official installation bundle to provision the Brick control plane, host agent, and out-of-band sentinel watchdog. Once installed, use brickctl and brick-sentinel to confirm operational health.",
+        title: "Understanding Shared vs. Dedicated Service Tiers",
+        body: "Depending on your account tier, your Brick dashboard adapts to your operational boundaries. Shared hosting accounts feature jailed directory structures and resource quotas, while dedicated instances provide isolated container environments managed entirely through the panel interface.",
         bullets: [
-          "Check core service status through systemd and brickctl.",
-          "Run the Sentinel dependency check to audit host prerequisites.",
-          "Capture the initial Brick State Manifest (BSM) blueprint."
+          "Shared hosting: Operates inside jailed user directories with strict resource quotas.",
+          "Dedicated hosting: Features dedicated container environments and isolated network boundaries.",
+          "No direct host terminal access is exposed to end users in either service model, ensuring strict code safety and system stability."
         ],
-        code: "sudo brickctl status\nsudo systemctl status brick --no-pager\nsudo brick-sentinel -cmd check\nsudo brick-sentinel -cmd blueprint"
+        code: "Web UI Dashboard -> Account Settings -> Service Tier & Resource Quotas"
       },
       {
-        title: "Secure the first boot and MFA",
-        body: "Open the panel on your configured listen port and complete the initial operator account creation. Choose a high-entropy password generated specifically for this installation and enroll passkey or TOTP multi-factor authentication immediately before exposing the hostname to public traffic."
+        title: "Securing Your Operator Session",
+        body: "Always log out of shared workstations when finished. The panel enforces session timeouts and IP-based rate limiting to protect your hosted data against unauthorized access."
       }
     ]
   },
@@ -63,16 +64,17 @@ export const allGuides: GuideArticle[] = [
     sections: [
       {
         title: "Evaluate marketplace templates",
-        body: "Choose from over 120 maintained application templates. Review the image repository, pinned digest or version tag, exposed container ports, required environment variables, persistent volumes, and reverse proxy settings before submitting the deployment plan."
+        body: "Choose from over 120 maintained application templates directly from the web interface. Review the image repository, pinned version tag, exposed container ports, required environment variables, persistent volumes, and reverse proxy settings before submitting the deployment plan.",
+        code: "Panel -> App Marketplace -> Select Template -> Configure Parameters -> Deploy"
       },
       {
-        title: "Backend port conflict resolution",
-        body: "Never select host ports by trial and error. Brick's backend compares requested container ports against the panel entrance, system listeners, existing tenant deployments, and reserved system ranges to guarantee zero collisions."
+        title: "Automatic port and domain resolution",
+        body: "Never select host ports by trial and error. Brick's backend compares requested container ports against the panel entrance, system listeners, existing tenant deployments, and reserved system ranges to guarantee zero collisions automatically."
       },
       {
         title: "Verify FQDN and TLS routing",
-        body: "Provide your production domain name and let Brick generate the Nginx reverse-proxy binding and automated Let's Encrypt certificate challenge. Test the external HTTPS endpoint rather than relying solely on local container health."
-    }
+        body: "Provide your production domain name in the application settings and let Brick generate the Nginx reverse-proxy binding and automated Let's Encrypt certificate challenge through simple web form actions."
+      }
     ]
   },
   {
@@ -86,16 +88,16 @@ export const allGuides: GuideArticle[] = [
     sections: [
       {
         title: "Provisioning isolated database instances",
-        body: "Create dedicated database containers with custom resource limits, persistent storage mounts on high-speed volumes, and secure internal networking. Brick automatically wires environment credentials for connected marketplace apps without exposing database ports to the public internet.",
-        code: "brickctl db create --engine postgres --version 16 --name production_db\nbrickctl db grant --database production_db --user app_user --privileges all"
+        body: "Create dedicated database containers with custom resource limits, persistent storage mounts on high-speed volumes, and secure internal networking entirely through the databases dashboard. Brick automatically wires environment credentials for connected marketplace apps without exposing database ports to the public internet.",
+        code: "Panel -> Databases -> New Database -> Select Engine (MySQL/PostgreSQL/Redis/Mongo) -> Set Credentials"
       },
       {
         title: "Automated backups and point-in-time recovery",
-        body: "Configure retention-backed scheduled snapshots for all database engines. Backups are compressed, encrypted at rest, and stored in configured object storage or local backup volumes with automated restoration drill support."
+        body: "Configure retention-backed scheduled snapshots for all database engines directly from the panel. Backups are compressed, encrypted at rest, and stored in configured object storage or local backup volumes."
       },
       {
         title: "Performance tuning and monitoring",
-        body: "Inspect real-time connection counts, slow query logs, buffer pool utilization, and memory usage through the built-in database dashboard. Apply optimized configuration templates with a single click."
+        body: "Inspect real-time connection counts, slow query logs, buffer pool utilization, and memory usage through the built-in database dashboard without needing command-line tools."
       }
     ]
   },
@@ -110,16 +112,16 @@ export const allGuides: GuideArticle[] = [
     sections: [
       {
         title: "Automated Let's Encrypt certificates",
-        body: "Request and renew SSL certificates automatically via ACME HTTP-01 or DNS-01 challenges. Brick monitors certificate expiration and handles zero-downtime renewals in the background.",
-        code: "brickctl ssl request --domain example.com --email admin@example.com --auto-renew"
+        body: "Request and renew SSL certificates automatically via ACME HTTP-01 challenges directly from the domain management screen. Brick monitors certificate expiration and handles zero-downtime renewals in the background.",
+        code: "Panel -> Websites / Apps -> Domains -> SSL Tab -> Request Let's Encrypt Certificate"
       },
       {
         title: "Custom and wildcard certificates",
-        body: "Upload enterprise wildcard certificates (.crt / .key pairs or PKCS#12 bundles) and bind them across multiple application subdomains with centralized renewal tracking."
+        body: "Upload enterprise wildcard certificates (.crt / .key pairs) through the web certificate manager and bind them across multiple application subdomains with centralized renewal tracking."
       },
       {
         title: "HTTP/2, HTTP/3, and security headers",
-        body: "Enforce strict transport security (HSTS), OCSP stapling, modern TLS 1.3 ciphers, and HTTP/3 QUIC protocol streaming across all reverse proxy virtual hosts."
+        body: "Enforce strict transport security (HSTS), OCSP stapling, modern TLS 1.3 ciphers, and HTTP/3 QUIC protocol streaming across all reverse proxy virtual hosts using simple toggle switches in the security settings tab."
       }
     ]
   },
@@ -134,7 +136,8 @@ export const allGuides: GuideArticle[] = [
     sections: [
       {
         title: "High-performance web file browser",
-        body: "Navigate site directories, inspect file sizes, sort by modification date, and preview media assets instantly. The file manager supports multi-file selection, drag-and-drop uploads, and fast archive extraction (ZIP/TAR.GZ)."
+        body: "Navigate site directories, inspect file sizes, sort by modification date, and preview media assets instantly. The file manager supports multi-file selection, drag-and-drop uploads, and fast archive extraction (ZIP/TAR.GZ) entirely within the browser.",
+        code: "Panel -> File Manager -> Browse Directories -> Upload / Extract Archives"
       },
       {
         title: "Built-in code editor",
@@ -142,7 +145,7 @@ export const allGuides: GuideArticle[] = [
       },
       {
         title: "POSIX permissions and ownership",
-        body: "Quickly modify file permissions (chmod 644/755) and user/group ownership (chown) to prevent web-server permission errors and secure sensitive configuration files."
+        body: "Quickly modify file permissions (chmod) and user/group ownership through the file context menu to prevent web-server permission errors and secure sensitive configuration files."
       }
     ]
   },
@@ -157,16 +160,17 @@ export const allGuides: GuideArticle[] = [
     sections: [
       {
         title: "Multi-version PHP architecture",
-        body: "Install and run PHP 7.4, 8.0, 8.1, 8.2, and 8.3 simultaneously via isolated PHP-FPM pools. Assign specific PHP runtimes to individual website directories or virtual hosts without host conflict."
+        body: "Select and assign PHP 7.4, 8.0, 8.1, 8.2, or 8.3 simultaneously via isolated PHP-FPM pools directly from your website runtime settings. The change takes effect instantly without restarting the server.",
+        code: "Panel -> Website Settings -> PHP Version -> Select Runtime Version -> Save"
       },
       {
         title: "Extension manager",
-        body: "Enable or disable PHP extensions (imagick, redis, gd, curl, mbstring, bcmath, pdo) with a single click and automatic FPM service reloading."
+        body: "Enable or disable PHP extensions (imagick, redis, gd, curl, mbstring, bcmath, pdo) with a single click in the extension manager interface."
       },
       {
         title: "Resource limits and php.ini tuning",
-        body: "Customize execution time, memory limits, post max size, upload max filesize, and opcache settings globally or per website through an intuitive settings panel."
-    }
+        body: "Customize execution time, memory limits, post max size, upload max filesize, and opcache settings globally or per website through intuitive web form inputs."
+      }
     ]
   },
   {
@@ -180,15 +184,16 @@ export const allGuides: GuideArticle[] = [
     sections: [
       {
         title: "Optimized WordPress one-click deployment",
-        body: "Deploy a production-ready WordPress instance pre-configured with Nginx FastCGI caching, Redis object cache persistence, SSL redirection, and automated database provisioning."
+        body: "Deploy a production-ready WordPress instance pre-configured with Nginx FastCGI caching, Redis object cache persistence, SSL redirection, and automated database provisioning directly from the marketplace.",
+        code: "Panel -> App Marketplace -> WordPress -> Enter Site Details -> Deploy"
       },
       {
-        title: "Integrated WP-CLI and management",
-        body: "Manage plugins, themes, database updates, and user resets directly through an embedded terminal or GUI actions without needing manual SSH or FTP access."
+        title: "Integrated site management",
+        body: "Manage plugins, themes, database updates, and user resets through panel GUI actions without needing manual SSH or FTP access."
       },
       {
         title: "Staging and cloning workflows",
-        body: "Create isolated staging clones of production sites for testing plugin upgrades or theme modifications before syncing changes back to live production."
+        body: "Create isolated staging clones of production sites for testing plugin upgrades or theme modifications before syncing changes back to live production with a single click."
       }
     ]
   },
@@ -203,15 +208,16 @@ export const allGuides: GuideArticle[] = [
     sections: [
       {
         title: "Comprehensive backup scheduling",
-        body: "Configure automated daily or hourly backups covering website files, database dumps, SSL certificates, and panel configuration metadata. Store backups locally or sync to remote S3 buckets."
+        body: "Configure automated daily or hourly backups covering website files, database dumps, SSL certificates, and panel configuration metadata directly from the backup manager.",
+        code: "Panel -> Backups -> Create Schedule -> Choose Frequency & Destination -> Save"
       },
       {
         title: "Point-in-time restoration",
-        body: "Restore individual databases, specific website directories, or full host snapshots without overwriting unrelated services. Brick verifies archive integrity before initiating restoration."
+        body: "Restore individual databases, specific website directories, or full host snapshots without overwriting unrelated services using the web restoration wizard."
       },
       {
-        title: "SATURE preflight and recovery integration",
-        body: "Combine backup snapshots with SATURE transactional updates and Sentinel out-of-band watchdog verification to guarantee a reliable rollback path for kernel and system changes."
+        title: "Cloud storage integration",
+        body: "Connect external cloud storage targets including Amazon S3, MinIO, or standard WebDAV servers to store encrypted backups off-site through simple form settings."
       }
     ]
   },
@@ -225,16 +231,17 @@ export const allGuides: GuideArticle[] = [
     version: "v0.9 stable",
     sections: [
       {
-        title: "NFTables firewall and rate limiting",
-        body: "Manage modern NFTables firewall rules through an intuitive interface. Enforce default-deny inbound policies, restrict administrative SSH access, and apply robust rate limits at authentication endpoints."
+        title: "Firewall and IP access rules",
+        body: "Manage firewall rules through the Security Firewall panel to block malicious IP addresses, restrict port access, and enforce geographic access policies.",
+        code: "Panel -> Security -> Firewall -> Add IP Rule / Port Restriction -> Apply"
       },
       {
         title: "File-integrity monitoring and malware scanner",
-        body: "Schedule automated scans to detect unauthorized file modifications, suspicious web shells, obfuscated PHP scripts, and backdoor connections across application web roots."
+        body: "Launch on-demand or scheduled malware scans across your web roots directly from the security dashboard to inspect files for known web shells and suspicious scripts."
       },
       {
         title: "Operator audit logging",
-        body: "Track every administrative action, login attempt, configuration change, and deployment event in a tamper-evident audit trail with actor correlation and timestamps."
+        body: "Review immutable audit logs recording every login attempt, configuration change, and deployment event directly within the panel activity viewer."
       }
     ]
   },
@@ -248,17 +255,14 @@ export const allGuides: GuideArticle[] = [
     version: "v0.9 stable",
     sections: [
       {
-        title: "Panel connectivity and service status",
-        body: "Verify systemd service health, listener port bindings, firewall rule state, and reverse-proxy routing when the control plane becomes unreachable.",
-        code: "systemctl status brick\nnetstat -tulnp | grep brick\nsudo brickctl status"
+        title: "Viewing live container and access logs",
+        body: "Access the integrated Log Viewer from any application or database management screen. Inspect real-time stdout, stderr, and Nginx access logs with keyword search and auto-refresh.",
+        code: "Panel -> App / Database -> Logs Tab -> Select Stream -> Search Keywords"
       },
       {
-        title: "Investigating authentication and MFA lockouts",
-        body: "Inspect authentication logs and host clock synchronization when login or MFA fails. Use the documented break-glass recovery procedure when rate limiting blocks an administrator."
-      },
-      {
-        title: "Preserving diagnostic evidence",
-        body: "Collect service logs, transaction outputs, Sentinel check results, and pre-change state manifests before retrying a failed deployment or update."
+        title: "Resolving common operational issues",
+        body: "Review built-in troubleshooting wizards for common scenarios such as database connection timeouts, PHP memory exhaustion, and SSL handshake failures directly in the panel interface.",
+        note: "All troubleshooting and diagnostic steps are performed securely through the web UI, protecting underlying system stability and shell jail boundaries."
       }
     ]
   }
