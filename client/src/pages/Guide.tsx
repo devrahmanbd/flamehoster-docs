@@ -56,7 +56,7 @@ export default function Guide() {
 
   return (
     <div className="kb-shell">
-      <SeoMeta title={guide.title} description={guide.intro} path={`/docs/${version}/${guide.slug}`} />
+      <SeoMeta title={guide.title} description={guide.intro} path={`/docs/${version}/${guide.slug}`} type="article" section={guide.category} keywords={[guide.title, guide.category, "Brick Web UI", "hosting panel", "operator guide"]} />
       <DocsHeader version={version} isGuide mobileOpen={mobileOpen} onToggleMobile={() => setMobileOpen((open) => !open)} onOpenSearch={() => setSearchOpen(true)} onOpenAssistant={() => setAssistantOpen(true)} onVersionChange={changeVersion} />
       <div className="kb-layout kb-layout--guide">
         <DocsSidebar version={version} activeSlug={guide.slug} open={mobileOpen} onNavigate={() => setMobileOpen(false)} />
