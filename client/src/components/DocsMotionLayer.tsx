@@ -95,7 +95,7 @@ export default function DocsMotionLayer() {
   }, []);
 
   return (
-    <div className="kb-aurora" aria-hidden="true">
+    <div className="kb-aurora" data-motion-source="shader-gradient-inspired" aria-hidden="true">
       <div className="kb-framer-grid" />
       <div ref={glowRef} className="kb-luminous-glow" />
       <div className="kb-cursor-trail">

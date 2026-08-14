@@ -51,6 +51,7 @@ export default function DocsSidebar({ version, activeSlug, open = false, collaps
                   href={getGuideHref(guide.slug, version)}
                   onClick={onNavigate}
                   className={`kb-nav-link ${active ? "kb-nav-link--active" : ""}`}
+                  data-motion-source="skiper-hover-members"
                   aria-current={active ? "page" : undefined}
                   title={collapsed ? guide.title : undefined}
                 >

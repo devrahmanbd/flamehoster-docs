@@ -123,3 +123,15 @@
 - [x] Final motion-polish unit suite completed successfully with 4 tests passing across 2 test files.
 - [x] Final motion-polish screenshots verified at desktop and narrow mobile widths.
 - [x] Save the updated motion-polish checkpoint.
+
+## Constrained Sidebar Scrolling & Visible Framer Motion Polish (User Feedback)
+
+- [x] Fix sidebar container height and overflow-y-auto so the sidebar is fully scrollable at constrained desktop widths (1024px) and mobile viewports.
+- [x] Make the grid and subtle aurora motion background visibly observable, layered, and responsive without excessive CPU load.
+- [x] Incorporate techniques and design patterns from supplied design resources (such as Skiper UI and Shader Gradient color rhythms) explicitly into the UI components.
+- [x] Capture and inspect screenshots across multiple viewports (desktop, 1024px laptop, 768px tablet, 390px mobile) to verify usability and visual impact.
+- [x] Add a responsive Playwright regression check for mobile drawer scrolling and visible motion layers
+
+- [x] Add an identifiable Skiper-style hover/focus treatment to a Brick Docs navigation component
+- [x] Add an identifiable Shader Gradient-inspired ambient layer variant to the Brick Docs motion component
+- [x] Document the exact resource-to-selector mapping in the motion audit notes and source comments
