@@ -43,8 +43,15 @@
 ## Follow-up history
 
 - [x] Re-run full build/test verification after final UI polish.
-- [ ] Create a new checkpoint only after all current work is complete and reviewed.
+- [x] Create a new checkpoint only after all current work is complete and reviewed.
 
 - [x] Run a full production build after the final visual polish.
 - [x] Capture fresh homepage and guide screenshots in both dark and light theme states.
 - [x] Verify keyboard-visible focus states and contrast for header controls, CTAs, sidebar links, guide-map links, and assistant/search triggers.
+
+## UX & Navigation Redesign (User Request)
+
+- [x] Redesign navbar layout to eliminate sloppy spacing, remove the GitHub icon, relocate version selection to sidebar/header context, and integrate a persistent right-side Ask chat menu.
+- [x] Soften harsh neon colors into a professional, restrained enterprise palette with refined contrast.
+- [x] Fix sidebar click responsiveness, link states, and typography hierarchy.
+- [x] Verify fixed UX across homepage and guide routes with screenshots and build checks.

@@ -1,21 +1,37 @@
-/* Brick Docs design reminder: group guides by operator task, keep labels concrete, and make every navigation item a real route. */
+/* Brick Docs design reminder: the sidebar is a task index, not a decorative rail; every state must be clear, reachable, and responsive. */
 import { ChevronRight, CircleHelp, ShieldCheck } from "lucide-react";
 import { Link } from "wouter";
 import { allGuides } from "../data/guides";
-import { docsGroups, getGuideHref, type DocsVersion } from "../lib/docs";
+import { docsGroups, getGuideHref, versionOptions, type DocsVersion } from "../lib/docs";
 
 interface DocsSidebarProps {
   version: DocsVersion;
   activeSlug?: string;
   open?: boolean;
   onNavigate?: () => void;
+  onVersionChange?: (version: DocsVersion) => void;
 }
 
-export default function DocsSidebar({ version, activeSlug, open = false, onNavigate }: DocsSidebarProps) {
+export default function DocsSidebar({ version, activeSlug, open = false, onNavigate, onVersionChange }: DocsSidebarProps) {
   return (
     <aside className={`kb-sidebar ${open ? "kb-sidebar--open" : ""}`} aria-label="Documentation navigation">
       <div className="kb-sidebar__topline"><span className="kb-status-dot" /> Public user documentation</div>
-      <div className="kb-sidebar__version-row"><span>Release channel</span><strong>{version === "v0.9" ? "v0.9 stable" : "v1.0 beta"}</strong></div>
+      <div className="kb-sidebar__release">
+        <div>
+          <span className="kb-sidebar__eyebrow">Documentation release</span>
+          <strong>{version === "v0.9" ? "Stable channel" : "Beta preview"}</strong>
+        </div>
+        {onVersionChange ? (
+          <select
+            className="kb-sidebar__version-select"
+            value={version}
+            onChange={(event) => onVersionChange(event.target.value as DocsVersion)}
+            aria-label="Choose documentation release"
+          >
+            {versionOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
+          </select>
+        ) : <span className="kb-sidebar__version-label">{version}</span>}
+      </div>
       <nav className="kb-sidebar__nav">
         {docsGroups.map((group) => (
           <section className="kb-nav-group" key={group.label}>
@@ -24,7 +40,18 @@ export default function DocsSidebar({ version, activeSlug, open = false, onNavig
               const guide = allGuides.find((item) => item.slug === slug);
               if (!guide) return null;
               const active = guide.slug === activeSlug;
-              return <Link key={guide.slug} href={getGuideHref(guide.slug, version)} onClick={onNavigate} className={`kb-nav-link ${active ? "kb-nav-link--active" : ""}`} aria-current={active ? "page" : undefined}><span>{guide.title}</span><ChevronRight size={14} /></Link>;
+              return (
+                <Link
+                  key={guide.slug}
+                  href={getGuideHref(guide.slug, version)}
+                  onClick={onNavigate}
+                  className={`kb-nav-link ${active ? "kb-nav-link--active" : ""}`}
+                  aria-current={active ? "page" : undefined}
+                >
+                  <span className="kb-nav-link__title">{guide.title}</span>
+                  <ChevronRight className="kb-nav-link__arrow" size={14} strokeWidth={1.8} aria-hidden="true" />
+                </Link>
+              );
             })}
           </section>
         ))}

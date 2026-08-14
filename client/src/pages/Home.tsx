@@ -56,9 +56,10 @@ export default function Home() {
   return (
     <div className="kb-shell">
       <SeoMeta title="Knowledge base for operators" description="Task-focused Brick Web UI documentation for shared hosting, dedicated hosting, application deployment, databases, SSL/TLS, backups, and security." path="/docs" type="website" section="Brick Web UI" keywords={["Brick hosting panel", "shared hosting", "dedicated hosting", "web UI documentation", "application deployment", "SSL", "databases", "backups"]} />
-      <DocsHeader version={version} mobileOpen={mobileOpen} onToggleMobile={() => setMobileOpen((open) => !open)} onOpenSearch={() => setSearchOpen(true)} onOpenAssistant={() => setAssistantOpen(true)} onVersionChange={setVersion} />
+      <DocsHeader mobileOpen={mobileOpen} onToggleMobile={() => setMobileOpen((open) => !open)} onOpenSearch={() => setSearchOpen(true)} onOpenAssistant={() => setAssistantOpen(true)} />
       <div className="kb-layout kb-layout--home">
-        <DocsSidebar version={version} open={mobileOpen} onNavigate={() => setMobileOpen(false)} />
+        <DocsSidebar version={version} open={mobileOpen} onNavigate={() => setMobileOpen(false)} onVersionChange={setVersion} />
+        {mobileOpen && <button className="kb-sidebar-scrim" aria-label="Close navigation" onClick={() => setMobileOpen(false)} />}
           <main className="kb-main kb-main--home">
           <div className="kb-breadcrumbs"><Link href="/">Brick Docs</Link><ChevronRight size={14} /><span>Public user documentation</span></div>
           <section className="kb-hero">
