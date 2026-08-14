@@ -60,7 +60,7 @@ export default function Home() {
       <DocsHeader mobileOpen={mobileOpen} onToggleMobile={() => setMobileOpen((open) => !open)} onOpenSearch={() => setSearchOpen(true)} />
       <div className={`kb-layout kb-layout--home ${sidebarCollapsed ? "kb-layout--sidebar-collapsed" : ""}`}>
         <DocsSidebar version={version} open={mobileOpen} collapsed={sidebarCollapsed} onToggleCollapse={() => setSidebarCollapsed((collapsed) => !collapsed)} onNavigate={() => setMobileOpen(false)} onVersionChange={setVersion} />
-        {mobileOpen && <button className="kb-sidebar-scrim" aria-label="Close navigation" onClick={() => setMobileOpen(false)} />}
+        <button className="kb-sidebar-scrim" aria-label="Close navigation" aria-hidden={!mobileOpen} tabIndex={mobileOpen ? 0 : -1} onClick={() => setMobileOpen(false)} />
           <main className="kb-main kb-main--home">
           <div className="kb-breadcrumbs"><Link href="/">Brick Docs</Link><ChevronRight size={14} /><span>Public user documentation</span></div>
           <section className="kb-hero">
@@ -77,7 +77,7 @@ export default function Home() {
           <section className="kb-infrastructure" aria-labelledby="infrastructure-heading">
             <div className="kb-section-heading"><div><span className="kb-section-kicker">CONTROL PLANE SIGNALS</span><h2 id="infrastructure-heading">Operate from known state.</h2><p>Brick keeps the Web UI close to the system signals that matter: identity, deployment health, storage, and recoverability.</p></div><span className="kb-section-count">LIVE MODEL</span></div>
             <div className="kb-infrastructure__grid">
-              <div className="kb-infrastructure__diagram" aria-label="Brick control plane architecture overview">
+              <div className="kb-infrastructure__diagram kb-card-cinematic" aria-label="Brick control plane architecture overview">
                 <div className="kb-infrastructure__diagram-head"><span><Workflow size={15} /> CONTROL PLANE ROUTE</span><span className="kb-state-badge"><i /> NOMINAL</span></div>
                 <div className="kb-infrastructure__flow">
                   <div className="kb-infrastructure__node kb-infrastructure__node--primary"><Server size={18} /><span>Brick Web UI</span><small>Operator boundary</small></div>
@@ -89,16 +89,16 @@ export default function Home() {
                 <div className="kb-infrastructure__diagram-foot"><span><LockKeyhole size={14} /> Session controls enforced</span><span><BadgeCheck size={14} /> Changes remain auditable</span></div>
               </div>
               <div className="kb-infrastructure__signals">
-                <div className="kb-signal-card"><span className="kb-signal-card__icon"><Activity size={16} /></span><span><strong>Network posture</strong><small>Traffic and service health visible in context</small></span><b>READY</b></div>
-                <div className="kb-signal-card"><span className="kb-signal-card__icon"><Gauge size={16} /></span><span><strong>Resource guardrails</strong><small>Quotas and usage states before deployment</small></span><b>READY</b></div>
-                <div className="kb-signal-card"><span className="kb-signal-card__icon"><ShieldCheck size={16} /></span><span><strong>Security controls</strong><small>MFA, certificates, scanning, and policy</small></span><b>READY</b></div>
+                <div className="kb-signal-card kb-card-cinematic"><span className="kb-signal-card__icon"><Activity size={16} /></span><span><strong>Network posture</strong><small>Traffic and service health visible in context</small></span><b>READY</b></div>
+                <div className="kb-signal-card kb-card-cinematic"><span className="kb-signal-card__icon"><Gauge size={16} /></span><span><strong>Resource guardrails</strong><small>Quotas and usage states before deployment</small></span><b>READY</b></div>
+                <div className="kb-signal-card kb-card-cinematic"><span className="kb-signal-card__icon"><ShieldCheck size={16} /></span><span><strong>Security controls</strong><small>MFA, certificates, scanning, and policy</small></span><b>READY</b></div>
               </div>
             </div>
           </section>
 
           <section className="kb-home-section">
             <div className="kb-section-heading"><div><span className="kb-section-kicker">PUBLIC GUIDE INDEX</span><h2>Find the exact task.</h2><p>Browse by the kind of change you need to make, not by internal system names.</p></div><span className="kb-section-count">{allGuides.length} guides</span></div>
-            <div className="kb-guide-grid">{allGuides.map((guide, index) => <Link key={guide.slug} href={getGuideHref(guide.slug, version)} className="kb-guide-card"><div className="kb-guide-card__top"><span>0{index + 1}</span><span>{guide.read}</span></div><h3>{guide.title}</h3><p>{guide.intro}</p><div className="kb-guide-card__footer"><span>{guide.category}</span><ArrowRight size={15} /></div></Link>)}</div>
+            <div className="kb-guide-grid">{allGuides.map((guide, index) => <Link key={guide.slug} href={getGuideHref(guide.slug, version)} className="kb-guide-card kb-card-cinematic"><div className="kb-guide-card__top"><span>0{index + 1}</span><span>{guide.read}</span></div><h3>{guide.title}</h3><p>{guide.intro}</p><div className="kb-guide-card__footer"><span>{guide.category}</span><ArrowRight size={15} /></div></Link>)}</div>
           </section>
 
           <section className="kb-helper-band"><div className="kb-helper-band__icon"><Sparkles size={18} /></div><div><span className="kb-section-kicker">GUIDE-GROUNDED ASSISTANCE</span><h2>Resolve the next operator action.</h2><p>Ask about a published Web UI workflow and get routed to the relevant guide. The helper never runs commands or touches your host.</p></div><button className="kb-button kb-button--quiet" onClick={() => setAssistantOpen(true)}>Ask docs <ArrowRight size={16} /></button></section>

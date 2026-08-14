@@ -72,3 +72,22 @@
 - [x] Tune CSS grid templates so 1024px to 1366px viewports fit sidebar, article, and TOC without horizontal overflow or cramped text.
 - [x] Ensure sidebar collapses gracefully or uses responsive grid columns on medium screens.
 - [x] Verify 1024px, 1280px, and mobile viewports with screenshots and build checks, including a fresh 390px narrow-mobile pass after the laptop fix.
+
+## Tablet Drawer Transition Animation (768px)
+
+- [ ] Audit existing drawer and scrim transition properties for 768px and smaller viewports.
+- [ ] Implement spring-like cubic-bezier timing (`cubic-bezier(0.16, 1, 0.3, 1)`), hardware-accelerated transforms, and reduced-motion fallbacks for the tablet drawer.
+- [ ] Verify 768px viewport drawer toggle with a dedicated screenshot.
+- [ ] Run production build and test suite, then save the refined checkpoint.
+
+## Olympus-Inspired Cinematic Motion & Framer Grid UI
+
+- [x] Analyze theolympus.org interaction style: subtle glowing grid lines, luminous mouse-proximity highlights, floating tech cards, and smooth layered depth.
+- [x] Upgrade `DocsMotionLayer` and `index.css` with an interactive CSS/JS grid tracking layer and luminous highlight effects without harming document contrast.
+- [x] Add cinematic hover/focus physics to homepage feature cards and guide action items.
+- [ ] Run build, tests, responsive checks, and save checkpoint.
+
+### Olympus Reference Analysis & Transferable Patterns
+- **Subtle Framer Grid**: Fine geometric grid overlay that provides spatial grounding without overwhelming document typography.
+- **Luminous Mouse Proximity**: Soft radial teal/cyan cursor spotlight that tracks pointer movement and gives dark obsidian surfaces depth and responsiveness.
+- **Layered Cinematic Cards**: Multi-stop dark gradient cards with glowing border gradients on hover, establishing clear hierarchical elevation.
