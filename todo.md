@@ -13230,3 +13230,7 @@ This task list may be extended with smaller implementation items, but existing h
 - [x] Verify all published Shared-facing content stays within the Web UI documentation boundary and move internal/developer information out of the public surface.
 - [x] Run route, interaction, accessibility, responsive, keyboard, content-boundary, test, and production-build validation before the next checkpoint.
 - [x] Write a final design-system implementation document and reusable master prompt for future BrickDocs work.
+
+## GitHub Delivery
+
+- [ ] Commit the verified BrickDocs redesign and push the active branch to its configured GitHub remote.
