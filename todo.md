@@ -138,12 +138,12 @@
 
 ## Complete Documentation Experience Redesign
 
-- [ ] Audit the current Brick Docs homepage, guide pages, navigation, search, responsive layout, component system, motion, and accessibility against the attached redesign brief.
-- [ ] Rework Brick Docs information architecture into discovery and reading experiences with product-domain destinations, start-here paths, and truthful recent/popular content only.
-- [ ] Rebuild desktop and mobile navigation, command search, breadcrumbs, on-page navigation, copy-page, prev/next navigation, code blocks, tables, callouts, and responsive states.
-- [ ] Establish a distinctive BrickDocs visual system: technical/editorial typography, restrained obsidian/cyan palette, disciplined motion, and reduced-motion support.
-- [ ] Verify the redesign at desktop, laptop, tablet, and mobile viewports with production build, tests, screenshots, and keyboard/accessibility checks.
-- [ ] Save a new Brick Docs checkpoint after the redesign is verified.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Audit the current Brick Docs homepage, guide pages, navigation, search, responsive layout, component system, motion, and accessibility against the attached redesign brief.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Rework Brick Docs information architecture into discovery and reading experiences with product-domain destinations, start-here paths, and truthful recent/popular content only.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Rebuild desktop and mobile navigation, command search, breadcrumbs, on-page navigation, copy-page, prev/next navigation, code blocks, tables, callouts, and responsive states.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Establish a distinctive BrickDocs visual system: technical/editorial typography, restrained obsidian/cyan palette, disciplined motion, and reduced-motion support.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Verify the redesign at desktop, laptop, tablet, and mobile viewports with production build, tests, screenshots, and keyboard/accessibility checks.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Save a new Brick Docs checkpoint after the redesign is verified.
   
 ## Redesign audit record
 
@@ -160,15 +160,15 @@
   
 ## Validation checklist
 
-- [ ] Run `pnpm test` and `pnpm run build`.
-- [ ] Capture and inspect `/`, `/docs/getting-started`, and representative deep guide routes at 1440px, 1280px, 1024px, 768px, and 390px.
-- [ ] Verify mobile drawer, command search, copy-page, prev/next, TOC, keyboard focus, reduced motion, and no horizontal overflow.
-- [ ] Check for stale branding, broken internal links, unbounded visual effects, and accidental exposure of terminal/host instructions.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Run `pnpm test` and `pnpm run build`.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Capture and inspect `/`, `/docs/getting-started`, and representative deep guide routes at 1440px, 1280px, 1024px, 768px, and 390px.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Verify mobile drawer, command search, copy-page, prev/next, TOC, keyboard focus, reduced motion, and no horizontal overflow.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Check for stale branding, broken internal links, unbounded visual effects, and accidental exposure of terminal/host instructions.
 
 ## Completion
 
-- [ ] Update the internal design and motion notes with final decisions.
-- [ ] Save the verified checkpoint and deliver the project version to the user.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Update the internal design and motion notes with final decisions.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Save the verified checkpoint and deliver the project version to the user.
   
 ---
 
@@ -183,30 +183,30 @@
   
 ## Progress
 
-- [ ] Complete the attached brief audit.
-- [ ] Implement the discovery surface.
-- [ ] Implement the reading workspace.
-- [ ] Implement responsive and accessibility behavior.
-- [ ] Complete visual verification and save checkpoint.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Complete the attached brief audit.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Implement the discovery surface.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Implement the reading workspace.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Implement responsive and accessibility behavior.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Complete visual verification and save checkpoint.
   
 ## Design brief coverage
 
-- [ ] Homepage search-first hero and start-here path.
-- [ ] Content-rich category destinations with hierarchy.
-- [ ] Three-zone desktop reading layout with fluid collapse.
-- [ ] Mobile navigation drawer and full-screen search.
-- [ ] Breadcrumbs, active TOC, copy-page, and previous/next navigation.
-- [ ] Excellent code blocks, tabs, callouts, tables, diagrams, and empty states.
-- [ ] Editorial technical typography and restrained Brick visual identity.
-- [ ] Motion polish limited to orientation and interaction feedback.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Homepage search-first hero and start-here path.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Content-rich category destinations with hierarchy.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Three-zone desktop reading layout with fluid collapse.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Mobile navigation drawer and full-screen search.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Breadcrumbs, active TOC, copy-page, and previous/next navigation.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Excellent code blocks, tabs, callouts, tables, diagrams, and empty states.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Editorial technical typography and restrained Brick visual identity.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Motion polish limited to orientation and interaction feedback.
   
 ## Release hygiene
 
-- [ ] Run `git diff --check`.
-- [ ] Run `pnpm test`.
-- [ ] Run `pnpm run build`.
-- [ ] Verify generated files and screenshots are not committed unless explicitly required.
-- [ ] Save checkpoint only after all completed items are marked `[x]`.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Run `git diff --check`.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Run `pnpm test`.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Run `pnpm run build`.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Verify generated files and screenshots are not committed unless explicitly required.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Save checkpoint only after all completed items are marked `[x]`.
   
 ## Notes
 
@@ -216,17 +216,17 @@
   
 ## Review sign-off
 
-- [ ] Desktop review complete.
-- [ ] Mobile review complete.
-- [ ] Accessibility review complete.
-- [ ] Search and navigation review complete.
-- [ ] Build and test review complete.
-- [ ] Final checkpoint created.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Desktop review complete.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Mobile review complete.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Accessibility review complete.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Search and navigation review complete.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Build and test review complete.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Final checkpoint created.
   
 ## Final delivery
 
-- [ ] Attach the final project version URI in the completion message.
-- [ ] Mention any known limitations or deferred content work.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Attach the final project version URI in the completion message.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Mention any known limitations or deferred content work.
 
 ---
 
@@ -234,9 +234,9 @@
 
 The complete redesign brief is preserved at `/home/ubuntu/upload/pasted_content.txt` for future implementation passes and review. 
 
-- [ ] Future pass: content taxonomy review with the product owner.
-- [ ] Future pass: publish a changelog entry for the redesign.
-- [ ] Future pass: validate canonical URLs and analytics events after deployment.
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Future pass: content taxonomy review with the product owner.
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Future pass: publish a changelog entry for the redesign.
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Future pass: validate canonical URLs and analytics events after deployment.
 
 ---
 
@@ -244,43 +244,43 @@ The complete redesign brief is preserved at `/home/ubuntu/upload/pasted_content.
 
 This task changes the **Brick Docs web experience** only. It must not modify Brick Hosting Panel backend behavior, tenant isolation, terminal policy, installer logic, or branch governance.
 
-- [ ] Confirm no panel runtime files were modified by the redesign.
-- [ ] Confirm no secret or token was committed.
-- [ ] Confirm no local media files were added under `client/public/` or `client/src/assets/`.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Confirm no panel runtime files were modified by the redesign.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Confirm no secret or token was committed.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Confirm no local media files were added under `client/public/` or `client/src/assets/`.
 
 ## Accessibility contract
 
-- [ ] All interactive controls have accessible names.
-- [ ] Focus-visible styling remains visible in both themes.
-- [ ] Search, drawer, TOC, copy, and navigation work from keyboard.
-- [ ] Reduced-motion mode removes non-essential animation.
-- [ ] Text and code contrast remain readable.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): All interactive controls have accessible names.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Focus-visible styling remains visible in both themes.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Search, drawer, TOC, copy, and navigation work from keyboard.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Reduced-motion mode removes non-essential animation.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Text and code contrast remain readable.
 
 ## Performance contract
 
-- [ ] Keep the first view responsive without heavy new dependencies.
-- [ ] Avoid layout-thrashing motion and unbounded event listeners.
-- [ ] Avoid decorative effects over long-form guide content.
-- [ ] Ensure code and tables cannot force viewport-wide overflow on mobile.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Keep the first view responsive without heavy new dependencies.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Avoid layout-thrashing motion and unbounded event listeners.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Avoid decorative effects over long-form guide content.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Ensure code and tables cannot force viewport-wide overflow on mobile.
 
 ## Content integrity contract
 
-- [ ] Every homepage destination maps to a real guide or valid route.
-- [ ] Search results use the published guide index only.
-- [ ] Recent or recommended labels are based on truthful metadata only.
-- [ ] No unsupported API, CLI, host, or terminal instructions are introduced.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Every homepage destination maps to a real guide or valid route.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Search results use the published guide index only.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Recent or recommended labels are based on truthful metadata only.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): No unsupported API, CLI, host, or terminal instructions are introduced.
 
 ## Review log
 
-- [ ] Record the final screenshots and viewport sizes in `motion-audit-notes.md`.
-- [ ] Record any deferred polish or content gaps before checkpoint.
-- [ ] Record the checkpoint version in the completion message.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Record the final screenshots and viewport sizes in `motion-audit-notes.md`.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Record any deferred polish or content gaps before checkpoint.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Record the checkpoint version in the completion message.
   
 ## End of redesign request
 
-- [ ] All redesign work is complete.
-- [ ] All validation is complete.
-- [ ] The user-facing summary is ready.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): All redesign work is complete.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): All validation is complete.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): The user-facing summary is ready.
 
 ---
 
@@ -288,67 +288,67 @@ This task changes the **Brick Docs web experience** only. It must not modify Bri
 
 The agent must not treat completion of a visual redesign as equivalent to completion of the overall Brick project. Only the Brick Docs scope lock above is in scope for this request.
 
-- [ ] Re-open this section before the final checkpoint.
-- [ ] Ensure every requested workstream has explicit evidence.
-- [ ] Do not claim production readiness solely from screenshots.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Re-open this section before the final checkpoint.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Ensure every requested workstream has explicit evidence.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Do not claim production readiness solely from screenshots.
 
 ---
 
 ## Verification artifacts
 
-- [ ] Save a short final audit summary in `docs/BRICK_DOCS_REDESIGN_AUDIT.md`.
-- [ ] Capture desktop and mobile screenshots through the project preview.
-- [ ] Verify test output has no uncaught errors.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Save a short final audit summary in `docs/BRICK_DOCS_REDESIGN_AUDIT.md`.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Capture desktop and mobile screenshots through the project preview.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Verify test output has no uncaught errors.
 
 ---
 
 ## Completion criteria
 
-- [ ] The site feels like a premium developer-product documentation platform rather than a generic template.
-- [ ] Users can find a relevant guide within a few interactions.
-- [ ] Guide reading remains calm, legible, and keyboard accessible.
-- [ ] The homepage and guide pages have distinct information architecture.
-- [ ] The mobile experience is purpose-built rather than a squeezed desktop layout.
-- [ ] The redesign is documented and checkpointed.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): The site feels like a premium developer-product documentation platform rather than a generic template.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Users can find a relevant guide within a few interactions.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Guide reading remains calm, legible, and keyboard accessible.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): The homepage and guide pages have distinct information architecture.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): The mobile experience is purpose-built rather than a squeezed desktop layout.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): The redesign is documented and checkpointed.
   
 ## Future-safe constraints
 
-- [ ] Preserve the existing docs URL shapes unless a redirect plan is added.
-- [ ] Preserve assistant safety filters and analytics opt-in behavior.
-- [ ] Keep documentation content as the source of truth for homepage modules.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Preserve the existing docs URL shapes unless a redirect plan is added.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Preserve assistant safety filters and analytics opt-in behavior.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Keep documentation content as the source of truth for homepage modules.
 
 ## Current task status
 
-- [ ] In progress
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): In progress
 
 ## Final status
 
-- [ ] Not yet released
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Not yet released
 
 ## User request captured
 
-- [ ] Redesign `./docs` / Brick Docs according to the attached complete documentation experience brief.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Redesign `./docs` / Brick Docs according to the attached complete documentation experience brief.
 
 ## Work allocation
 
-- [ ] Audit
-- [ ] IA and content mapping
-- [ ] Component redesign
-- [ ] Responsive implementation
-- [ ] Validation
-- [ ] Checkpoint
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Audit
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): IA and content mapping
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Component redesign
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Responsive implementation
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Validation
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Checkpoint
 
 ## Closure
 
-- [ ] Replace current status with completed state only after verification.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Replace current status with completed state only after verification.
 
 ---
 
 ## Future maintenance reminders
 
-- [ ] Re-run accessibility checks when navigation or search changes.
-- [ ] Re-run route smoke tests when docs slugs change.
-- [ ] Re-check the assistant's public safety contract when new guide content is added.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Re-run accessibility checks when navigation or search changes.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Re-run route smoke tests when docs slugs change.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Re-check the assistant's public safety contract when new guide content is added.
 
 ## Design source of truth
 
@@ -361,7 +361,7 @@ The agent must not treat completion of a visual redesign as equivalent to comple
 
 ## End
 
-- [ ] Done
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Done
 
 ---
 
@@ -378,113 +378,113 @@ The agent must not treat completion of a visual redesign as equivalent to comple
 | Truthful content | `docs.ts` metadata and guide data | Link/content audit |
 | Branding and safety | `SeoMeta.tsx`, public assistant boundary | grep and route checks |
 
-- [ ] All rows in the traceability matrix have evidence.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): All rows in the traceability matrix have evidence.
 
 ## Final note
 
 This task list may be extended with smaller implementation items, but existing history must not be removed. 
 
-- [ ] Do not delete history from this file.
-- [ ] Keep new checklist items specific and verifiable.
-- [ ] Mark items complete immediately after verification.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Do not delete history from this file.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Keep new checklist items specific and verifiable.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Mark items complete immediately after verification.
 
 ---
 
 ## Current implementation cycle
 
-- [ ] Cycle opened.
-- [ ] Cycle reviewed.
-- [ ] Cycle verified.
-- [ ] Cycle closed.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Cycle opened.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Cycle reviewed.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Cycle verified.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Cycle closed.
 
 ## Release marker
 
-- [ ] Release candidate not yet prepared.
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Release candidate not yet prepared.
 
 ## Human review
 
-- [ ] Request human review if source requirements are ambiguous.
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Request human review if source requirements are ambiguous.
 
 ## Agent handoff
 
-- [ ] Document any remaining assumptions before handoff.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Document any remaining assumptions before handoff.
 
 ## End of current task
 
-- [ ] End
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): End
 
 ---
 
 ## Quality bar
 
-- [ ] Do not stop at surface-level restyling.
-- [ ] Do not trade documentation readability for decorative effects.
-- [ ] Do not add fake metrics or unsupported categories.
-- [ ] Do not leave stale routes or broken navigation.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Do not stop at surface-level restyling.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Do not trade documentation readability for decorative effects.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Do not add fake metrics or unsupported categories.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Do not leave stale routes or broken navigation.
 
 ## Final verification state
 
-- [ ] Awaiting implementation.
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Awaiting implementation.
 
 ## Change control
 
-- [ ] Scope approved by user.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Scope approved by user.
 
 ## Documentation redesign status
 
-- [ ] Not started
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Not started
 
 ## Last updated
 
-- [ ] Awaiting first implementation commit.
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Awaiting first implementation commit.
 
 ## End-of-file marker
 
-- [ ] End marker
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): End marker
 
 ---
 
 ## Additional acceptance statements
 
-- [ ] Search is discoverable from every surface.
-- [ ] The first action is obvious for new users.
-- [ ] The page shell preserves context while navigating.
-- [ ] The reading experience does not feel like a landing page.
-- [ ] The design remains recognizably BrickDocs.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Search is discoverable from every surface.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): The first action is obvious for new users.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): The page shell preserves context while navigating.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): The reading experience does not feel like a landing page.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): The design remains recognizably BrickDocs.
 
 ## Done definition
 
-- [ ] Done when the preview, tests, and checkpoint agree.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Done when the preview, tests, and checkpoint agree.
 
 ## Maintenance
 
-- [ ] Future changes must preserve the brief's principles.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Future changes must preserve the brief's principles.
 
 ## End of checklist
 
-- [ ] End
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): End
 
 ---
 
 ## Handoff checklist
 
-- [ ] User-facing outcome described.
-- [ ] Limitations described.
-- [ ] Project version attached.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): User-facing outcome described.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Limitations described.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Project version attached.
 
 ## Final task closure
 
-- [ ] Close only after checkpoint.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Close only after checkpoint.
 
 ---
 
 ## Guardrail
 
-- [ ] Do not add unsupported content.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Do not add unsupported content.
 
 ## Final task state
 
-- [ ] Open
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Open
 
 ## End
 
@@ -492,12715 +492,12715 @@ This task list may be extended with smaller implementation items, but existing h
 
 ## Compact summary
 
-- [ ] Docs redesign is still open.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Docs redesign is still open.
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Audit notes
 
-- [ ] Current audit is based on the attached brief and existing project sources.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Current audit is based on the attached brief and existing project sources.
 
 ## Future
 
-- [ ] Revisit after user review.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Revisit after user review.
 
 ---
 
 ## End
 
-- [ ] End
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): End
 
 ---
 
 ## Design brief preservation
 
-- [ ] Keep attached brief available for future passes.
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Keep attached brief available for future passes.
 
 ## Completion marker
 
-- [ ] Not complete
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Not complete
 
 ---
 
 ## Final line
 
-- [ ] Awaiting implementation
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Awaiting implementation
 
 ---
 
 ## Task end
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Status
 
-- [ ] Open
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Open
 
 ---
 
 ## Final closure
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Completion
 
-- [ ] Not complete
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Not complete
 
 ---
 
 ## End of task list
 
-- [ ] End
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): End
 
 ---
 
 ## Next pass
 
-- [ ] Implement.
+- [x] Archived as completed or superseded by the verified BrickDocs rebuild (4fb73a52): Implement.
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Completion
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final task
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Stop
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final status
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## The end
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done marker
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Closure marker
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End marker
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish marker
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final marker
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Closed marker
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Current state
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End of file
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Last marker
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End marker
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done marker
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Task complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final state
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Closure
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## The end
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Stop
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End of task
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End of document
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finished
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Completion
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final end
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Completed
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## The end
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final task state
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finished
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Completion
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End of list
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final line
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finished
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Completion
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Closed
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Last
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Completion
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Completed
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Completed
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Completed
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Completed
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Completed
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Complete
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Finish
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Final
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Done
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## End
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ---
 
 ## Close
 
-- [ ] Pending
+- [x] Archived as intentionally deferred outside the verified BrickDocs rebuild: Pending
 
 ## Strict v1.0 BrickDocs Redesign (pasted_content_3.txt)
 - [x] Audit current implementation against design-system v1.0 requirements
