@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, it, expect } from "vitest";
 import {
   answerDocsQuestion,
   isPromptInjectionAttempt,
@@ -79,5 +79,14 @@ describe("docs assistant safety and retrieval", () => {
     });
     expect(result.status).toBe("boundary");
     expect(result.citations).toEqual([]);
+  });
+
+  it("logs unanswered questions when a query has no matching guide", async () => {
+    const result = await answerDocsQuestion({
+      question: "completelyunsupportedfeature xyz789",
+      edition: "shared",
+      requestKey: "vitest-unanswered",
+    });
+    expect(result.status).toBe("not-found");
   });
 });

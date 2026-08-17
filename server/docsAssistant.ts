@@ -1,5 +1,6 @@
-import { TRPCError } from "@trpc/server";
 import { publishedGuides, type DocsEdition } from "../client/src/data/guides";
+import { logUnansweredQuestion } from "./db";
+import { TRPCError } from "@trpc/server";
 
 export type AssistantStatus = "answer" | "boundary" | "not-found" | "limited";
 
@@ -234,14 +235,39 @@ export async function answerDocsQuestion(input: { question: string; edition: Doc
   checkRateLimit(input.requestKey ?? "public-docs");
 
   if (isPromptInjectionAttempt(question)) {
+    await logUnansweredQuestion({
+      edition: input.edition,
+      question,
+      reason: "prompt-injection",
+    }).catch(() => {});
     return boundaryResponse("The assistant ignores attempts to alter its instructions and can only use published BrickDocs content.");
   }
   if (isRestrictedDocsQuestion(question)) {
+    await logUnansweredQuestion({
+      edition: input.edition,
+      question,
+      reason: "restricted-host-command",
+    }).catch(() => {});
     return boundaryResponse("BrickDocs public guidance is intentionally limited to safe Web UI workflows.");
   }
 
   const matches = searchGuideContext(question, input.edition);
-  if (!matches.length) return noMatchResponse(input.edition);
+  if (!matches.length) {
+    await logUnansweredQuestion({
+      edition: input.edition,
+      question,
+      reason: "no-guide-match",
+    }).catch(() => {});
+    return noMatchResponse(input.edition);
+  }
 
-  return composeVerifiedAnswer(matches, input.edition);
+  const result = composeVerifiedAnswer(matches, input.edition);
+  if (result.status === "limited") {
+    await logUnansweredQuestion({
+      edition: input.edition,
+      question,
+      reason: "limited-confidence",
+    }).catch(() => {});
+  }
+  return result;
 }

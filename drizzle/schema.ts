@@ -1,4 +1,4 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
+import { mysqlTable, int, varchar, text, mysqlEnum, timestamp } from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -25,4 +25,26 @@ export const users = mysqlTable("users", {
 export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
 
-// TODO: Add your tables here
+export const assistantFeedback = mysqlTable("assistantFeedback", {
+  id: int("id").autoincrement().primaryKey(),
+  edition: varchar("edition", { length: 32 }).notNull(),
+  question: text("question").notNull(),
+  answer: text("answer").notNull(),
+  rating: mysqlEnum("rating", ["helpful", "unhelpful"]).notNull(),
+  comment: text("comment"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type AssistantFeedback = typeof assistantFeedback.$inferSelect;
+export type InsertAssistantFeedback = typeof assistantFeedback.$inferInsert;
+
+export const unansweredQuestions = mysqlTable("unansweredQuestions", {
+  id: int("id").autoincrement().primaryKey(),
+  edition: varchar("edition", { length: 32 }).notNull(),
+  question: text("question").notNull(),
+  reason: varchar("reason", { length: 64 }).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type UnansweredQuestion = typeof unansweredQuestions.$inferSelect;
+export type InsertUnansweredQuestion = typeof unansweredQuestions.$inferInsert;

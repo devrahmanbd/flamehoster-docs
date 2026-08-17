@@ -1,5 +1,4 @@
-/* Brick Docs design reminder: the assistant is a source-grounded Web UI guide helper; it never implies shell access or infrastructure control. */
-import { BookOpen, MessageCircleQuestion, Send, ShieldCheck, Sparkles, Volume2, VolumeX, X } from "lucide-react";
+import { BookOpen, Check, MessageCircleQuestion, Send, ShieldCheck, Sparkles, ThumbsDown, ThumbsUp, Volume2, VolumeX, X } from "lucide-react";
 import { FormEvent, MutableRefObject, useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "wouter";
 import { Streamdown } from "streamdown";
@@ -17,9 +16,11 @@ type AssistantStatus = "answer" | "boundary" | "not-found" | "limited";
 type AssistantMessage = {
   role: "user" | "assistant";
   content: string;
+  question?: string;
   citations?: Array<{ slug: string; title: string; section: string }>;
   status?: AssistantStatus;
   redirectReason?: string;
+  feedback?: "helpful" | "unhelpful";
 };
 
 const prompts: Record<DocsEdition, string[]> = {
@@ -65,6 +66,7 @@ function statusLabel(status?: AssistantStatus) {
 export default function DocsAssistantDrawer({ open, edition, onClose, onOpen }: DocsAssistantDrawerProps) {
   const [query, setQuery] = useState("");
   const [messages, setMessages] = useState<AssistantMessage[]>([]);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [soundEnabled, setSoundEnabled] = useState(() => {
     if (typeof window === "undefined") return false;
     return window.localStorage.getItem(SOUND_STORAGE_KEY) === "true";
@@ -73,8 +75,10 @@ export default function DocsAssistantDrawer({ open, edition, onClose, onOpen }: 
   const triggerRef = useRef<HTMLButtonElement>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
   const askDocs = trpc.docs.ask.useMutation();
+  const sendFeedback = trpc.docs.feedback.useMutation();
   const currentPrompts = useMemo(() => prompts[edition], [edition]);
   const activeEditionLabel = editionLabel(edition);
+
   const closeAssistant = () => {
     onClose();
     window.requestAnimationFrame(() => triggerRef.current?.focus());
@@ -87,6 +91,7 @@ export default function DocsAssistantDrawer({ open, edition, onClose, onOpen }: 
   useEffect(() => {
     setMessages([]);
     setQuery("");
+    setErrorMessage(null);
   }, [edition]);
 
   useEffect(() => {
@@ -107,10 +112,22 @@ export default function DocsAssistantDrawer({ open, edition, onClose, onOpen }: 
     });
   };
 
+  const handleFeedback = (index: number, rating: "helpful" | "unhelpful", message: AssistantMessage) => {
+    setMessages((current) => current.map((item, i) => (i === index ? { ...item, feedback: rating } : item)));
+    const lastUserQuery = messages.slice(0, index).reverse().find((m) => m.role === "user")?.content ?? "Direct question";
+    sendFeedback.mutate({
+      edition,
+      question: lastUserQuery,
+      answer: message.content,
+      rating,
+    });
+  };
+
   const submitQuestion = (event?: FormEvent) => {
     event?.preventDefault();
     const question = query.trim();
     if (!question || askDocs.isPending) return;
+    setErrorMessage(null);
     if (soundEnabled) playNotificationTone(audioContextRef, "send");
     setMessages((current) => [...current, { role: "user", content: question }]);
     setQuery("");
@@ -122,18 +139,15 @@ export default function DocsAssistantDrawer({ open, edition, onClose, onOpen }: 
           setMessages((current) => [...current, {
             role: "assistant",
             content: result.answer,
+            question,
             citations: result.citations,
             status: result.status,
             redirectReason: result.redirectReason,
           }]);
         },
-        onError: () => {
+        onError: (err) => {
           if (soundEnabled) playNotificationTone(audioContextRef, "receive");
-          setMessages((current) => [...current, {
-            role: "assistant",
-            content: "The documentation assistant is temporarily unavailable. Use search to open a verified Brick Web UI guide instead.",
-            status: "limited",
-          }]);
+          setErrorMessage(err.message || "Failed to reach the documentation assistant. Please check your connection and try again.");
         },
       },
     );
@@ -157,7 +171,7 @@ export default function DocsAssistantDrawer({ open, edition, onClose, onOpen }: 
 
           <div className="docs-assistant-edition" aria-label={`Assistant is answering from ${activeEditionLabel} guides`}><ShieldCheck size={14} /><span>{activeEditionLabel} source boundary</span></div>
           <div className="docs-assistant-thread" aria-busy={askDocs.isPending}>
-            {!messages.length && (
+            {!messages.length && !errorMessage && (
               <div className="docs-assistant-welcome">
                 <div className="docs-assistant-welcome__icon"><MessageCircleQuestion size={19} /></div>
                 <strong>What are you working on?</strong>
@@ -171,11 +185,44 @@ export default function DocsAssistantDrawer({ open, edition, onClose, onOpen }: 
                 <div className="docs-assistant-message__body"><Streamdown>{message.content}</Streamdown></div>
                 {message.redirectReason && message.status !== "answer" ? <p className="docs-assistant-reason">{message.redirectReason}</p> : null}
                 {message.citations?.length ? <div className="docs-assistant-citations" aria-label="Published guide sources">{message.citations.map((citation) => <Link key={`${citation.slug}-${citation.section}`} href={getGuideHref(citation.slug, edition)} onClick={closeAssistant}><BookOpen size={13} /><span>{citation.title}<small>{citation.section}</small></span></Link>)}</div> : null}
+                {message.role === "assistant" && (
+                  <div className="docs-assistant-feedback" aria-label="Rate this answer">
+                    <span>Was this helpful?</span>
+                    {message.feedback ? (
+                      <span className="docs-assistant-feedback__thanks"><Check size={13} /> Thanks for your feedback!</span>
+                    ) : (
+                      <div className="docs-assistant-feedback__actions">
+                        <button onClick={() => handleFeedback(index, "helpful", message)} aria-label="Helpful answer" title="Helpful"><ThumbsUp size={13} /></button>
+                        <button onClick={() => handleFeedback(index, "unhelpful", message)} aria-label="Unhelpful answer" title="Unhelpful"><ThumbsDown size={13} /></button>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             ))}
-            {askDocs.isPending && <div className="docs-assistant-message docs-assistant-message--assistant"><div className="docs-assistant-message__meta"><span>Brick Docs</span><small className="docs-assistant-status">Checking sources</small></div><div className="docs-assistant-thinking"><span>Reviewing the published guides</span><span className="docs-assistant-typing" aria-label="Brick Docs is typing"><i /><i /><i /></span></div></div>}
+            {askDocs.isPending && (
+              <div className="docs-assistant-message docs-assistant-message--assistant docs-assistant-loading-card">
+                <div className="docs-assistant-message__meta">
+                  <span>Brick Docs</span>
+                  <small className="docs-assistant-status">Checking sources</small>
+                </div>
+                <div className="docs-assistant-thinking">
+                  <span>Searching published guides and verifying boundaries</span>
+                  <span className="docs-assistant-typing" aria-label="Brick Docs is typing">
+                    <i /><i /><i />
+                  </span>
+                </div>
+                <div className="docs-assistant-shimmer-bar" aria-hidden="true" />
+              </div>
+            )}
+            {errorMessage && (
+              <div className="docs-assistant-error-banner" role="alert">
+                <span>{errorMessage}</span>
+                <button onClick={() => setErrorMessage(null)}>Dismiss</button>
+              </div>
+            )}
           </div>
-          <p className="sr-only" role="status" aria-live="polite">{askDocs.isPending ? "Brick Docs is reviewing published guides." : messages.at(-1)?.role === "assistant" ? "Brick Docs response is ready." : ""}</p>
+          <p className="sr-only" role="status" aria-live="polite">{askDocs.isPending ? "Brick Docs is reviewing published guides." : messages.at(-1)?.role === "assistant" ? "Brick Docs response is ready." : errorMessage ? errorMessage : ""}</p>
 
           <form className="docs-assistant-composer" onSubmit={submitQuestion}>
             <input ref={inputRef} value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Ask about a Web UI task…" aria-label="Ask Brick Docs a question" aria-describedby="brick-assistant-input-help" maxLength={600} />

@@ -1,5 +1,13 @@
 {
   "version": "7",
   "dialect": "mysql",
-  "entries": []
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1786973740112,
+      "tag": "0000_faulty_risque",
+      "breakpoints": true
+    }
+  ]
 }
