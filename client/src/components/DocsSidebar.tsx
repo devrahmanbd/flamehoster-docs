@@ -15,10 +15,12 @@ export default function DocsSidebar({ edition, activeSlug, isOpen, onClose }: Do
   const editionLabel = editionOptions.find((option) => option.value === edition)?.label ?? "Shared Hosting";
   const drawerRef = useRef<HTMLElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const previouslyFocusedRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     if (!isOpen || window.matchMedia("(min-width: 901px)").matches) return;
 
+    previouslyFocusedRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     const focusTimer = window.setTimeout(() => closeButtonRef.current?.focus(), 0);
@@ -46,6 +48,11 @@ export default function DocsSidebar({ edition, activeSlug, isOpen, onClose }: Do
       window.clearTimeout(focusTimer);
       document.body.style.overflow = previousOverflow;
       document.removeEventListener("keydown", trapFocus);
+      const returnTarget = previouslyFocusedRef.current;
+      if (returnTarget?.isConnected) {
+        window.setTimeout(() => returnTarget.focus(), 0);
+      }
+      previouslyFocusedRef.current = null;
     };
   }, [isOpen, onClose]);
 

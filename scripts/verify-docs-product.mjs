@@ -47,12 +47,22 @@ try {
 
   const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, isMobile: true });
   await mobile.goto(`${baseUrl}/docs/shared`, { waitUntil: "networkidle" });
-  await mobile.getByRole("button", { name: "Open documentation navigation" }).click();
+  const menuButton = mobile.getByRole("button", { name: "Open documentation navigation" });
+  await menuButton.click();
   const drawer = mobile.locator("#docs-sidebar");
   await assert(await drawer.isVisible(), "Mobile documentation drawer did not open");
   await assert((await drawer.getAttribute("aria-modal")) === "true", "Mobile documentation drawer is missing modal semantics");
-  await drawer.getByRole("button", { name: "Close navigation menu" }).click();
-  await mobile.getByRole("button", { name: "Open documentation navigation" }).waitFor();
+  await assert(await drawer.getByRole("button", { name: "Close navigation menu" }).evaluate((element) => element === document.activeElement), "Drawer did not move initial keyboard focus to its close control");
+
+  await mobile.keyboard.press("Escape");
+  await assert(!(await drawer.getAttribute("aria-modal")), "Escape did not dismiss the mobile documentation drawer");
+  await assert(await menuButton.evaluate((element) => element === document.activeElement), "Drawer did not restore focus to the navigation trigger after Escape");
+
+  await menuButton.click();
+  await drawer.getByRole("button", { name: "Close navigation menu" }).waitFor();
+  await mobile.locator(".docs-nav-scrim").click({ position: { x: 380, y: 300 } });
+  await assert(!(await drawer.getAttribute("aria-modal")), "Scrim click did not dismiss the mobile documentation drawer");
+  await assert(await menuButton.evaluate((element) => element === document.activeElement), "Drawer did not restore focus to the navigation trigger after scrim dismissal");
   await assertNoHorizontalOverflow(mobile, "Shared mobile homepage");
   await mobile.close();
   await desktop.close();

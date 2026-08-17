@@ -13235,3 +13235,13 @@ This task list may be extended with smaller implementation items, but existing h
 
 - [x] Commit the verified BrickDocs redesign and push the active branch to its configured GitHub remote.
 - [x] Push only BrickDocs `main` to `https://github.com/devrahmanbd/flamehoster-docs` without modifying the Brick Hosting Panel repository or its branches.
+
+## BrickDocs and Panel Alignment Audit
+
+- [x] Inventory verified Brick panel edition, role, feature, safety-boundary, and workflow evidence from the governed panel repository.
+- [x] Inventory BrickDocs public routes, guide metadata, edition claims, and public-content boundary.
+- [x] Classify every material documentation claim as aligned, missing, stale, ambiguous, or unsafe against panel evidence.
+- [x] Validate representative live public routes and record an evidence-based remediation priority list.
+- [x] Deliver the alignment report without changing public product claims until each correction is verified.
+- [x] Confirm the homepage has no duplicate edition-selection surface outside the header switcher and preserve that single-control contract.
+- [x] Extend and run mobile-drawer verification for initial focus, Escape dismissal, scrim dismissal, and focus restoration to the menu control.
