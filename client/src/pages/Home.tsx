@@ -90,7 +90,7 @@ export default function Home() {
           {/* Prime Intellect style domain-driven discovery grid */}
           <div className="kb-domain-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px", marginBottom: "40px" }}>
             {docsGroups.map((group, idx) => {
-              const representativeGuide = allGuides.find((g) => group.slugs.includes(g.slug));
+              const representativeGuide = allGuides.find((g) => (group.slugs as readonly string[]).includes(g.slug));
               return (
                 <div
                   key={group.label}

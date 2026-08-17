@@ -13201,3 +13201,10 @@ This task list may be extended with smaller implementation items, but existing h
 ## Close
 
 - [ ] Pending
+
+## Strict v1.0 BrickDocs Redesign (pasted_content_3.txt)
+- [x] Audit current implementation against design-system v1.0 requirements
+- [x] Enforce user-only Shared-edition content boundary (remove host/terminal commands from public guides)
+- [x] Redesign header, persistent sidebar, mobile drawer, and search interface to match calm predictability
+- [x] Implement editorial reading measure, code block presentation, and structured metadata
+- [x] Run responsive script, tests, build, and save verified project version

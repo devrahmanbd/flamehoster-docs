@@ -41,7 +41,7 @@ try {
     }
 
     if (viewport.width <= 900) {
-      const toggle = page.locator(".kb-mobile-toggle");
+      const toggle = page.locator("header button[aria-label='Open menu']");
       await toggle.click();
       await page.locator(".kb-sidebar.kb-sidebar--open").waitFor();
       const openState = await page.evaluate(() => {
