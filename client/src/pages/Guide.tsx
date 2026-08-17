@@ -1,102 +1,268 @@
-/* Brick Docs design reminder: the article is the product—keep the center measure calm, make navigation obvious, and never imply public terminal access. */
-import { ArrowLeft, ArrowRight, CheckCircle2, Clipboard, Copy, FileText, Link2, Terminal, Wrench } from "lucide-react";
-import gsap from "gsap";
-import { useEffect, useMemo, useState } from "react";
-import { Link, useLocation, useRoute } from "wouter";
+/* OpenHands-style professional documentation guide reader page */
+import { ArrowLeft, ArrowRight, CheckCircle2, ChevronRight, Clipboard, Copy, FileText, Link2, Terminal, Wrench } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "wouter";
 import DocsAssistantDrawer from "../components/DocsAssistantDrawer";
 import DocsHeader from "../components/DocsHeader";
 import DocsSearchDialog from "../components/DocsSearchDialog";
 import DocsSidebar from "../components/DocsSidebar";
 import SeoMeta from "../components/SeoMeta";
-import { getGuideHref, getNextGuide, getPreviousGuide, findGuide, type DocsVersion } from "../lib/docs";
+import { allGuides } from "../data/guides";
+import { findGuide, getGuideHref, type DocsVersion } from "../lib/docs";
 
-export default function Guide() {
-  const [, versionParams] = useRoute("/docs/:version/:slug");
-  const [, shortParams] = useRoute("/docs/:slug");
+function ChevronSlash() {
+  return <ChevronRight size={13} style={{ color: "var(--kb-text-faint)" }} aria-hidden="true" />;
+}
+
+interface GuideProps {
+  slug: string;
+  version?: DocsVersion;
+}
+
+export default function Guide({ slug, version = "v0.9" }: GuideProps) {
   const [, navigate] = useLocation();
-  const slug = versionParams?.slug ?? shortParams?.slug ?? "getting-started";
-  const version: DocsVersion = versionParams?.version === "v1.0-beta" ? "v1.0-beta" : "v0.9";
-  const guide = useMemo(() => findGuide(slug), [slug]);
+  const guide = findGuide(slug);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-  const [assistantOpen, setAssistantOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+  const [assistantOpen, setAssistantOpen] = useState(false);
   const [pageCopied, setPageCopied] = useState(false);
-  const nextGuide = getNextGuide(guide.slug);
-  const previousGuide = getPreviousGuide(guide.slug);
+  const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+  const [edition, setEdition] = useState<"shared" | "dedicated">("shared");
+
+  const currentIndex = allGuides.findIndex((item) => item.slug === guide.slug);
+  const previousGuide = currentIndex > 0 ? allGuides[currentIndex - 1] : null;
+  const nextGuide = currentIndex >= 0 && currentIndex < allGuides.length - 1 ? allGuides[currentIndex + 1] : null;
 
   useEffect(() => {
-    const root = document.querySelector<HTMLElement>(".kb-main--article");
-    if (!root || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const context = gsap.context(() => {
-      gsap.fromTo(
-        [".kb-article__meta", ".kb-article h1", ".kb-article__intro", ".kb-article__tools", ".kb-article-section", ".kb-article-callout", ".kb-article-footer"],
-        { y: 12 },
-        { y: 0, duration: 0.56, stagger: 0.045, ease: "power3.out", clearProps: "transform" },
-      );
-    }, root);
-    return () => context.revert();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [guide.slug]);
 
-  useEffect(() => {
-    const onKeyDown = (event: KeyboardEvent) => {
-      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
-        event.preventDefault();
-        setSearchOpen(true);
-      }
-      if (event.key === "Escape") {
-        setSearchOpen(false);
-        setAssistantOpen(false);
-      }
-    };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, []);
-
-  const copyCode = async (code: string, index: number) => {
-    await navigator.clipboard?.writeText(code);
-    setCopiedIndex(index);
-    window.setTimeout(() => setCopiedIndex(null), 1500);
+  const copyCode = async (text: string, index: number) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedIndex(index);
+      window.setTimeout(() => setCopiedIndex(null), 1500);
+    } catch {
+      // Fallback
+    }
   };
 
   const copyPageLink = async () => {
-    await navigator.clipboard?.writeText(window.location.href);
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+    } catch {
+      // Fallback
+    }
     setPageCopied(true);
     window.setTimeout(() => setPageCopied(false), 1500);
   };
 
-  const changeVersion = (nextVersion: DocsVersion) => navigate(getGuideHref(guide.slug, nextVersion));
-
   return (
-    <div className="kb-shell">
-      <SeoMeta title={guide.title} description={guide.intro} path={`/docs/${version}/${guide.slug}`} type="article" section={guide.category} keywords={[guide.title, guide.category, "Brick Web UI", "hosting panel", "operator guide"]} />
-      <DocsHeader isGuide mobileOpen={mobileOpen} onToggleMobile={() => setMobileOpen((open) => !open)} onOpenSearch={() => setSearchOpen(true)} />
-      <div className={`kb-layout kb-layout--guide ${sidebarCollapsed ? "kb-layout--sidebar-collapsed" : ""}`}>
-        <DocsSidebar version={version} activeSlug={guide.slug} open={mobileOpen} collapsed={sidebarCollapsed} onToggleCollapse={() => setSidebarCollapsed((collapsed) => !collapsed)} onNavigate={() => setMobileOpen(false)} onVersionChange={changeVersion} />
-        <button className="kb-sidebar-scrim" aria-label="Close navigation" aria-hidden={!mobileOpen} tabIndex={mobileOpen ? 0 : -1} onClick={() => setMobileOpen(false)} />
-        <main className="kb-main kb-main--article">
-          <div className="kb-breadcrumbs"><Link href="/docs">Brick Docs</Link><ChevronSlash /><Link href={`/docs/${version}/${guide.slug}`}>{version === "v0.9" ? "Stable" : "Beta"}</Link><ChevronSlash /><span>{guide.title}</span></div>
-          <article className="kb-article">
-            <div className="kb-article__meta"><span className="kb-article-tag">{guide.eyebrow}</span><span>{guide.read} read</span><span className="kb-article-status"><i /> {version === "v0.9" ? "Stable operator guide" : "Beta preview"}</span></div>
-            <h1>{guide.title}</h1>
-            <p className="kb-article__intro">{guide.intro}</p>
-            <div className="kb-article__tools"><button className="kb-article-tool" onClick={copyPageLink}>{pageCopied ? <Clipboard size={15} /> : <Link2 size={15} />} {pageCopied ? "Link copied" : "Copy link"}</button><button className="kb-article-tool" onClick={() => setAssistantOpen(true)}><FileText size={15} /> Ask about this guide</button></div>
-            <div className="kb-article__rule" />
-            {guide.sections.map((section, index) => <section className="kb-article-section kb-card-cinematic" id={`section-${index + 1}`} key={section.title}><div className="kb-article-section__number">{String(index + 1).padStart(2, "0")}</div><div className="kb-article-section__body"><h2>{section.title}</h2><p>{section.body}</p>{section.bullets && <ul className="kb-check-list">{section.bullets.map((bullet) => <li key={bullet}><CheckCircle2 size={16} /><span>{bullet}</span></li>)}</ul>}{section.code && <div className="kb-reference-block"><div className="kb-reference-block__header"><span><Terminal size={14} /> Reference snippet</span><button onClick={() => copyCode(section.code!, index)}>{copiedIndex === index ? <Clipboard size={14} /> : <Copy size={14} />}{copiedIndex === index ? "Copied" : "Copy"}</button></div><pre><code>{section.code}</code></pre><small>Examples are documentation references only. This site does not provide terminal access.</small></div>}</div></section>)}
-            <div className="kb-article-callout"><Wrench size={18} /><div><strong>Operate from the Brick panel</strong><span>Use the corresponding panel screen and its visible status indicators to confirm changes. Keep recovery checkpoints and operator notes with every production change.</span></div></div>
-            <footer className="kb-article-footer"><div className="kb-article-footer__nav">{previousGuide ? <Link href={getGuideHref(previousGuide.slug, version)} className="kb-next-link kb-next-link--previous kb-card-cinematic"><span><ArrowLeft size={15} /> Previous</span><strong>{previousGuide.title}</strong></Link> : <span />}{nextGuide ? <Link href={getGuideHref(nextGuide.slug, version)} className="kb-next-link kb-card-cinematic"><span>Next guide <ArrowRight size={15} /></span><strong>{nextGuide.title}</strong></Link> : <span />}</div><p><button className="kb-text-button" onClick={copyPageLink}>{pageCopied ? "Link copied" : "Copy this page"}</button></p></footer>
+    <div style={{ minHeight: "100vh", backgroundColor: "var(--kb-bg)", color: "var(--kb-text)" }}>
+      <SeoMeta
+        title={guide.title}
+        description={guide.intro}
+        path={`/docs/${version}/${guide.slug}`}
+        type="article"
+        section={guide.category}
+        keywords={[guide.title, guide.category, "Brick Web UI", "hosting panel", "operator guide"]}
+      />
+      <DocsHeader
+        mobileOpen={mobileOpen}
+        onToggleMobile={() => setMobileOpen(!mobileOpen)}
+        onOpenSearch={() => setSearchOpen(true)}
+        edition={edition}
+        onEditionChange={setEdition}
+      />
+      <div className="kb-layout">
+        <DocsSidebar isOpen={mobileOpen} edition={edition} />
+        <main className="kb-main-content">
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "13px", color: "var(--kb-text-muted)", marginBottom: "20px" }}>
+            <Link href="/" style={{ color: "var(--kb-text-muted)", textDecoration: "none" }}>Brick Docs</Link>
+            <ChevronSlash />
+            <span>{guide.category}</span>
+            <ChevronSlash />
+            <span style={{ color: "var(--kb-text)", fontWeight: "500" }}>{guide.title}</span>
+          </div>
+
+          <article style={{ lineHeight: "1.7" }}>
+            <div style={{ fontSize: "12px", fontWeight: "600", textTransform: "uppercase", letterSpacing: "0.05em", color: "var(--kb-accent)", marginBottom: "8px" }}>
+              {guide.eyebrow}
+            </div>
+            <h1 style={{ fontSize: "32px", fontWeight: "800", color: "var(--kb-text)", letterSpacing: "-0.02em", marginBottom: "16px" }}>
+              {guide.title}
+            </h1>
+            <p style={{ fontSize: "16px", color: "var(--kb-text-muted)", marginBottom: "24px" }}>
+              {guide.intro}
+            </p>
+
+            <div style={{ display: "flex", gap: "12px", marginBottom: "32px", paddingBottom: "24px", borderBottom: "1px solid var(--kb-border)" }}>
+              <button
+                onClick={copyPageLink}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  padding: "6px 12px",
+                  borderRadius: "6px",
+                  border: "1px solid var(--kb-border)",
+                  background: "var(--kb-surface-soft)",
+                  color: "var(--kb-text)",
+                  fontSize: "13px",
+                  cursor: "pointer",
+                }}
+              >
+                <Link2 size={14} /> {pageCopied ? "Link copied" : "Copy link"}
+              </button>
+              <button
+                onClick={() => setAssistantOpen(true)}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  padding: "6px 12px",
+                  borderRadius: "6px",
+                  border: "1px solid var(--kb-border)",
+                  background: "var(--kb-surface-soft)",
+                  color: "var(--kb-text)",
+                  fontSize: "13px",
+                  cursor: "pointer",
+                }}
+              >
+                <FileText size={14} /> Ask assistant
+              </button>
+            </div>
+
+            {guide.sections.map((section, index) => (
+              <section key={section.title} id={`section-${index + 1}`} style={{ marginBottom: "40px" }}>
+                <h2 style={{ fontSize: "20px", fontWeight: "700", color: "var(--kb-text)", marginBottom: "12px" }}>
+                  {index + 1}. {section.title}
+                </h2>
+                <p style={{ fontSize: "15px", color: "var(--kb-text-muted)", marginBottom: "16px" }}>
+                  {section.body}
+                </p>
+
+                {section.bullets && (
+                  <ul style={{ listStyle: "disc", paddingLeft: "20px", marginBottom: "16px", color: "var(--kb-text-muted)" }}>
+                    {section.bullets.map((bullet) => (
+                      <li key={bullet} style={{ marginBottom: "6px", fontSize: "14px" }}>{bullet}</li>
+                    ))}
+                  </ul>
+                )}
+
+                {section.code && (
+                  <div style={{
+                    backgroundColor: "var(--kb-code-bg)",
+                    border: "1px solid var(--kb-border)",
+                    borderRadius: "6px",
+                    overflow: "hidden",
+                    marginBottom: "16px",
+                  }}>
+                    <div style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      padding: "8px 12px",
+                      backgroundColor: "var(--kb-surface-soft)",
+                      borderBottom: "1px solid var(--kb-border)",
+                      fontSize: "12px",
+                      color: "var(--kb-text-muted)",
+                    }}>
+                      <span>Terminal / Configuration Example</span>
+                      <button
+                        onClick={() => copyCode(section.code!, index)}
+                        style={{
+                          background: "transparent",
+                          border: "none",
+                          color: "var(--kb-accent)",
+                          cursor: "pointer",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "4px",
+                          fontSize: "12px",
+                          fontWeight: "600",
+                        }}
+                      >
+                        {copiedIndex === index ? <Clipboard size={13} /> : <Copy size={13} />}
+                        {copiedIndex === index ? "Copied" : "Copy"}
+                      </button>
+                    </div>
+                    <pre style={{ padding: "16px", margin: 0, overflowX: "auto", fontFamily: "var(--kb-font-mono)", fontSize: "13px", color: "var(--kb-text)" }}>
+                      <code>{section.code}</code>
+                    </pre>
+                  </div>
+                )}
+              </section>
+            ))}
+
+            <div style={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginTop: "48px",
+              paddingTop: "24px",
+              borderTop: "1px solid var(--kb-border)",
+            }}>
+              {previousGuide ? (
+                <Link
+                  href={getGuideHref(previousGuide.slug, version)}
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "4px",
+                    textDecoration: "none",
+                    padding: "12px 16px",
+                    borderRadius: "6px",
+                    backgroundColor: "var(--kb-surface)",
+                    border: "1px solid var(--kb-border)",
+                  }}
+                >
+                  <span style={{ fontSize: "12px", color: "var(--kb-text-faint)", display: "flex", alignItems: "center", gap: "4px" }}>
+                    <ArrowLeft size={12} /> Previous guide
+                  </span>
+                  <span style={{ fontSize: "14px", fontWeight: "600", color: "var(--kb-text)" }}>{previousGuide.title}</span>
+                </Link>
+              ) : <div />}
+
+              {nextGuide ? (
+                <Link
+                  href={getGuideHref(nextGuide.slug, version)}
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "4px",
+                    textDecoration: "none",
+                    padding: "12px 16px",
+                    borderRadius: "6px",
+                    backgroundColor: "var(--kb-surface)",
+                    border: "1px solid var(--kb-border)",
+                    textAlign: "right",
+                  }}
+                >
+                  <span style={{ fontSize: "12px", color: "var(--kb-text-faint)", display: "flex", alignItems: "center", gap: "4px", justifyContent: "flex-end" }}>
+                    Next guide <ArrowRight size={12} />
+                  </span>
+                  <span style={{ fontSize: "14px", fontWeight: "600", color: "var(--kb-text)" }}>{nextGuide.title}</span>
+                </Link>
+              ) : <div />}
+            </div>
           </article>
         </main>
-        <aside className="kb-toc" aria-label="On this page"><div className="kb-toc__head"><div><div className="kb-toc__label">GUIDE MAP</div><strong>On this page</strong></div><span className="kb-toc__count">{String(guide.sections.length).padStart(2, "0")} SECTIONS</span></div><p className="kb-toc__intro">Follow the operator checkpoints in sequence, then confirm the visible panel state.</p><div className="kb-toc__progress" aria-hidden="true"><span style={{ width: `${Math.min(100, Math.max(24, guide.sections.length * 18))}%` }} /></div><nav>{guide.sections.map((section, index) => <a href={`#section-${index + 1}`} key={section.title}><span>{String(index + 1).padStart(2, "0")}</span><b>{section.title}</b><i>↗</i></a>)}</nav><div className="kb-toc__divider" /><div className="kb-toc__status"><span>DOCUMENT STATUS</span><strong>{version === "v0.9" ? "Stable operator guide" : "Beta preview"}</strong><p>Written for administrators operating Brick through the panel.</p></div></aside>
       </div>
-      <DocsSearchDialog open={searchOpen} query={searchQuery} version={version} onQueryChange={setSearchQuery} onClose={() => setSearchOpen(false)} />
-      <DocsAssistantDrawer open={assistantOpen} version={version} onOpen={() => setAssistantOpen(true)} onClose={() => setAssistantOpen(false)} />
+
+      <DocsSearchDialog
+        open={searchOpen}
+        query={searchQuery}
+        version={version}
+        onQueryChange={setSearchQuery}
+        onClose={() => setSearchOpen(false)}
+      />
+      <DocsAssistantDrawer
+        open={assistantOpen}
+        version={version}
+        onOpen={() => setAssistantOpen(true)}
+        onClose={() => setAssistantOpen(false)}
+      />
     </div>
   );
-}
-
-function ChevronSlash() {
-  return <span className="kb-breadcrumb-separator">/</span>;
 }

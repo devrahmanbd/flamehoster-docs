@@ -13208,3 +13208,12 @@ This task list may be extended with smaller implementation items, but existing h
 - [x] Redesign header, persistent sidebar, mobile drawer, and search interface to match calm predictability
 - [x] Implement editorial reading measure, code block presentation, and structured metadata
 - [x] Run responsive script, tests, build, and save verified project version
+
+## Corrective OpenHands-Style Documentation Redesign
+- [x] Audit reported failures (low contrast, fancy distractions, bad desktop sidebar, broken mobile view, misplaced badge)
+- [ ] Implement OpenHands-style clean documentation shell with professional high-contrast typography and clear separation of concerns
+- [ ] Add explicit Edition Switcher (Shared Edition vs Dedicated Edition) in the sidebar/header context area
+- [ ] Rebuild desktop sidebar into a clean, structured documentation navigation tree with professional font weights and hover states
+- [ ] Rebuild mobile drawer into a robust, readable, full-height overlay with clean padding and touch targets
+- [ ] Remove all unnecessary widgets (Quick Stats, fancy grids, glowing backgrounds) in favor of high-density, calm documentation content
+- [ ] Build, verify responsive behavior, and save verified checkpoint
