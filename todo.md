@@ -13233,5 +13233,5 @@ This task list may be extended with smaller implementation items, but existing h
 
 ## GitHub Delivery
 
-- [ ] Commit the verified BrickDocs redesign and push the active branch to its configured GitHub remote.
-- [ ] Push only BrickDocs `main` to `https://github.com/devrahmanbd/flamehoster-docs` without modifying the Brick Hosting Panel repository or its branches.
+- [x] Commit the verified BrickDocs redesign and push the active branch to its configured GitHub remote.
+- [x] Push only BrickDocs `main` to `https://github.com/devrahmanbd/flamehoster-docs` without modifying the Brick Hosting Panel repository or its branches.
