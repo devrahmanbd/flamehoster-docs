@@ -124,3 +124,82 @@ body {
     padding: 24px 20px;
   }
 }
+
+
+/* Ambient Motion Layer & Pointer-Tracking Background Grid */
+.kb-aurora {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0.9;
+}
+
+.kb-framer-grid {
+  position: absolute;
+  inset: -100px;
+  background-image: linear-gradient(to right, rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.3s ease;
+}
+
+.light .kb-framer-grid {
+  background-image: linear-gradient(to right, rgba(2, 132, 199, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(2, 132, 199, 0.05) 1px, transparent 1px);
+}
+
+.kb-luminous-glow {
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(14, 165, 233, 0.04) 45%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  will-change: transform;
+}
+
+.light .kb-luminous-glow {
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.10) 0%, rgba(3, 105, 161, 0.03) 45%, transparent 70%);
+}
+
+.kb-cursor-trail {
+  position: absolute;
+  inset: 0;
+}
+
+.kb-cursor-particle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--trail-size, 4px);
+  height: var(--trail-size, 4px);
+  border-radius: 50%;
+  background-color: var(--kb-accent);
+  opacity: 0;
+  transform: translate3d(-999px, -999px, 0);
+}
+
+@keyframes particleDrift {
+  0% {
+    opacity: 0.75;
+    transform: translate3d(var(--trail-x), var(--trail-y), 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(calc(var(--trail-x) + var(--trail-drift-x)), calc(var(--trail-y) + var(--trail-drift-y)), 0) scale(0.3);
+  }
+}
+
+.kb-cursor-particle.is-emitting {
+  animation: particleDrift 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Ensure document content sits above motion layer */
+.kb-shell, .kb-layout, header, footer {
+  position: relative;
+  z-index: 1;
+}
