@@ -1,4 +1,4 @@
-import { Activity, ArrowRight, BadgeCheck, BookOpen, ChevronRight, Database, ExternalLink, FileText, Gauge, Layers3, LockKeyhole, RefreshCw, Search, Server, ShieldCheck, Sparkles, Workflow } from "lucide-react";
+import { ArrowRight, BookOpen, ChevronRight, Database, ExternalLink, FileText, Gauge, Layers3, LockKeyhole, RefreshCw, Search, Server, ShieldCheck, Sparkles, Workflow, Terminal } from "lucide-react";
 import gsap from "gsap";
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "wouter";
@@ -8,7 +8,7 @@ import DocsSearchDialog from "../components/DocsSearchDialog";
 import DocsSidebar from "../components/DocsSidebar";
 import SeoMeta from "../components/SeoMeta";
 import { allGuides } from "../data/guides";
-import { getGuideHref, type DocsVersion } from "../lib/docs";
+import { getGuideHref, docsGroups, type DocsVersion } from "../lib/docs";
 
 export default function Home() {
   const [version, setVersion] = useState<DocsVersion>("v0.9");
@@ -37,9 +37,9 @@ export default function Home() {
     if (!root || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const context = gsap.context(() => {
       gsap.fromTo(
-        [".kb-kb-header", ".kb-category-tabs", ".kb-guide-list-item", ".kb-kb-sidebar-panel"],
-        { y: 10 },
-        { y: 0, duration: 0.45, stagger: 0.03, ease: "power3.out", clearProps: "transform" },
+        [".kb-kb-header", ".kb-domain-grid", ".kb-start-here", ".kb-guide-list-item", ".kb-kb-sidebar-panel"],
+        { y: 12, opacity: 0.92 },
+        { y: 0, opacity: 1, duration: 0.5, stagger: 0.04, ease: "power3.out", clearProps: "transform" },
       );
     }, root);
     return () => context.revert();
@@ -67,24 +67,107 @@ export default function Home() {
       <div className={`kb-layout kb-layout--home ${sidebarCollapsed ? "kb-layout--sidebar-collapsed" : ""}`}>
         <DocsSidebar version={version} open={mobileOpen} collapsed={sidebarCollapsed} onToggleCollapse={() => setSidebarCollapsed((collapsed) => !collapsed)} onNavigate={() => setMobileOpen(false)} onVersionChange={setVersion} />
         <button className="kb-sidebar-scrim" aria-label="Close navigation" aria-hidden={!mobileOpen} tabIndex={mobileOpen ? 0 : -1} onClick={() => setMobileOpen(false)} />
-        <main className="kb-main kb-main--home" style={{ padding: "36px 48px 64px", maxWidth: "1280px" }}>
-          <div className="kb-breadcrumbs" style={{ marginBottom: "20px" }}>
+        <main className="kb-main kb-main--home" style={{ padding: "40px 52px 72px", maxWidth: "1320px", margin: "0 auto" }}>
+          <div className="kb-breadcrumbs" style={{ marginBottom: "24px" }}>
             <Link href="/">Brick Knowledge Base</Link>
             <ChevronRight size={14} />
-            <span>Documentation Index</span>
+            <span>Documentation Hub</span>
           </div>
 
-          <div className="kb-kb-header" style={{ marginBottom: "32px", display: "grid", gap: "12px" }}>
+          <div className="kb-kb-header" style={{ marginBottom: "36px", display: "grid", gap: "16px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
               <span className="kb-status-dot" />
-              <span className="kb-sidebar__topline" style={{ margin: 0 }}>Brick Knowledge Base · {version === "v0.9" ? "Stable v0.9" : "Beta v1.0"}</span>
+              <span className="kb-sidebar__topline" style={{ margin: 0 }}>Brick Knowledge Base · {version === "v0.9" ? "Stable v0.9 (Shared & Core)" : "Beta v1.0"}</span>
             </div>
-            <h1 style={{ fontSize: "36px", fontWeight: "700", fontFamily: "var(--kb-font-display)", letterSpacing: "-.04em", color: "var(--kb-ink-strong)", margin: 0 }}>
+            <h1 style={{ fontSize: "clamp(36px, 5vw, 52px)", fontWeight: "700", fontFamily: "var(--kb-font-display)", letterSpacing: "-.04em", color: "var(--kb-ink-strong)", margin: 0, lineHeight: "1.1" }}>
               Documentation Index & Operator Guides
             </h1>
-            <p style={{ color: "var(--kb-muted)", fontSize: "16px", lineHeight: "1.6", maxWidth: "780px", margin: 0 }}>
-              Comprehensive, task-oriented reference manuals for managing shared hosting tenants, configuring databases, securing domains with SSL/TLS, and executing point-in-time recovery entirely through the Brick Web UI.
+            <p style={{ color: "var(--kb-muted)", fontSize: "17px", lineHeight: "1.65", maxWidth: "820px", margin: 0 }}>
+              Comprehensive, task-oriented reference manuals for managing shared hosting tenants, configuring secure MySQL/PostgreSQL databases, binding SSL/TLS certificates, and executing point-in-time recovery entirely through the Brick Web UI.
             </p>
+          </div>
+
+          {/* Prime Intellect style domain-driven discovery grid */}
+          <div className="kb-domain-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px", marginBottom: "40px" }}>
+            {docsGroups.map((group, idx) => {
+              const representativeGuide = allGuides.find((g) => group.slugs.includes(g.slug));
+              return (
+                <div
+                  key={group.label}
+                  className="kb-card-cinematic"
+                  style={{
+                    padding: "24px",
+                    borderRadius: "14px",
+                    border: "1px solid var(--kb-line)",
+                    background: "var(--kb-surface)",
+                    display: "grid",
+                    gap: "12px",
+                    position: "relative",
+                    overflow: "hidden",
+                  }}
+                >
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <span style={{ fontSize: "11px", fontFamily: "var(--kb-font-mono)", padding: "2px 8px", borderRadius: "6px", background: "var(--kb-accent-wash)", color: "var(--kb-accent-strong)", fontWeight: "600" }}>
+                      DOMAIN 0{idx + 1}
+                    </span>
+                    <span style={{ fontSize: "12px", fontFamily: "var(--kb-font-mono)", color: "var(--kb-faint)" }}>{group.slugs.length} guides</span>
+                  </div>
+                  <h3 style={{ fontSize: "18px", fontWeight: "600", fontFamily: "var(--kb-font-display)", color: "var(--kb-ink-strong)", margin: 0 }}>
+                    {group.label}
+                  </h3>
+                  <p style={{ fontSize: "13px", color: "var(--kb-muted)", margin: 0, lineHeight: "1.5" }}>
+                    {group.description}
+                  </p>
+                  {representativeGuide && (
+                    <div style={{ marginTop: "8px", paddingTop: "12px", borderTop: "1px solid var(--kb-line)" }}>
+                      <Link
+                        href={getGuideHref(representativeGuide.slug, version)}
+                        style={{ display: "flex", alignItems: "center", justifyContent: "space-between", fontSize: "13px", color: "var(--kb-accent-strong)", textDecoration: "none", fontWeight: "500" }}
+                      >
+                        <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", marginRight: "8px" }}>Start with: {representativeGuide.title}</span>
+                        <ArrowRight size={14} />
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Explicit Start Here Onboarding Path */}
+          <div className="kb-start-here kb-card-cinematic" style={{ padding: "28px", borderRadius: "16px", border: "1px solid var(--kb-line)", background: "var(--kb-surface-soft)", marginBottom: "40px", display: "grid", gap: "20px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px" }}>
+              <div>
+                <span className="kb-sidebar__topline" style={{ margin: "0 0 6px 0" }}>Operator Onboarding Pathway</span>
+                <h2 style={{ fontSize: "22px", fontWeight: "600", fontFamily: "var(--kb-font-display)", color: "var(--kb-ink-strong)", margin: 0 }}>
+                  From First Boot to Production Multi-Tenancy in Four Steps
+                </h2>
+              </div>
+              <span style={{ fontSize: "12px", fontFamily: "var(--kb-font-mono)", color: "var(--kb-faint)", padding: "4px 10px", border: "1px solid var(--kb-line)", borderRadius: "6px", background: "var(--kb-surface)" }}>
+                Zero Terminal Access Policy Enforced
+              </span>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "16px" }}>
+              {[
+                { step: "01", title: "Access & Auth", desc: "Log into the secure Brick Web UI with enterprise credentials.", slug: "navigating-the-brick-web-panel" },
+                { step: "02", title: "Deploy Application", desc: "Select runtime stacks and map domains without shell access.", slug: "deploy-containerized-applications-without-guessing" },
+                { step: "03", title: "Databases & Storage", desc: "Provision isolated MySQL databases and managed directories.", slug: "provision-and-manage-high-performance-databases" },
+                { step: "04", title: "Recovery & Backups", desc: "Verify point-in-time recovery and automated sentinel alerts.", slug: "back-up-and-restore-websites-databases-and-host-state" },
+              ].map((s) => (
+                <Link
+                  key={s.step}
+                  href={getGuideHref(s.slug, version)}
+                  style={{ padding: "16px", borderRadius: "12px", background: "var(--kb-surface)", border: "1px solid var(--kb-line)", textDecoration: "none", display: "grid", gap: "8px", transition: "all 160ms ease" }}
+                >
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <span style={{ fontFamily: "var(--kb-font-mono)", fontSize: "12px", fontWeight: "700", color: "var(--kb-accent-strong)" }}>STEP {s.step}</span>
+                    <ArrowRight size={14} style={{ color: "var(--kb-faint)" }} />
+                  </div>
+                  <strong style={{ fontSize: "14px", color: "var(--kb-ink-strong)", fontFamily: "var(--kb-font-display)" }}>{s.title}</strong>
+                  <p style={{ fontSize: "12px", color: "var(--kb-muted)", margin: 0, lineHeight: "1.4" }}>{s.desc}</p>
+                </Link>
+              ))}
+            </div>
           </div>
 
           <div className="kb-kb-toolbar" style={{ display: "flex", flexWrap: "wrap", gap: "16px", alignItems: "center", justifyContent: "space-between", marginBottom: "28px", paddingBottom: "20px", borderBottom: "1px solid var(--kb-line)" }}>
@@ -126,7 +209,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 300px", gap: "36px", alignItems: "start" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 320px", gap: "36px", alignItems: "start" }} className="kb-home-split">
             <div className="kb-guide-list" style={{ display: "grid", gap: "12px" }}>
               {filteredGuides.length === 0 ? (
                 <div style={{ padding: "48px", textAlign: "center", border: "1px solid var(--kb-line)", borderRadius: "12px", background: "var(--kb-surface)" }}>
