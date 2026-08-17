@@ -1,45 +1,78 @@
-/* Brick Docs design reminder: search is a primary route to knowledge, not a decorative control; results must be fast, readable, and keyboard reachable. */
 import { ArrowUpRight, Search, X } from "lucide-react";
-import { useEffect, useMemo, useRef } from "react";
-import { Link } from "wouter";
-import { searchGuides, getGuideHref, type DocsVersion } from "../lib/docs";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { useLocation } from "wouter";
+import { getGuideHref, searchGuides, type DocsEdition } from "../lib/docs";
 
 interface DocsSearchDialogProps {
   open: boolean;
-  query: string;
-  version: DocsVersion;
-  onQueryChange: (value: string) => void;
+  edition: DocsEdition;
   onClose: () => void;
 }
 
-export default function DocsSearchDialog({ open, query, version, onQueryChange, onClose }: DocsSearchDialogProps) {
+export default function DocsSearchDialog({ open, edition, onClose }: DocsSearchDialogProps) {
+  const [, navigate] = useLocation();
   const inputRef = useRef<HTMLInputElement>(null);
-  const results = useMemo(() => searchGuides(query).slice(0, 8), [query]);
+  const dialogRef = useRef<HTMLElement>(null);
+  const returnFocusRef = useRef<HTMLElement | null>(null);
+  const [query, setQuery] = useState("");
+  const [activeIndex, setActiveIndex] = useState(0);
+  const results = useMemo(() => searchGuides(query, edition).slice(0, 8), [query, edition]);
 
   useEffect(() => {
     if (!open) return;
-    inputRef.current?.focus();
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
+    returnFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    setQuery("");
+    setActiveIndex(0);
+    window.setTimeout(() => inputRef.current?.focus(), 0);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      returnFocusRef.current?.focus();
     };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [open, onClose]);
+  }, [open, edition]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") { event.preventDefault(); onClose(); }
+      if (event.key === "ArrowDown" && results.length) { event.preventDefault(); setActiveIndex((index) => (index + 1) % results.length); }
+      if (event.key === "ArrowUp" && results.length) { event.preventDefault(); setActiveIndex((index) => (index - 1 + results.length) % results.length); }
+      if (event.key === "Enter" && results[activeIndex]) { event.preventDefault(); navigate(getGuideHref(results[activeIndex].slug, edition)); onClose(); }
+      if (event.key === "Tab") {
+        const focusable = dialogRef.current?.querySelectorAll<HTMLElement>('input, button:not([disabled]), [tabindex]:not([tabindex="-1"])');
+        if (!focusable?.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [activeIndex, edition, navigate, onClose, open, results]);
 
   if (!open) return null;
   return (
-    <div className="kb-modal-backdrop" role="presentation" onMouseDown={onClose}>
-      <div className="kb-search-dialog" role="dialog" aria-modal="true" aria-label="Search Brick documentation" onMouseDown={(event) => event.stopPropagation()}>
-        <div className="kb-search-dialog__header">
-          <div className="kb-search-input"><Search size={18} /><input ref={inputRef} value={query} onChange={(event) => onQueryChange(event.target.value)} placeholder="Search guides, topics, and procedures" /><kbd>ESC</kbd></div>
-          <button className="kb-dialog-close" onClick={onClose} aria-label="Close search"><X size={18} /></button>
+    <div className="docs-search-overlay" role="presentation" onMouseDown={onClose}>
+      <section ref={dialogRef} className="docs-search-dialog" role="dialog" aria-modal="true" aria-label="Search Brick documentation" onMouseDown={(event) => event.stopPropagation()}>
+        <div className="docs-search-dialog__input">
+          <Search size={19} aria-hidden="true" />
+          <input ref={inputRef} value={query} onChange={(event) => { setQuery(event.target.value); setActiveIndex(0); }} placeholder={`Search ${edition === "shared" ? "Shared" : "Dedicated"} guides`} aria-label="Search documentation" />
+          <button className="docs-icon-button" type="button" onClick={onClose} aria-label="Close search"><X size={18} /></button>
         </div>
-        <div className="kb-search-dialog__meta"><span>{query ? `${results.length} matching guide${results.length === 1 ? "" : "s"}` : "Search all public Brick guides"}</span><span>Use your keyboard to navigate</span></div>
-        <div className="kb-search-results" role="listbox">
-          {results.map((guide) => <Link key={guide.slug} href={getGuideHref(guide.slug, version)} className="kb-search-result" onClick={onClose}><span className="kb-search-result__index">{guide.category}</span><span className="kb-search-result__body"><strong>{guide.title}</strong><small>{guide.intro}</small></span><ArrowUpRight size={16} /></Link>)}
-          {!results.length && <div className="kb-search-empty"><strong>No public guide matches “{query}”.</strong><span>Try “database”, “SSL”, “PHP”, “WordPress”, or “backup”.</span></div>}
+        <div className="docs-search-dialog__hint"><span>{query ? `${results.length} matching guides` : `Search ${edition === "shared" ? "Shared Hosting" : "Dedicated"} documentation`}</span><span>↑↓ navigate · Enter open · Esc close</span></div>
+        <div className="docs-search-results" role="listbox" aria-label="Guide results">
+          {results.map((guide, index) => (
+            <button type="button" role="option" aria-selected={activeIndex === index} className={activeIndex === index ? "is-active" : ""} key={guide.slug} onMouseEnter={() => setActiveIndex(index)} onClick={() => { navigate(getGuideHref(guide.slug, edition)); onClose(); }}>
+              <span className="docs-search-result__category">{guide.category}</span>
+              <span className="docs-search-result__body"><strong>{guide.title}</strong><small>{guide.intro}</small></span>
+              <ArrowUpRight size={17} aria-hidden="true" />
+            </button>
+          ))}
+          {!results.length ? <div className="docs-search-empty"><strong>No guide matches “{query}”.</strong><span>Try a product, task, or panel feature such as “SSL”, “backup”, or “PHP”.</span></div> : null}
         </div>
-      </div>
+      </section>
     </div>
   );
 }

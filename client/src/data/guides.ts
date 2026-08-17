@@ -6,6 +6,9 @@ export interface GuideSection {
   note?: string;
 }
 
+export type DocsEdition = "shared" | "dedicated";
+export type GuideStatus = "published" | "beta";
+
 export interface GuideArticle {
   slug: string;
   category: string;
@@ -14,6 +17,10 @@ export interface GuideArticle {
   intro: string;
   read: string;
   version: string;
+  editions?: DocsEdition[];
+  status?: GuideStatus;
+  updatedAt?: string;
+  relatedSlugs?: string[];
   sections: GuideSection[];
 }
 
@@ -267,3 +274,24 @@ export const allGuides: GuideArticle[] = [
     ]
   }
 ];
+
+const guideMetadata: Record<string, Pick<GuideArticle, "editions" | "status" | "updatedAt" | "relatedSlugs">> = {
+  "getting-started": { editions: ["shared", "dedicated"], status: "published", updatedAt: "2026-08-17", relatedSlugs: ["ssl-tls", "security", "troubleshooting"] },
+  "deploying-apps": { editions: ["dedicated"], status: "published", updatedAt: "2026-08-17", relatedSlugs: ["ssl-tls", "databases", "backups"] },
+  databases: { editions: ["dedicated"], status: "published", updatedAt: "2026-08-17", relatedSlugs: ["backups", "troubleshooting", "deploying-apps"] },
+  "ssl-tls": { editions: ["shared", "dedicated"], status: "published", updatedAt: "2026-08-17", relatedSlugs: ["security", "wordpress-cms", "troubleshooting"] },
+  "file-manager": { editions: ["shared", "dedicated"], status: "published", updatedAt: "2026-08-17", relatedSlugs: ["php-management", "backups", "security"] },
+  "php-management": { editions: ["shared", "dedicated"], status: "published", updatedAt: "2026-08-17", relatedSlugs: ["file-manager", "wordpress-cms", "troubleshooting"] },
+  "wordpress-cms": { editions: ["shared", "dedicated"], status: "published", updatedAt: "2026-08-17", relatedSlugs: ["php-management", "ssl-tls", "backups"] },
+  backups: { editions: ["shared", "dedicated"], status: "published", updatedAt: "2026-08-17", relatedSlugs: ["file-manager", "databases", "troubleshooting"] },
+  security: { editions: ["shared", "dedicated"], status: "published", updatedAt: "2026-08-17", relatedSlugs: ["ssl-tls", "getting-started", "troubleshooting"] },
+  troubleshooting: { editions: ["shared", "dedicated"], status: "published", updatedAt: "2026-08-17", relatedSlugs: ["backups", "security", "getting-started"] },
+};
+
+export const publishedGuides: GuideArticle[] = allGuides.map((guide) => ({
+  ...guide,
+  editions: guideMetadata[guide.slug]?.editions ?? ["shared", "dedicated"],
+  status: guideMetadata[guide.slug]?.status ?? "published",
+  updatedAt: guideMetadata[guide.slug]?.updatedAt ?? "2026-08-17",
+  relatedSlugs: guideMetadata[guide.slug]?.relatedSlugs ?? [],
+}));

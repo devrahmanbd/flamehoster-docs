@@ -13211,9 +13211,22 @@ This task list may be extended with smaller implementation items, but existing h
 
 ## Corrective OpenHands-Style Documentation Redesign
 - [x] Audit reported failures (low contrast, fancy distractions, bad desktop sidebar, broken mobile view, misplaced badge)
-- [ ] Implement OpenHands-style clean documentation shell with professional high-contrast typography and clear separation of concerns
-- [ ] Add explicit Edition Switcher (Shared Edition vs Dedicated Edition) in the sidebar/header context area
-- [ ] Rebuild desktop sidebar into a clean, structured documentation navigation tree with professional font weights and hover states
-- [ ] Rebuild mobile drawer into a robust, readable, full-height overlay with clean padding and touch targets
-- [ ] Remove all unnecessary widgets (Quick Stats, fancy grids, glowing backgrounds) in favor of high-density, calm documentation content
-- [ ] Build, verify responsive behavior, and save verified checkpoint
+- [x] Implement OpenHands-style clean documentation shell with professional high-contrast typography and clear separation of concerns
+- [x] Add explicit Edition Switcher (Shared Edition vs Dedicated Edition) in the sidebar/header context area
+- [x] Rebuild desktop sidebar into a clean, structured documentation navigation tree with professional font weights and hover states
+- [x] Rebuild mobile drawer into a robust, readable, full-height overlay with clean padding and touch targets
+- [x] Remove intrusive widgets in favor of high-density, calm documentation content; retain only the explicitly requested low-intensity background grid with reduced-motion safeguards
+- [x] Build, verify responsive behavior, and save verified checkpoint
+## Business-Critical BrickDocs Product Rebuild (pasted_content_4.txt)
+- [x] Audit every route, control, layout state, content relationship, runtime error, and responsive breakpoint before redesigning visual details.
+- [x] Produce a verified route/content map with title, parent section, ordering, breadcrumb, related pages, previous/next links, on-page headings, and search metadata.
+- [x] Publish a KEEP / REWORK / REMOVE / REPLACE / MISSING / BROKEN audit that explicitly addresses every failing documentation-system requirement.
+- [x] Build a real edition model for Shared and Dedicated rather than a cosmetic content filter; preserve valid state in URL and browser history.
+- [x] Replace the current shell with a reusable client-ready documentation layout: stable header, structured desktop sidebar, editorial main column, and contextual on-page navigation.
+- [x] Rebuild the mobile experience as a purpose-built drawer, search overlay, inline page navigation, and previous/next flow with focus management and body-scroll locking.
+- [x] Rework navigation, breadcrumb, heading anchors, copy-link controls, search keyboard navigation, 404, empty, loading, and error states as working product features.
+- [x] Establish semantic light and dark themes with verified contrast, persistent preference, no flashes, and complete component coverage.
+- [x] Retain motion only where it supports orientation or feedback; remove decorative effects that make reading or interaction worse.
+- [x] Verify all published Shared-facing content stays within the Web UI documentation boundary and move internal/developer information out of the public surface.
+- [x] Run route, interaction, accessibility, responsive, keyboard, content-boundary, test, and production-build validation before the next checkpoint.
+- [x] Write a final design-system implementation document and reusable master prompt for future BrickDocs work.

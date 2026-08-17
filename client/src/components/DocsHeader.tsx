@@ -1,192 +1,57 @@
-/* OpenHands-style professional documentation header */
 import { ExternalLink, Menu, Moon, Search, Sun, X } from "lucide-react";
+import { useEffect } from "react";
 import { Link } from "wouter";
 import { useTheme } from "../contexts/ThemeContext";
+import type { DocsEdition } from "../lib/docs";
 
 interface DocsHeaderProps {
-  mobileOpen?: boolean;
-  onToggleMobile?: () => void;
-  onOpenSearch?: () => void;
-  edition: "shared" | "dedicated";
-  onEditionChange: (edition: "shared" | "dedicated") => void;
+  edition: DocsEdition;
+  mobileOpen: boolean;
+  onToggleMobile: () => void;
+  onOpenSearch: () => void;
+  onEditionChange: (edition: DocsEdition) => void;
 }
 
-export default function DocsHeader({ mobileOpen = false, onToggleMobile, onOpenSearch, edition, onEditionChange }: DocsHeaderProps) {
+export default function DocsHeader({ edition, mobileOpen, onToggleMobile, onOpenSearch, onEditionChange }: DocsHeaderProps) {
   const { theme, toggleTheme } = useTheme();
 
+  useEffect(() => {
+    const handleSearchShortcut = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        onOpenSearch();
+      }
+    };
+    window.addEventListener("keydown", handleSearchShortcut);
+    return () => window.removeEventListener("keydown", handleSearchShortcut);
+  }, [onOpenSearch]);
+
   return (
-    <header style={{
-      height: "60px",
-      backgroundColor: "var(--kb-surface)",
-      borderBottom: "1px solid var(--kb-border)",
-      position: "sticky",
-      top: 0,
-      zIndex: 50,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-      padding: "0 24px",
-    }}>
-      <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-        {onToggleMobile && (
-          <button
-            onClick={onToggleMobile}
-            aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              background: "transparent",
-              border: "1px solid var(--kb-border)",
-              borderRadius: "6px",
-              width: "36px",
-              height: "36px",
-              color: "var(--kb-text)",
-              cursor: "pointer",
-            }}
-          >
-            {mobileOpen ? <X size={18} /> : <Menu size={18} />}
-          </button>
-        )}
-
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
-          <div style={{
-            width: "28px",
-            height: "28px",
-            borderRadius: "6px",
-            backgroundColor: "var(--kb-accent)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "#ffffff",
-            fontWeight: "700",
-            fontSize: "14px",
-            fontFamily: "var(--kb-font-mono)",
-          }}>
-            B
-          </div>
-          <span style={{ fontSize: "16px", fontWeight: "700", color: "var(--kb-text)", letterSpacing: "-0.01em" }}>
-            BrickDocs
-          </span>
+    <header className="docs-header">
+      <div className="docs-header__start">
+        <button className="docs-icon-button docs-menu-trigger" type="button" onClick={onToggleMobile} aria-label={mobileOpen ? "Close documentation navigation" : "Open documentation navigation"} aria-controls="docs-sidebar" aria-expanded={mobileOpen}>
+          {mobileOpen ? <X size={19} /> : <Menu size={19} />}
+        </button>
+        <Link href="/docs/shared" className="docs-brand" aria-label="BrickDocs home">
+          <span className="docs-brand__mark" aria-hidden="true">B</span>
+          <span>Brick<span>Docs</span></span>
         </Link>
-
-        {/* Edition Switcher */}
-        <div style={{
-          display: "flex",
-          background: "var(--kb-surface-soft)",
-          border: "1px solid var(--kb-border)",
-          borderRadius: "6px",
-          padding: "2px",
-          marginLeft: "8px",
-        }}>
-          <button
-            onClick={() => onEditionChange("shared")}
-            style={{
-              padding: "4px 10px",
-              borderRadius: "4px",
-              border: "none",
-              background: edition === "shared" ? "var(--kb-accent)" : "transparent",
-              color: edition === "shared" ? "#ffffff" : "var(--kb-text-muted)",
-              fontSize: "12px",
-              fontWeight: "600",
-              cursor: "pointer",
-            }}
-          >
-            Shared
-          </button>
-          <button
-            onClick={() => onEditionChange("dedicated")}
-            style={{
-              padding: "4px 10px",
-              borderRadius: "4px",
-              border: "none",
-              background: edition === "dedicated" ? "var(--kb-accent)" : "transparent",
-              color: edition === "dedicated" ? "#ffffff" : "var(--kb-text-muted)",
-              fontSize: "12px",
-              fontWeight: "600",
-              cursor: "pointer",
-            }}
-          >
-            Dedicated
-          </button>
+        <div className="docs-edition-switch" aria-label="Documentation edition" role="group">
+          <button type="button" aria-pressed={edition === "shared"} className={edition === "shared" ? "is-active" : ""} onClick={() => onEditionChange("shared")}>Shared</button>
+          <button type="button" aria-pressed={edition === "dedicated"} className={edition === "dedicated" ? "is-active" : ""} onClick={() => onEditionChange("dedicated")}>Dedicated</button>
         </div>
       </div>
-
-      <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-        {onOpenSearch && (
-          <button
-            onClick={onOpenSearch}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              width: "240px",
-              height: "36px",
-              padding: "0 12px",
-              background: "var(--kb-surface-soft)",
-              border: "1px solid var(--kb-border)",
-              borderRadius: "6px",
-              color: "var(--kb-text-muted)",
-              fontSize: "13px",
-              cursor: "pointer",
-            }}
-          >
-            <span style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <Search size={14} /> Search documentation...
-            </span>
-            <kbd style={{
-              fontSize: "11px",
-              padding: "1px 5px",
-              background: "var(--kb-surface)",
-              borderRadius: "4px",
-              border: "1px solid var(--kb-border)",
-              fontFamily: "var(--kb-font-mono)",
-              color: "var(--kb-text-faint)",
-            }}>
-              ⌘K
-            </kbd>
-          </button>
-        )}
-
-        <button
-          onClick={toggleTheme}
-          aria-label="Toggle theme"
-          style={{
-            background: "var(--kb-surface-soft)",
-            border: "1px solid var(--kb-border)",
-            borderRadius: "6px",
-            width: "36px",
-            height: "36px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: "pointer",
-            color: "var(--kb-text)",
-          }}
-        >
-          {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+      <div className="docs-header__end">
+        <button type="button" className="docs-search-trigger" onClick={onOpenSearch} aria-label="Search BrickDocs">
+          <Search size={16} aria-hidden="true" />
+          <span>Search documentation</span>
+          <kbd>⌘ K</kbd>
         </button>
-
-        <a
-          href="https://github.com/devrahmanbd/flamehoster"
-          target="_blank"
-          rel="noreferrer"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "6px",
-            padding: "6px 12px",
-            borderRadius: "6px",
-            background: "var(--kb-surface-soft)",
-            border: "1px solid var(--kb-border)",
-            color: "var(--kb-text)",
-            fontSize: "13px",
-            fontWeight: "500",
-            textDecoration: "none",
-          }}
-        >
-          <span>GitHub</span>
-          <ExternalLink size={13} style={{ color: "var(--kb-text-faint)" }} />
+        <button type="button" className="docs-icon-button" onClick={toggleTheme} aria-label={theme === "dark" ? "Use light theme" : "Use dark theme"}>
+          {theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}
+        </button>
+        <a className="docs-github-link" href="https://github.com/devrahmanbd/flamehoster" target="_blank" rel="noreferrer">
+          <span>Project</span><ExternalLink size={14} aria-hidden="true" />
         </a>
       </div>
     </header>

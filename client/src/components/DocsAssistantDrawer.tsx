@@ -4,11 +4,11 @@ import { FormEvent, MutableRefObject, useEffect, useRef, useState } from "react"
 import { Link } from "wouter";
 import { Streamdown } from "streamdown";
 import { trpc } from "../lib/trpc";
-import { getGuideHref, type DocsVersion } from "../lib/docs";
+import { getGuideHref, type DocsEdition } from "../lib/docs";
 
 interface DocsAssistantDrawerProps {
   open: boolean;
-  version: DocsVersion;
+  edition: DocsEdition;
   onClose: () => void;
   onOpen: () => void;
 }
@@ -46,7 +46,7 @@ function playNotificationTone(contextRef: MutableRefObject<AudioContext | null>,
   }).catch(() => undefined);
 }
 
-export default function DocsAssistantDrawer({ open, version, onClose, onOpen }: DocsAssistantDrawerProps) {
+export default function DocsAssistantDrawer({ open, edition, onClose, onOpen }: DocsAssistantDrawerProps) {
   const [query, setQuery] = useState("");
   const [messages, setMessages] = useState<AssistantMessage[]>([]);
   const [soundEnabled, setSoundEnabled] = useState(() => {
@@ -87,7 +87,7 @@ export default function DocsAssistantDrawer({ open, version, onClose, onOpen }: 
     setMessages((current) => [...current, { role: "user", content: question }]);
     setQuery("");
     askDocs.mutate(
-      { question, version },
+      { question, version: edition === "dedicated" ? "v1.0-beta" : "v0.9" },
       {
         onSuccess: (result) => {
           if (soundEnabled) playNotificationTone(audioContextRef, "receive");
@@ -130,7 +130,7 @@ export default function DocsAssistantDrawer({ open, version, onClose, onOpen }: 
               <div className={`kb-assistant-message kb-assistant-message--${message.role}`} key={`${message.role}-${index}`}>
                 <span className="kb-assistant-message__label">{message.role === "user" ? "You" : "Brick Docs"}</span>
                 <div className="kb-assistant-message__body"><Streamdown>{message.content}</Streamdown></div>
-                {message.citations?.length ? <div className="kb-assistant-citations">{message.citations.map((citation) => <Link key={`${citation.slug}-${citation.section}`} href={getGuideHref(citation.slug, version)} onClick={onClose}><BookOpen size={13} /><span>{citation.title}<small>{citation.section}</small></span></Link>)}</div> : null}
+                {message.citations?.length ? <div className="kb-assistant-citations">{message.citations.map((citation) => <Link key={`${citation.slug}-${citation.section}`} href={getGuideHref(citation.slug, edition)} onClick={onClose}><BookOpen size={13} /><span>{citation.title}<small>{citation.section}</small></span></Link>)}</div> : null}
               </div>
             ))}
             {askDocs.isPending && <div className="kb-assistant-message kb-assistant-message--assistant"><span className="kb-assistant-message__label">Brick Docs</span><div className="kb-assistant-thinking"><span>Reviewing the published guides</span><span className="kb-assistant-typing" aria-label="Brick Docs is typing"><i /><i /><i /></span></div></div>}

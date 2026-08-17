@@ -1,268 +1,77 @@
-/* OpenHands-style professional documentation guide reader page */
-import { ArrowLeft, ArrowRight, CheckCircle2, ChevronRight, Clipboard, Copy, FileText, Link2, Terminal, Wrench } from "lucide-react";
-import { useEffect, useState } from "react";
+import { ArrowLeft, ArrowRight, Check, Copy, Link2, Search } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useLocation } from "wouter";
-import DocsAssistantDrawer from "../components/DocsAssistantDrawer";
 import DocsHeader from "../components/DocsHeader";
 import DocsSearchDialog from "../components/DocsSearchDialog";
 import DocsSidebar from "../components/DocsSidebar";
 import SeoMeta from "../components/SeoMeta";
-import { allGuides } from "../data/guides";
-import { findGuide, getGuideHref, type DocsVersion } from "../lib/docs";
+import { findGuide, getAdjacentGuides, getEditionHomeHref, getGuideHref, guidesForEdition, relatedGuides, type DocsEdition } from "../lib/docs";
 
-function ChevronSlash() {
-  return <ChevronRight size={13} style={{ color: "var(--kb-text-faint)" }} aria-hidden="true" />;
-}
+interface GuideProps { edition: DocsEdition; slug: string; }
 
-interface GuideProps {
-  slug: string;
-  version?: DocsVersion;
-}
+function sectionId(index: number) { return `section-${index + 1}`; }
 
-export default function Guide({ slug, version = "v0.9" }: GuideProps) {
+export default function Guide({ edition, slug }: GuideProps) {
   const [, navigate] = useLocation();
-  const guide = findGuide(slug);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [assistantOpen, setAssistantOpen] = useState(false);
-  const [pageCopied, setPageCopied] = useState(false);
-  const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
-  const [edition, setEdition] = useState<"shared" | "dedicated">("shared");
-
-  const currentIndex = allGuides.findIndex((item) => item.slug === guide.slug);
-  const previousGuide = currentIndex > 0 ? allGuides[currentIndex - 1] : null;
-  const nextGuide = currentIndex >= 0 && currentIndex < allGuides.length - 1 ? allGuides[currentIndex + 1] : null;
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [guide.slug]);
-
-  const copyCode = async (text: string, index: number) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopiedIndex(index);
-      window.setTimeout(() => setCopiedIndex(null), 1500);
-    } catch {
-      // Fallback
-    }
+  const [copiedPage, setCopiedPage] = useState(false);
+  const [copiedCode, setCopiedCode] = useState<number | null>(null);
+  const guide = findGuide(slug, edition);
+  const adjacent = useMemo(() => guide ? getAdjacentGuides(guide.slug, edition) : { previous: undefined, next: undefined }, [edition, guide]);
+  const related = useMemo(() => guide ? relatedGuides(guide, edition) : [], [edition, guide]);
+  const changeEdition = (next: DocsEdition) => {
+    const matchingGuide = findGuide(slug, next);
+    navigate(matchingGuide ? getGuideHref(matchingGuide.slug, next) : getEditionHomeHref(next));
   };
 
-  const copyPageLink = async () => {
-    try {
-      await navigator.clipboard.writeText(window.location.href);
-    } catch {
-      // Fallback
-    }
-    setPageCopied(true);
-    window.setTimeout(() => setPageCopied(false), 1500);
+  useEffect(() => { window.scrollTo({ top: 0, behavior: "auto" }); }, [edition, slug]);
+  if (!guide) {
+    return (
+      <div className="docs-app-shell">
+        <SeoMeta title="Guide unavailable" description="This guide is not published in the selected BrickDocs edition." path={getEditionHomeHref(edition)} type="website" />
+        <DocsHeader edition={edition} mobileOpen={mobileOpen} onToggleMobile={() => setMobileOpen((value) => !value)} onOpenSearch={() => setSearchOpen(true)} onEditionChange={changeEdition} />
+        <div className="docs-page-grid">
+          <DocsSidebar edition={edition} isOpen={mobileOpen} onClose={() => setMobileOpen(false)} />
+          <main className="docs-main docs-reader" id="main-content">
+            <section className="docs-unavailable" aria-labelledby="guide-unavailable-title">
+              <p className="docs-eyebrow">Guide unavailable</p>
+              <h1 id="guide-unavailable-title">This guide is not published for the selected edition.</h1>
+              <p>Choose another published guide from the navigation, or return to the {edition === "shared" ? "Shared" : "Dedicated"} documentation overview.</p>
+              <Link className="docs-primary-link" href={getEditionHomeHref(edition)}>View {edition === "shared" ? "Shared" : "Dedicated"} documentation</Link>
+            </section>
+          </main>
+          <aside className="docs-on-page" aria-label="On this page"><p>DOCUMENTATION</p><span>Use the left navigation to find a published guide.</span></aside>
+        </div>
+        <DocsSearchDialog open={searchOpen} edition={edition} onClose={() => setSearchOpen(false)} />
+      </div>
+    );
+  }
+
+  const copyText = async (text: string, success: (value: boolean) => void) => {
+    try { await navigator.clipboard.writeText(text); success(true); window.setTimeout(() => success(false), 1600); } catch { success(false); }
   };
 
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "var(--kb-bg)", color: "var(--kb-text)" }}>
-      <SeoMeta
-        title={guide.title}
-        description={guide.intro}
-        path={`/docs/${version}/${guide.slug}`}
-        type="article"
-        section={guide.category}
-        keywords={[guide.title, guide.category, "Brick Web UI", "hosting panel", "operator guide"]}
-      />
-      <DocsHeader
-        mobileOpen={mobileOpen}
-        onToggleMobile={() => setMobileOpen(!mobileOpen)}
-        onOpenSearch={() => setSearchOpen(true)}
-        edition={edition}
-        onEditionChange={setEdition}
-      />
-      <div className="kb-layout">
-        <DocsSidebar isOpen={mobileOpen} edition={edition} />
-        <main className="kb-main-content">
-          <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "13px", color: "var(--kb-text-muted)", marginBottom: "20px" }}>
-            <Link href="/" style={{ color: "var(--kb-text-muted)", textDecoration: "none" }}>Brick Docs</Link>
-            <ChevronSlash />
-            <span>{guide.category}</span>
-            <ChevronSlash />
-            <span style={{ color: "var(--kb-text)", fontWeight: "500" }}>{guide.title}</span>
-          </div>
-
-          <article style={{ lineHeight: "1.7" }}>
-            <div style={{ fontSize: "12px", fontWeight: "600", textTransform: "uppercase", letterSpacing: "0.05em", color: "var(--kb-accent)", marginBottom: "8px" }}>
-              {guide.eyebrow}
+    <div className="docs-app-shell">
+      <SeoMeta title={guide.title} description={guide.intro} path={getGuideHref(guide.slug, edition)} type="article" section={guide.category} keywords={[guide.title, guide.category, "BrickDocs"]} />
+      <DocsHeader edition={edition} mobileOpen={mobileOpen} onToggleMobile={() => setMobileOpen((value) => !value)} onOpenSearch={() => setSearchOpen(true)} onEditionChange={changeEdition} />
+      <div className="docs-page-grid">
+        <DocsSidebar edition={edition} activeSlug={guide.slug} isOpen={mobileOpen} onClose={() => setMobileOpen(false)} />
+        <main className="docs-main docs-reader" id="main-content">
+          <nav className="docs-breadcrumbs" aria-label="Breadcrumb"><Link href={getEditionHomeHref(edition)}>BrickDocs</Link><span>/</span><span>{guide.category}</span><span>/</span><strong>{guide.title}</strong></nav>
+          <article>
+            <header className="docs-article-header"><p className="docs-eyebrow">{guide.eyebrow}</p><h1>{guide.title}</h1><p>{guide.intro}</p><div className="docs-article-tools"><button type="button" onClick={() => copyText(window.location.href, setCopiedPage)}>{copiedPage ? <Check size={15} /> : <Link2 size={15} />}{copiedPage ? "Link copied" : "Copy page link"}</button><button type="button" onClick={() => setSearchOpen(true)}><Search size={15} />Search guides</button></div></header>
+            <div className="docs-article-body">
+              {guide.sections.map((section, index) => <section id={sectionId(index)} key={section.title} className="docs-article-section"><h2>{section.title}</h2><p>{section.body}</p>{section.bullets?.length ? <ul>{section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul> : null}{section.code ? <div className="docs-code-block"><div><span>Panel reference</span><button type="button" onClick={() => copyText(section.code!, (success) => { if (success) { setCopiedCode(index); window.setTimeout(() => setCopiedCode(null), 1600); } })}>{copiedCode === index ? <Check size={14} /> : <Copy size={14} />}{copiedCode === index ? "Copied" : "Copy"}</button></div><pre><code>{section.code}</code></pre></div> : null}</section>)}
             </div>
-            <h1 style={{ fontSize: "32px", fontWeight: "800", color: "var(--kb-text)", letterSpacing: "-0.02em", marginBottom: "16px" }}>
-              {guide.title}
-            </h1>
-            <p style={{ fontSize: "16px", color: "var(--kb-text-muted)", marginBottom: "24px" }}>
-              {guide.intro}
-            </p>
-
-            <div style={{ display: "flex", gap: "12px", marginBottom: "32px", paddingBottom: "24px", borderBottom: "1px solid var(--kb-border)" }}>
-              <button
-                onClick={copyPageLink}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "6px",
-                  padding: "6px 12px",
-                  borderRadius: "6px",
-                  border: "1px solid var(--kb-border)",
-                  background: "var(--kb-surface-soft)",
-                  color: "var(--kb-text)",
-                  fontSize: "13px",
-                  cursor: "pointer",
-                }}
-              >
-                <Link2 size={14} /> {pageCopied ? "Link copied" : "Copy link"}
-              </button>
-              <button
-                onClick={() => setAssistantOpen(true)}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "6px",
-                  padding: "6px 12px",
-                  borderRadius: "6px",
-                  border: "1px solid var(--kb-border)",
-                  background: "var(--kb-surface-soft)",
-                  color: "var(--kb-text)",
-                  fontSize: "13px",
-                  cursor: "pointer",
-                }}
-              >
-                <FileText size={14} /> Ask assistant
-              </button>
-            </div>
-
-            {guide.sections.map((section, index) => (
-              <section key={section.title} id={`section-${index + 1}`} style={{ marginBottom: "40px" }}>
-                <h2 style={{ fontSize: "20px", fontWeight: "700", color: "var(--kb-text)", marginBottom: "12px" }}>
-                  {index + 1}. {section.title}
-                </h2>
-                <p style={{ fontSize: "15px", color: "var(--kb-text-muted)", marginBottom: "16px" }}>
-                  {section.body}
-                </p>
-
-                {section.bullets && (
-                  <ul style={{ listStyle: "disc", paddingLeft: "20px", marginBottom: "16px", color: "var(--kb-text-muted)" }}>
-                    {section.bullets.map((bullet) => (
-                      <li key={bullet} style={{ marginBottom: "6px", fontSize: "14px" }}>{bullet}</li>
-                    ))}
-                  </ul>
-                )}
-
-                {section.code && (
-                  <div style={{
-                    backgroundColor: "var(--kb-code-bg)",
-                    border: "1px solid var(--kb-border)",
-                    borderRadius: "6px",
-                    overflow: "hidden",
-                    marginBottom: "16px",
-                  }}>
-                    <div style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      padding: "8px 12px",
-                      backgroundColor: "var(--kb-surface-soft)",
-                      borderBottom: "1px solid var(--kb-border)",
-                      fontSize: "12px",
-                      color: "var(--kb-text-muted)",
-                    }}>
-                      <span>Terminal / Configuration Example</span>
-                      <button
-                        onClick={() => copyCode(section.code!, index)}
-                        style={{
-                          background: "transparent",
-                          border: "none",
-                          color: "var(--kb-accent)",
-                          cursor: "pointer",
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "4px",
-                          fontSize: "12px",
-                          fontWeight: "600",
-                        }}
-                      >
-                        {copiedIndex === index ? <Clipboard size={13} /> : <Copy size={13} />}
-                        {copiedIndex === index ? "Copied" : "Copy"}
-                      </button>
-                    </div>
-                    <pre style={{ padding: "16px", margin: 0, overflowX: "auto", fontFamily: "var(--kb-font-mono)", fontSize: "13px", color: "var(--kb-text)" }}>
-                      <code>{section.code}</code>
-                    </pre>
-                  </div>
-                )}
-              </section>
-            ))}
-
-            <div style={{
-              display: "flex",
-              justifyContent: "space-between",
-              marginTop: "48px",
-              paddingTop: "24px",
-              borderTop: "1px solid var(--kb-border)",
-            }}>
-              {previousGuide ? (
-                <Link
-                  href={getGuideHref(previousGuide.slug, version)}
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "4px",
-                    textDecoration: "none",
-                    padding: "12px 16px",
-                    borderRadius: "6px",
-                    backgroundColor: "var(--kb-surface)",
-                    border: "1px solid var(--kb-border)",
-                  }}
-                >
-                  <span style={{ fontSize: "12px", color: "var(--kb-text-faint)", display: "flex", alignItems: "center", gap: "4px" }}>
-                    <ArrowLeft size={12} /> Previous guide
-                  </span>
-                  <span style={{ fontSize: "14px", fontWeight: "600", color: "var(--kb-text)" }}>{previousGuide.title}</span>
-                </Link>
-              ) : <div />}
-
-              {nextGuide ? (
-                <Link
-                  href={getGuideHref(nextGuide.slug, version)}
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "4px",
-                    textDecoration: "none",
-                    padding: "12px 16px",
-                    borderRadius: "6px",
-                    backgroundColor: "var(--kb-surface)",
-                    border: "1px solid var(--kb-border)",
-                    textAlign: "right",
-                  }}
-                >
-                  <span style={{ fontSize: "12px", color: "var(--kb-text-faint)", display: "flex", alignItems: "center", gap: "4px", justifyContent: "flex-end" }}>
-                    Next guide <ArrowRight size={12} />
-                  </span>
-                  <span style={{ fontSize: "14px", fontWeight: "600", color: "var(--kb-text)" }}>{nextGuide.title}</span>
-                </Link>
-              ) : <div />}
-            </div>
+            {related.length ? <section className="docs-related"><h2>Related guides</h2><div>{related.map((item) => <Link href={getGuideHref(item.slug, edition)} key={item.slug}>{item.title}<ArrowRight size={15} /></Link>)}</div></section> : null}
+            <nav className="docs-prev-next" aria-label="Guide sequence">{adjacent.previous ? <Link href={getGuideHref(adjacent.previous.slug, edition)}><span><ArrowLeft size={15} />Previous</span><strong>{adjacent.previous.title}</strong></Link> : <span />}{adjacent.next ? <Link href={getGuideHref(adjacent.next.slug, edition)}><span>Next<ArrowRight size={15} /></span><strong>{adjacent.next.title}</strong></Link> : <span />}</nav>
           </article>
         </main>
+        <aside className="docs-on-page" aria-label="On this page"><p>ON THIS PAGE</p><nav>{guide.sections.map((section, index) => <a key={section.title} href={`#${sectionId(index)}`}>{section.title}</a>)}</nav></aside>
       </div>
-
-      <DocsSearchDialog
-        open={searchOpen}
-        query={searchQuery}
-        version={version}
-        onQueryChange={setSearchQuery}
-        onClose={() => setSearchOpen(false)}
-      />
-      <DocsAssistantDrawer
-        open={assistantOpen}
-        version={version}
-        onOpen={() => setAssistantOpen(true)}
-        onClose={() => setAssistantOpen(false)}
-      />
+      <DocsSearchDialog open={searchOpen} edition={edition} onClose={() => setSearchOpen(false)} />
     </div>
   );
 }

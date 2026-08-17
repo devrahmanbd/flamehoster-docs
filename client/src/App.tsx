@@ -1,40 +1,30 @@
 import { Route, Switch, useLocation } from "wouter";
 import DocsMotionLayer from "./components/DocsMotionLayer";
-import DocsRouteTransition from "./components/DocsRouteTransition";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { normalizeEdition, type DocsEdition } from "./lib/docs";
+import Guide from "./pages/Guide";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
-import Guide from "./pages/Guide";
-import type { DocsVersion } from "./lib/docs";
 
 function Router() {
   const [location] = useLocation();
-
   return (
-    <DocsRouteTransition key={location}>
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/docs" component={Home} />
-        <Route path="/docs/:version/:slug">
-          {(params) => <Guide slug={params.slug} version={params.version as DocsVersion} />}
-        </Route>
-        <Route path="/docs/:slug">
-          {(params) => <Guide slug={params.slug} version="v0.9" />}
-        </Route>
-        <Route path="/404" component={NotFound} />
-        <Route component={NotFound} />
-      </Switch>
-    </DocsRouteTransition>
+    <Switch key={location}>
+      <Route path="/" component={() => <Home edition="shared" />} />
+      <Route path="/docs" component={() => <Home edition="shared" />} />
+      <Route path="/docs/:edition/:slug">{(params) => <Guide edition={normalizeEdition(params.edition)} slug={params.slug} />}</Route>
+      <Route path="/docs/:edition">{(params) => <Home edition={normalizeEdition(params.edition)} />}</Route>
+      <Route path="/shared/:slug">{(params) => <Guide edition="shared" slug={params.slug} />}</Route>
+      <Route path="/dedicated/:slug">{(params) => <Guide edition="dedicated" slug={params.slug} />}</Route>
+      <Route path="/shared" component={() => <Home edition="shared" />} />
+      <Route path="/dedicated" component={() => <Home edition="dedicated" />} />
+      <Route path="/legacy/:slug">{(params) => <Guide edition="shared" slug={params.slug} />}</Route>
+      <Route path="/404" component={NotFound} />
+      <Route component={NotFound} />
+    </Switch>
   );
 }
 
 export default function App() {
-  return (
-    <>
-      <DocsMotionLayer />
-      <ThemeProvider defaultTheme="dark">
-        <Router />
-      </ThemeProvider>
-    </>
-  );
+  return <ThemeProvider defaultTheme="light"><DocsMotionLayer /><Router /></ThemeProvider>;
 }

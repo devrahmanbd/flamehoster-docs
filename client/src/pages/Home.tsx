@@ -1,175 +1,74 @@
+import { ArrowRight, BookOpen, ChevronRight, CircleHelp, FileCheck2, ShieldCheck } from "lucide-react";
 import { useState } from "react";
-import { Link } from "wouter";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { Link, useLocation } from "wouter";
 import DocsHeader from "../components/DocsHeader";
-import DocsSidebar from "../components/DocsSidebar";
 import DocsSearchDialog from "../components/DocsSearchDialog";
-import { docsGroups, type DocsVersion } from "../lib/docs";
-import { allGuides } from "../data/guides";
+import DocsSidebar from "../components/DocsSidebar";
+import SeoMeta from "../components/SeoMeta";
+import { editionOptions, getEditionHomeHref, getGuideHref, groupsForEdition, guidesForEdition, type DocsEdition } from "../lib/docs";
 
-export default function Home() {
+interface HomeProps { edition: DocsEdition; }
+
+const sharedSteps = [
+  ["01", "Secure your account", "Set up your account security and learn where tenant controls live.", "getting-started"],
+  ["02", "Connect a website", "Point a domain, configure TLS, and verify your live website.", "ssl-tls"],
+  ["03", "Manage your application", "Work with files, PHP, CMS configuration, and app deployment tools.", "php-management"],
+  ["04", "Protect your data", "Create a recovery routine for databases and website data.", "backups"],
+] as const;
+
+const dedicatedSteps = [
+  ["01", "Start with the platform", "Understand the dedicated workspace and its managed operational controls.", "getting-started"],
+  ["02", "Deploy your workload", "Prepare an application and its service settings in the dedicated console.", "deploying-apps"],
+  ["03", "Protect application data", "Review database and recovery planning before you go live.", "databases"],
+  ["04", "Operate with confidence", "Use guided diagnostics and support-ready evidence when an issue appears.", "troubleshooting"],
+] as const;
+
+export default function Home({ edition }: HomeProps) {
+  const [, navigate] = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [edition, setEdition] = useState<"shared" | "dedicated">("shared");
-  const [, setVersion] = useState<DocsVersion>("v0.9");
-
-  const filteredGroups = docsGroups.map(group => ({
-    ...group,
-    guides: group.slugs
-      .map((slug: string) => allGuides.find(g => g.slug === slug))
-      .filter((g): g is NonNullable<typeof g> => {
-        if (!g) return false;
-        if (edition === "shared") {
-          return !g.slug.includes("kernel") && !g.slug.includes("dedicated");
-        }
-        return true;
-      })
-  })).filter(g => g.guides.length > 0);
+  const groups = groupsForEdition(edition);
+  const guides = guidesForEdition(edition);
+  const editionMeta = editionOptions.find((item) => item.value === edition)!;
+  const steps = edition === "shared" ? sharedSteps : dedicatedSteps;
+  const firstGuide = guides[0];
 
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "var(--kb-bg)", color: "var(--kb-text)", display: "flex", flexDirection: "column" }}>
-      <DocsHeader
-        mobileOpen={mobileOpen}
-        onToggleMobile={() => setMobileOpen(!mobileOpen)}
-        onOpenSearch={() => setSearchOpen(true)}
-        edition={edition}
-        onEditionChange={setEdition}
-      />
-
-      <div className="kb-layout" style={{ display: "flex", flex: 1 }}>
-        <DocsSidebar
-          isOpen={mobileOpen}
-          edition={edition}
-        />
-
-        <main className="kb-main-content" style={{ flex: 1, padding: "48px 64px", maxWidth: "960px", margin: "0 auto" }}>
-          <div style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "8px",
-            padding: "4px 12px",
-            borderRadius: "9999px",
-            background: "var(--kb-accent-bg)",
-            border: "1px solid var(--kb-border)",
-            fontSize: "12px",
-            fontWeight: "600",
-            color: "var(--kb-accent)",
-            marginBottom: "20px",
-          }}>
-            <CheckCircle2 size={13} />
-            Official {edition === "shared" ? "Shared Hosting" : "Dedicated Enterprise"} Documentation
-          </div>
-
-          <h1 style={{ fontSize: "36px", fontWeight: "800", letterSpacing: "-0.03em", marginBottom: "16px", lineHeight: "1.2" }}>
-            Brick {edition === "shared" ? "Shared Hosting" : "Dedicated"} Reference Manual
-          </h1>
-          <p style={{ fontSize: "16px", color: "var(--kb-text-muted)", lineHeight: "1.6", marginBottom: "40px", maxWidth: "720px" }}>
-            Production-grade operational guides for managing tenants, configuring databases, issuing SSL/TLS certificates, and controlling your hosting infrastructure through the Brick Web UI.
-          </p>
-
-          <div style={{
-            padding: "20px",
-            borderRadius: "8px",
-            background: "var(--kb-surface)",
-            border: "1px solid var(--kb-border)",
-            marginBottom: "36px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: "16px",
-          }}>
-            <div>
-              <h3 style={{ fontSize: "15px", fontWeight: "600", marginBottom: "4px" }}>
-                Currently viewing: {edition === "shared" ? "Shared Hosting Edition" : "Dedicated Enterprise Edition"}
-              </h3>
-              <p style={{ fontSize: "13px", color: "var(--kb-text-muted)", margin: 0 }}>
-                {edition === "shared" 
-                  ? "Optimized for multi-tenant isolation, caged terminal execution, and automated resource quotas."
-                  : "Provides full root access, dedicated container clusters, and advanced AI automation hooks."}
-              </p>
+    <div className="docs-app-shell">
+      <SeoMeta title={`${editionMeta.label} documentation`} description={editionMeta.description} path={getEditionHomeHref(edition)} type="website" />
+      <DocsHeader edition={edition} mobileOpen={mobileOpen} onToggleMobile={() => setMobileOpen((value) => !value)} onOpenSearch={() => setSearchOpen(true)} onEditionChange={(next) => navigate(getEditionHomeHref(next))} />
+      <div className="docs-page-grid">
+        <DocsSidebar edition={edition} isOpen={mobileOpen} onClose={() => setMobileOpen(false)} />
+        <main className="docs-main docs-home" id="main-content">
+          <section className="docs-home-intro" aria-labelledby="docs-home-title">
+            <p className="docs-eyebrow">BrickDocs · {editionMeta.label}</p>
+            <h1 id="docs-home-title">Clear guidance for every task in your Brick panel.</h1>
+            <p className="docs-home-lede">{edition === "shared" ? "Use the Brick Web UI to operate websites, data services, security settings, and recovery workflows without exposing host-level controls." : "Use the Dedicated console guides to plan, deploy, operate, and recover application workloads with deliberate control points."}</p>
+            <div className="docs-home-actions">
+              {firstGuide ? <Link href={getGuideHref(firstGuide.slug, edition)} className="docs-primary-link">Start with {firstGuide.title}<ArrowRight size={16} /></Link> : null}
+              <button type="button" className="docs-secondary-button" onClick={() => setSearchOpen(true)}><BookOpen size={16} />Browse by task</button>
             </div>
-            <button
-              onClick={() => setEdition(edition === "shared" ? "dedicated" : "shared")}
-              style={{
-                padding: "8px 14px",
-                borderRadius: "6px",
-                background: "var(--kb-surface-soft)",
-                border: "1px solid var(--kb-border)",
-                color: "var(--kb-text)",
-                fontSize: "13px",
-                fontWeight: "600",
-                cursor: "pointer",
-                whiteSpace: "nowrap",
-              }}
-            >
-              Switch to {edition === "shared" ? "Dedicated" : "Shared"}
-            </button>
-          </div>
+          </section>
 
-          <h2 style={{ fontSize: "20px", fontWeight: "700", marginBottom: "20px" }}>Core Documentation Domains</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px", marginBottom: "48px" }}>
-            {filteredGroups.map((group) => {
-              const firstGuide = group.guides[0];
-              return (
-                <div key={group.label} style={{
-                  background: "var(--kb-surface)",
-                  border: "1px solid var(--kb-border)",
-                  borderRadius: "8px",
-                  padding: "24px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                }}>
-                  <div>
-                    <h3 style={{ fontSize: "16px", fontWeight: "700", marginBottom: "4px", color: "var(--kb-text)" }}>
-                      {group.label}
-                    </h3>
-                    <p style={{ fontSize: "12px", color: "var(--kb-text-faint)", marginBottom: "12px" }}>{group.description}</p>
-                    <ul style={{ listStyle: "none", padding: 0, margin: "0 0 20px 0", display: "flex", flexDirection: "column", gap: "8px" }}>
-                      {group.guides.map(guide => (
-                        <li key={guide.slug}>
-                          <Link href={`/docs/v0.9/${guide.slug}`} style={{
-                            color: "var(--kb-text-muted)",
-                            textDecoration: "none",
-                            fontSize: "13px",
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "6px",
-                          }}>
-                            <span style={{ color: "var(--kb-accent)" }}>›</span> {guide.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  {firstGuide && (
-                    <Link href={`/docs/v0.9/${firstGuide.slug}`} style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "6px",
-                      fontSize: "13px",
-                      fontWeight: "600",
-                      color: "var(--kb-accent)",
-                      textDecoration: "none",
-                    }}>
-                      Explore {group.label} <ArrowRight size={14} />
-                    </Link>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+          <section className="docs-content-section" aria-labelledby="start-here-title">
+            <div className="docs-section-heading"><div><p className="docs-eyebrow">New to Brick</p><h2 id="start-here-title">A sensible place to begin</h2></div><span>Follow the sequence or jump to a task.</span></div>
+            <div className="docs-start-steps">
+              {steps.map(([number, title, copy, slug]) => <Link className="docs-step" href={getGuideHref(slug, edition)} key={slug}><span className="docs-step__number">{number}</span><div><h3>{title}</h3><p>{copy}</p></div><ChevronRight size={17} aria-hidden="true" /></Link>)}
+            </div>
+          </section>
+
+          <section className="docs-content-section" aria-labelledby="task-guides-title">
+            <div className="docs-section-heading"><div><p className="docs-eyebrow">Task guides</p><h2 id="task-guides-title">Find the right workflow</h2></div><span>{guides.length} published guides in this edition</span></div>
+            <div className="docs-domain-grid">
+              {groups.map((group) => <section className="docs-domain" key={group.id}><div><h3>{group.label}</h3><p>{group.description}</p></div><ul>{group.guides.map((guide) => <li key={guide.slug}><Link href={getGuideHref(guide.slug, edition)}>{guide.title}<ArrowRight size={14} aria-hidden="true" /></Link></li>)}</ul></section>)}
+            </div>
+          </section>
+
+          <section className="docs-help-band" aria-label="Documentation support options"><div><ShieldCheck size={21} aria-hidden="true" /><div><strong>Operate within your edition’s controls.</strong><span>These guides describe supported panel actions and preserve the separation between Shared-user and Dedicated workflows.</span></div></div><div><CircleHelp size={20} aria-hidden="true" /><span>Use the page search to find a specific panel task.</span></div></section>
         </main>
+        <aside className="docs-home-rail" aria-label="Documentation orientation"><p>IN THIS EDITION</p><strong>{editionMeta.label}</strong><span>{editionMeta.description}</span><div><FileCheck2 size={16} /><span>Guides are organized by the job you need to complete.</span></div></aside>
       </div>
-
-      <DocsSearchDialog
-        open={searchOpen}
-        query={searchQuery}
-        version="v0.9"
-        onQueryChange={setSearchQuery}
-        onClose={() => setSearchOpen(false)}
-      />
+      <DocsSearchDialog open={searchOpen} edition={edition} onClose={() => setSearchOpen(false)} />
     </div>
   );
 }

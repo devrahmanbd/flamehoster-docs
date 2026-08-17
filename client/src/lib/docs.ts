@@ -1,75 +1,90 @@
-/* Brick Docs design reminder: keep public navigation task-based, predictable, and searchable; never expose host execution controls in the knowledge base. */
-import { allGuides, type GuideArticle } from "../data/guides";
+/*
+ * BrickDocs navigation contract.
+ * Public documentation is edition-aware by design. The selected edition lives
+ * in the URL, so links are shareable and browser navigation remains honest.
+ */
+import { publishedGuides, type DocsEdition, type GuideArticle } from "../data/guides";
 
-export type DocsVersion = "v0.9" | "v1.0-beta";
+export type { DocsEdition };
+export type DocsVersion = "shared" | "dedicated";
 
-export const versionOptions: Array<{ value: DocsVersion; label: string; tone: "stable" | "beta" }> = [
-  { value: "v0.9", label: "v0.9 Stable", tone: "stable" },
-  { value: "v1.0-beta", label: "v1.0 Beta", tone: "beta" },
+export const editionOptions: Array<{
+  value: DocsEdition;
+  label: string;
+  description: string;
+}> = [
+  { value: "shared", label: "Shared Hosting", description: "Guides for managed websites and hosting accounts" },
+  { value: "dedicated", label: "Dedicated", description: "Guides for dedicated application and infrastructure workloads" },
 ];
 
 export const docsGroups = [
-  {
-    label: "Start here",
-    description: "First steps and safe defaults",
-    slugs: ["getting-started", "deploying-apps"],
-  },
-  {
-    label: "Data & storage",
-    description: "Databases, files, and recovery",
-    slugs: ["databases", "file-manager", "backups"],
-  },
-  {
-    label: "Security & network",
-    description: "TLS, MFA, and operator controls",
-    slugs: ["ssl-tls", "security"],
-  },
-  {
-    label: "Application runtime",
-    description: "PHP, WordPress, and CMS hosting",
-    slugs: ["php-management", "wordpress-cms"],
-  },
-  {
-    label: "Operations",
-    description: "Diagnostics and safe maintenance",
-    slugs: ["troubleshooting"],
-  },
+  { id: "start", label: "Start here", description: "First-time orientation and account safety", slugs: ["getting-started"] },
+  { id: "websites", label: "Websites & files", description: "Domains, files, PHP, and CMS workflows", slugs: ["ssl-tls", "file-manager", "php-management", "wordpress-cms"] },
+  { id: "data", label: "Data & recovery", description: "Data services and recovery planning", slugs: ["databases", "backups"] },
+  { id: "security", label: "Security", description: "Account protection and service hardening", slugs: ["security"] },
+  { id: "operations", label: "Operations", description: "Applications and guided diagnostics", slugs: ["deploying-apps", "troubleshooting"] },
 ] as const;
 
-export function getGuideHref(slug: string, version: DocsVersion = "v0.9") {
-  return `/docs/${version}/${slug}`;
+export function normalizeEdition(value?: string): DocsEdition {
+  return value === "dedicated" ? "dedicated" : "shared";
 }
 
-export function findGuide(slug: string): GuideArticle {
-  return allGuides.find((guide) => guide.slug === slug) ?? allGuides[0];
+export function getGuideHref(slug: string, edition: DocsEdition = "shared") {
+  return `/docs/${edition}/${slug}`;
 }
 
-export function searchGuides(query: string): GuideArticle[] {
+export function getEditionHomeHref(edition: DocsEdition) {
+  return `/docs/${edition}`;
+}
+
+export function guidesForEdition(edition: DocsEdition): GuideArticle[] {
+  return publishedGuides.filter((guide) => guide.editions?.includes(edition));
+}
+
+export function groupsForEdition(edition: DocsEdition) {
+  const available = new Set(guidesForEdition(edition).map((guide) => guide.slug));
+  return docsGroups
+    .map((group) => ({
+      ...group,
+      guides: group.slugs
+        .filter((slug) => available.has(slug))
+        .map((slug) => publishedGuides.find((guide) => guide.slug === slug))
+        .filter((guide): guide is GuideArticle => Boolean(guide)),
+    }))
+    .filter((group) => group.guides.length > 0);
+}
+
+export function findGuide(slug: string, edition: DocsEdition = "shared"): GuideArticle | undefined {
+  return guidesForEdition(edition).find((guide) => guide.slug === slug);
+}
+
+export function searchGuides(query: string, edition: DocsEdition): GuideArticle[] {
   const normalized = query.trim().toLowerCase();
-  if (!normalized) return allGuides;
+  const guides = guidesForEdition(edition);
+  if (!normalized) return guides;
 
-  return allGuides.filter((guide) => {
+  return guides.filter((guide) => {
     const searchable = [
       guide.title,
       guide.category,
       guide.eyebrow,
       guide.intro,
       ...guide.sections.flatMap((section) => [section.title, section.body, ...(section.bullets ?? []), section.code ?? ""]),
-    ]
-      .join(" ")
-      .toLowerCase();
+    ].join(" ").toLowerCase();
     return searchable.includes(normalized);
   });
 }
 
-export function getNextGuide(currentSlug: string) {
-  const currentIndex = allGuides.findIndex((guide) => guide.slug === currentSlug);
-  if (currentIndex < 0 || currentIndex === allGuides.length - 1) return undefined;
-  return allGuides[currentIndex + 1];
+export function getAdjacentGuides(currentSlug: string, edition: DocsEdition) {
+  const guides = guidesForEdition(edition);
+  const currentIndex = guides.findIndex((guide) => guide.slug === currentSlug);
+  return {
+    previous: currentIndex > 0 ? guides[currentIndex - 1] : undefined,
+    next: currentIndex >= 0 && currentIndex < guides.length - 1 ? guides[currentIndex + 1] : undefined,
+  };
 }
 
-export function getPreviousGuide(currentSlug: string) {
-  const currentIndex = allGuides.findIndex((guide) => guide.slug === currentSlug);
-  if (currentIndex <= 0) return undefined;
-  return allGuides[currentIndex - 1];
+export function relatedGuides(guide: GuideArticle, edition: DocsEdition): GuideArticle[] {
+  const available = new Map(guidesForEdition(edition).map((item) => [item.slug, item]));
+  return (guide.relatedSlugs ?? []).map((slug) => available.get(slug)).filter((item): item is GuideArticle => Boolean(item));
 }
