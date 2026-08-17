@@ -13245,3 +13245,11 @@ This task list may be extended with smaller implementation items, but existing h
 - [x] Deliver the alignment report without changing public product claims until each correction is verified.
 - [x] Confirm the homepage has no duplicate edition-selection surface outside the header switcher and preserve that single-control contract.
 - [x] Extend and run mobile-drawer verification for initial focus, Escape dismissal, scrim dismissal, and focus restoration to the menu control.
+
+## Ask AI Agent Strengthening
+
+- [x] Audit the current Ask AI procedure, retrieval model, safety policy, UI behavior, and tests against the BrickDocs public-content contract.
+- [x] Strengthen grounded, edition-aware answer selection with citation validation, confidence handling, and helpful safe-refusal paths.
+- [x] Improve the Ask AI drawer to clarify its edition and source boundaries, show citation-backed answers, and handle loading and failure states accessibly.
+- [x] Add regression tests for prompt injection, host-level requests, cross-edition leakage, unsupported claims, and valid customer questions.
+- [x] Validate the strengthened agent through unit tests, safe live prompts, browser interaction checks, a production build, checkpoint, and GitHub push.

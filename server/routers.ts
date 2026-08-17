@@ -20,14 +20,11 @@ export const appRouter = router({
       .input(
         z.object({
           question: z.string().trim().min(1).max(600),
-          version: z.enum(["v0.9", "v1.0-beta"]).default("v0.9"),
+          edition: z.enum(["shared", "dedicated"]).default("shared"),
         }),
       )
       .mutation(async ({ input, ctx }) => {
-        const forwardedFor = ctx.req.headers["x-forwarded-for"];
-        const requestKey = Array.isArray(forwardedFor)
-          ? forwardedFor[0]
-          : forwardedFor ?? ctx.req.ip ?? "public-docs";
+        const requestKey = ctx.req.ip ?? "public-docs";
         return answerDocsQuestion({ ...input, requestKey });
       }),
   }),

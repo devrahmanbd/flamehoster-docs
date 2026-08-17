@@ -1,6 +1,7 @@
 import { ArrowRight, BookOpen, ChevronRight, CircleHelp, FileCheck2, ShieldCheck } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
+import DocsAssistantDrawer from "../components/DocsAssistantDrawer";
 import DocsHeader from "../components/DocsHeader";
 import DocsSearchDialog from "../components/DocsSearchDialog";
 import DocsSidebar from "../components/DocsSidebar";
@@ -27,6 +28,7 @@ export default function Home({ edition }: HomeProps) {
   const [, navigate] = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [assistantOpen, setAssistantOpen] = useState(false);
   const groups = groupsForEdition(edition);
   const guides = guidesForEdition(edition);
   const editionMeta = editionOptions.find((item) => item.value === edition)!;
@@ -69,6 +71,7 @@ export default function Home({ edition }: HomeProps) {
         <aside className="docs-home-rail" aria-label="Documentation orientation"><p>IN THIS EDITION</p><strong>{editionMeta.label}</strong><span>{editionMeta.description}</span><div><FileCheck2 size={16} /><span>Guides are organized by the job you need to complete.</span></div></aside>
       </div>
       <DocsSearchDialog open={searchOpen} edition={edition} onClose={() => setSearchOpen(false)} />
+      <DocsAssistantDrawer open={assistantOpen} edition={edition} onClose={() => setAssistantOpen(false)} onOpen={() => { setMobileOpen(false); setSearchOpen(false); setAssistantOpen(true); }} />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { ArrowLeft, ArrowRight, Check, Copy, Link2, Search } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { Link, useLocation } from "wouter";
+import DocsAssistantDrawer from "../components/DocsAssistantDrawer";
 import DocsHeader from "../components/DocsHeader";
 import DocsSearchDialog from "../components/DocsSearchDialog";
 import DocsSidebar from "../components/DocsSidebar";
@@ -15,6 +16,7 @@ export default function Guide({ edition, slug }: GuideProps) {
   const [, navigate] = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [assistantOpen, setAssistantOpen] = useState(false);
   const [copiedPage, setCopiedPage] = useState(false);
   const [copiedCode, setCopiedCode] = useState<number | null>(null);
   const guide = findGuide(slug, edition);
@@ -44,6 +46,7 @@ export default function Guide({ edition, slug }: GuideProps) {
           <aside className="docs-on-page" aria-label="On this page"><p>DOCUMENTATION</p><span>Use the left navigation to find a published guide.</span></aside>
         </div>
         <DocsSearchDialog open={searchOpen} edition={edition} onClose={() => setSearchOpen(false)} />
+        <DocsAssistantDrawer open={assistantOpen} edition={edition} onClose={() => setAssistantOpen(false)} onOpen={() => { setMobileOpen(false); setSearchOpen(false); setAssistantOpen(true); }} />
       </div>
     );
   }
@@ -72,6 +75,7 @@ export default function Guide({ edition, slug }: GuideProps) {
         <aside className="docs-on-page" aria-label="On this page"><p>ON THIS PAGE</p><nav>{guide.sections.map((section, index) => <a key={section.title} href={`#${sectionId(index)}`}>{section.title}</a>)}</nav></aside>
       </div>
       <DocsSearchDialog open={searchOpen} edition={edition} onClose={() => setSearchOpen(false)} />
+      <DocsAssistantDrawer open={assistantOpen} edition={edition} onClose={() => setAssistantOpen(false)} onOpen={() => { setMobileOpen(false); setSearchOpen(false); setAssistantOpen(true); }} />
     </div>
   );
 }

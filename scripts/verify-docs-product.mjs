@@ -33,6 +33,28 @@ try {
   await desktop.getByRole("button", { name: "Shared" }).first().click();
   await desktop.waitForURL(/\/docs\/shared$/);
 
+  const askBrick = desktop.getByRole("button", { name: "Open Ask Brick Docs" });
+  await askBrick.click();
+  const assistant = desktop.getByRole("dialog", { name: "Brick documentation assistant" });
+  await assistant.waitFor();
+  await assert((await assistant.innerText()).includes("Shared Hosting source boundary"), "Ask AI did not declare the active Shared source boundary");
+  await assert((await assistant.innerText()).includes("How do I change my PHP version?"), "Ask AI did not use Shared-safe starting prompts");
+  const assistantInput = assistant.getByRole("textbox", { name: "Ask Brick Docs a question" });
+  await desktop.waitForFunction(() => document.activeElement?.getAttribute("aria-label") === "Ask Brick Docs a question");
+  await assert(await assistantInput.evaluate((element) => element === document.activeElement), "Ask AI did not focus its input when opened");
+  await assistant.getByRole("button", { name: "Close documentation assistant" }).click();
+  await assert(await desktop.getByRole("dialog", { name: "Brick documentation assistant" }).count() === 0, "Ask AI close control did not dismiss the assistant");
+
+  await desktop.getByRole("button", { name: "Dedicated" }).first().click();
+  await desktop.waitForURL(/\/docs\/dedicated$/);
+  await askBrick.click();
+  const dedicatedAssistant = desktop.getByRole("dialog", { name: "Brick documentation assistant" });
+  await assert((await dedicatedAssistant.innerText()).includes("Dedicated source boundary"), "Ask AI did not declare the active Dedicated source boundary");
+  await assert((await dedicatedAssistant.innerText()).includes("How do I deploy an app?"), "Ask AI did not use Dedicated starting prompts");
+  await dedicatedAssistant.getByRole("button", { name: "Close documentation assistant" }).click();
+  await desktop.getByRole("button", { name: "Shared" }).first().click();
+  await desktop.waitForURL(/\/docs\/shared$/);
+
   await desktop.keyboard.press(process.platform === "darwin" ? "Meta+K" : "Control+K");
   await desktop.getByRole("dialog", { name: "Search Brick documentation" }).waitFor();
   const searchInput = desktop.getByRole("textbox", { name: "Search documentation" });
@@ -56,12 +78,14 @@ try {
 
   await mobile.keyboard.press("Escape");
   await assert(!(await drawer.getAttribute("aria-modal")), "Escape did not dismiss the mobile documentation drawer");
+  await mobile.waitForFunction(() => document.activeElement?.getAttribute("aria-label") === "Open documentation navigation");
   await assert(await menuButton.evaluate((element) => element === document.activeElement), "Drawer did not restore focus to the navigation trigger after Escape");
 
   await menuButton.click();
   await drawer.getByRole("button", { name: "Close navigation menu" }).waitFor();
   await mobile.locator(".docs-nav-scrim").click({ position: { x: 380, y: 300 } });
   await assert(!(await drawer.getAttribute("aria-modal")), "Scrim click did not dismiss the mobile documentation drawer");
+  await mobile.waitForFunction(() => document.activeElement?.getAttribute("aria-label") === "Open documentation navigation");
   await assert(await menuButton.evaluate((element) => element === document.activeElement), "Drawer did not restore focus to the navigation trigger after scrim dismissal");
   await assertNoHorizontalOverflow(mobile, "Shared mobile homepage");
   await mobile.close();
